@@ -7,26 +7,13 @@
   'use strict';
 
   /* ======================================================
-     1. PARTICLE SYSTEM — Mobile-Adaptive
+     1. PARTICLE SYSTEM
      ====================================================== */
   const canvas = document.getElementById('particleCanvas');
   const ctx = canvas.getContext('2d');
 
-  const isTouch = navigator.maxTouchPoints > 0;
-  let isMobile, isTablet, COUNT, CONNECT, FPS, INTERVAL;
-  let lastTS = 0;
+  let particles = [];
   let animFrame;
-
-  function getDeviceProfile() {
-    const w = window.innerWidth;
-    isMobile = w <= 600;
-    isTablet = !isMobile && (w <= 900 || isTouch);
-    COUNT = isMobile ? 18 : isTablet ? 32 : 90;
-    CONNECT = !isMobile && !isTablet;   /* connection lines only on desktop */
-    FPS = isMobile ? 20 : isTablet ? 30 : 60;
-    INTERVAL = 1000 / FPS;
-  }
-  getDeviceProfile();
 
   function resizeCanvas() {
     canvas.width = window.innerWidth;
@@ -34,12 +21,11 @@
   }
 
   function createParticle() {
-    const spd = isMobile ? 0.18 : 0.35;
     return {
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      vx: (Math.random() - 0.5) * spd,
-      vy: (Math.random() - 0.5) * spd,
+      vx: (Math.random() - 0.5) * 0.35,
+      vy: (Math.random() - 0.5) * 0.35,
       size: Math.random() * 1.8 + 0.4,
       opacity: Math.random() * 0.5 + 0.1,
       color: Math.random() < 0.7 ? '#00e5ff' : Math.random() < 0.5 ? '#2979ff' : '#00bfa5',
@@ -48,15 +34,66 @@
     };
   }
 
-  let particles = [];
-
   function initParticles() {
+    const count = Math.min(Math.floor((canvas.width * canvas.height) / 12000), 120);
     particles = [];
-    for (let i = 0; i < COUNT; i++) {
+    for (let i = 0; i < count; i++) {
       const p = createParticle();
       p.life = Math.random() * p.maxLife;
       particles.push(p);
     }
+  }
+
+  function drawParticles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    particles.forEach((p, i) => {
+      // Update
+      p.x += p.vx;
+      p.y += p.vy;
+      p.life++;
+
+      // Wrap around
+      if (p.x < 0) p.x = canvas.width;
+      if (p.x > canvas.width) p.x = 0;
+      if (p.y < 0) p.y = canvas.height;
+      if (p.y > canvas.height) p.y = 0;
+
+      // Fade in / out
+      const lifeFrac = p.life / p.maxLife;
+      const fade = lifeFrac < 0.1 ? lifeFrac / 0.1 : lifeFrac > 0.9 ? (1 - lifeFrac) / 0.1 : 1;
+      const alpha = p.opacity * fade;
+
+      // Draw dot
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fillStyle = hexToRgba(p.color, alpha);
+      ctx.fill();
+
+      // Draw connection lines
+      for (let j = i + 1; j < particles.length; j++) {
+        const q = particles[j];
+        const dx = p.x - q.x;
+        const dy = p.y - q.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 120) {
+          const lineAlpha = (1 - dist / 120) * 0.12 * alpha;
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(q.x, q.y);
+          ctx.strokeStyle = hexToRgba('#00e5ff', lineAlpha);
+          ctx.lineWidth = 0.4;
+          ctx.stroke();
+        }
+      }
+
+      // Respawn
+      if (p.life >= p.maxLife) {
+        particles[i] = createParticle();
+      }
+    });
+
+    animFrame = requestAnimationFrame(drawParticles);
   }
 
   function hexToRgba(hex, alpha) {
@@ -66,65 +103,16 @@
     return `rgba(${r},${g},${b},${alpha})`;
   }
 
-  function drawParticles(ts) {
-    animFrame = requestAnimationFrame(drawParticles);
-    if (ts - lastTS < INTERVAL) return;
-    lastTS = ts;
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    particles.forEach((p, i) => {
-      p.x += p.vx;
-      p.y += p.vy;
-      p.life++;
-
-      if (p.x < 0) p.x = canvas.width;
-      if (p.x > canvas.width) p.x = 0;
-      if (p.y < 0) p.y = canvas.height;
-      if (p.y > canvas.height) p.y = 0;
-
-      const lifeFrac = p.life / p.maxLife;
-      const fade = lifeFrac < 0.1 ? lifeFrac / 0.1 : lifeFrac > 0.9 ? (1 - lifeFrac) / 0.1 : 1;
-      const alpha = p.opacity * fade;
-
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-      ctx.fillStyle = hexToRgba(p.color, alpha);
-      ctx.fill();
-
-      /* Connection lines — desktop only */
-      if (CONNECT) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const q = particles[j];
-          const dx = p.x - q.x, dy = p.y - q.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 120) {
-            const lineAlpha = (1 - dist / 120) * 0.12 * alpha;
-            ctx.beginPath();
-            ctx.moveTo(p.x, p.y);
-            ctx.lineTo(q.x, q.y);
-            ctx.strokeStyle = hexToRgba('#00e5ff', lineAlpha);
-            ctx.lineWidth = 0.4;
-            ctx.stroke();
-          }
-        }
-      }
-
-      if (p.life >= p.maxLife) particles[i] = createParticle();
-    });
-  }
-
   window.addEventListener('resize', () => {
-    getDeviceProfile();
     resizeCanvas();
     cancelAnimationFrame(animFrame);
     initParticles();
-    requestAnimationFrame(drawParticles);
-  }, { passive: true });
+    drawParticles();
+  });
 
   resizeCanvas();
   initParticles();
-  requestAnimationFrame(drawParticles);
+  drawParticles();
 
   /* ======================================================
      2. NAVBAR — scroll + mobile toggle
@@ -268,19 +256,17 @@
   ltStatNums.forEach(el => ltStatObserver.observe(el));
 
   /* ======================================================
-     5. PARALLAX — hero visual (desktop only)
+     5. PARALLAX — hero visual
      ====================================================== */
-  if (!isTouch) {
-    const holoLogo = document.querySelector('.holo-logo');
-    window.addEventListener('mousemove', (e) => {
-      if (!holoLogo) return;
-      const cx = window.innerWidth / 2;
-      const cy = window.innerHeight / 2;
-      const dx = (e.clientX - cx) / cx;
-      const dy = (e.clientY - cy) / cy;
-      holoLogo.style.transform = `translate(${dx * 10}px, ${dy * 8}px)`;
-    }, { passive: true });
-  }
+  const holoLogo = document.querySelector('.holo-logo');
+  window.addEventListener('mousemove', (e) => {
+    if (!holoLogo) return;
+    const cx = window.innerWidth / 2;
+    const cy = window.innerHeight / 2;
+    const dx = (e.clientX - cx) / cx;
+    const dy = (e.clientY - cy) / cy;
+    holoLogo.style.transform = `translate(${dx * 10}px, ${dy * 8}px)`;
+  }, { passive: true });
 
   /* ======================================================
      6. CONTACT FORM
@@ -323,28 +309,27 @@
   });
 
   /* ======================================================
-     8. CURSOR GLOW TRAIL (desktop only — avoid mobile perf hit)
+     8. CURSOR GLOW TRAIL
      ====================================================== */
-  if (!isTouch) {
-    const cursorTrail = document.createElement('div');
-    cursorTrail.style.cssText = `
-      position: fixed;
-      pointer-events: none;
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(0,229,255,0.045), transparent 70%);
-      transform: translate(-50%, -50%);
-      transition: left 0.15s ease, top 0.15s ease;
-      z-index: 0;
-      will-change: left, top;
-    `;
-    document.body.appendChild(cursorTrail);
-    document.addEventListener('mousemove', (e) => {
-      cursorTrail.style.left = e.clientX + 'px';
-      cursorTrail.style.top = e.clientY + 'px';
-    }, { passive: true });
-  }
+  const cursorTrail = document.createElement('div');
+  cursorTrail.style.cssText = `
+    position: fixed;
+    pointer-events: none;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,229,255,0.045), transparent 70%);
+    transform: translate(-50%, -50%);
+    transition: left 0.15s ease, top 0.15s ease;
+    z-index: 0;
+    will-change: left, top;
+  `;
+  document.body.appendChild(cursorTrail);
+
+  document.addEventListener('mousemove', (e) => {
+    cursorTrail.style.left = e.clientX + 'px';
+    cursorTrail.style.top = e.clientY + 'px';
+  }, { passive: true });
 
   /* ======================================================
      9. TECH PILLS HOVER GLOW
