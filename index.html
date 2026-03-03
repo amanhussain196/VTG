@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Vistara Tech Global — We Do All of Your Digital Heavy Lifting. Custom websites, web apps, e-commerce, mobile apps, SEO, and graphic design." />
+    <meta name="keywords"
+        content="Vistara Tech Global, web development, mobile apps, e-commerce, SEO, digital agency" />
+    <title>Vistara Tech Global | Next-Gen Digital Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <!-- Particle Canvas -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Grid Overlay -->
+    <div class="grid-overlay"></div>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <img src="WWW.VISTARATECHGLOBAL.COM-removebg-preview.png" alt="Vistara Tech Global Logo"
+                    class="logo-img" />
+                <span class="logo-text">VISTARA<span class="logo-accent"> TECH</span></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#why-us" class="nav-link">Why Us</a></li>
+                <li><a href="#tech-stack" class="nav-link">Tech Stack</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <a href="#contact" class="nav-cta">Get Started</a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" id="home">
+        <div class="hero-bg-elements">
+            <div class="hex-grid"></div>
+            <div class="scan-line"></div>
+            <div class="scan-line scan-line-2"></div>
+            <div class="data-stream stream-1"></div>
+            <div class="data-stream stream-2"></div>
+            <div class="data-stream stream-3"></div>
+            <div class="data-stream stream-4"></div>
+            <div class="data-stream stream-5"></div>
+            <div class="data-stream stream-6"></div>
+            <div class="glow-orb orb-1"></div>
+            <div class="glow-orb orb-2"></div>
+            <div class="floating-dots"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                NEXT-GEN TECHNOLOGY SOLUTIONS
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line line-1"><span class="glitch-text glitch-delay-1" data-text="ENGINEERING">ENGINEERING</span></span>
+                <span class="title-line line-2">THE <span class="glitch-text glitch-delay-2" data-text="DIGITAL">DIGITAL</span></span>
+                <span class="title-line line-3"><span class="glow-pulse-wrap"><span class="glitch-text" data-text="FUTURE">FUTURE</span></span></span>
+            </h1>
+            <p class="hero-tagline">We Do All of Your <span class="tagline-highlight">Digital Heavy Lifting</span></p>
+            <p class="hero-sub">From cutting-edge web platforms to AI-powered mobile applications — Vistara Tech Global
+                transforms your vision into scalable, high-performance reality.</p>
+            <div class="hero-cta-group">
+                <a href="#contact" class="btn btn-primary" id="hero-get-started">
+                    <span class="btn-icon">⚡</span>
+                    Start a Project
+                    <span class="btn-glow"></span>
+                </a>
+                <a href="#contact" class="btn btn-secondary" id="hero-reach-us">
+                    <span class="btn-icon">📡</span>
+                    Talk to Experts
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-num" data-target="150">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Projects Delivered</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-num" data-target="50">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Global Clients</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-num" data-target="5">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Years of Excellence</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="logo-hologram">
+                <div class="holo-ring ring-outer"></div>
+                <div class="holo-ring ring-mid"></div>
+                <div class="holo-ring ring-inner"></div>
+                <div class="pulse-ring pulse-ring-1"></div>
+                <div class="pulse-ring pulse-ring-2"></div>
+                <div class="pulse-ring pulse-ring-3"></div>
+                <img src="WWW.VISTARATECHGLOBAL.COM-removebg-preview.png" alt="Vistara Tech Global" class="holo-logo" />
+                <div class="holo-scanline"></div>
+                <div class="holo-corner hc-tl"></div>
+                <div class="holo-corner hc-tr"></div>
+                <div class="holo-corner hc-bl"></div>
+                <div class="holo-corner hc-br"></div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span class="scroll-text">SCROLL</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ==================== LIVE TECH ==================== -->
+    <section class="live-tech" id="live-tech">
+        <div class="live-tech-inner">
+            <div class="section-header">
+                <div class="section-badge"><span class="badge-dot"></span> LIVE DIGITAL ENGINE</div>
+                <h2 class="section-title">Powering <span class="text-accent glitch-text glitch-sm glitch-delay-3" data-text="Digital Innovation">Digital Innovation</span></h2>
+                <p class="section-subtitle">Four pillars. One mission. Infinite scale.</p>
+            </div>
+            <div class="live-tech-grid">
+                <div class="lt-card reveal" id="lt-web">
+                    <div class="lt-card-glow"></div>
+                    <div class="lt-line-top"></div>
+                    <div class="lt-icon">⚙️</div>
+                    <h3 class="lt-title">Scalable Web Apps</h3>
+                    <p class="lt-desc">Built for millions of users — architected to never break under pressure.</p>
+                    <div class="lt-stat"><span class="lt-stat-num" data-target="99">0</span>% Uptime SLA</div>
+                </div>
+                <div class="lt-card reveal" id="lt-mobile">
+                    <div class="lt-card-glow"></div>
+                    <div class="lt-line-top"></div>
+                    <div class="lt-icon">📱</div>
+                    <h3 class="lt-title">Mobile Engineering</h3>
+                    <p class="lt-desc">Native, fast, secure — apps that users actually love to open every day.</p>
+                    <div class="lt-stat"><span class="lt-stat-num" data-target="50">0</span>+ Apps Shipped</div>
+                </div>
+                <div class="lt-card reveal" id="lt-ai">
+                    <div class="lt-card-glow"></div>
+                    <div class="lt-line-top"></div>
+                    <div class="lt-icon">🧠</div>
+                    <h3 class="lt-title">AI & Automation</h3>
+                    <p class="lt-desc">Data-driven intelligence that learns, adapts, and accelerates your growth.</p>
+                    <div class="lt-stat"><span class="lt-stat-num" data-target="10">0</span>x Faster Ops</div>
+                </div>
+                <div class="lt-card reveal" id="lt-ecom">
+                    <div class="lt-card-glow"></div>
+                    <div class="lt-line-top"></div>
+                    <div class="lt-icon">🛒</div>
+                    <h3 class="lt-title">E-Commerce Systems</h3>
+                    <p class="lt-desc">Conversion-focused stores engineered to sell more, faster, around the clock.</p>
+                    <div class="lt-stat"><span class="lt-stat-num" data-target="3">0</span>x Revenue Lift</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SERVICES ==================== -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <div class="section-badge">OUR CAPABILITIES</div>
+            <h2 class="section-title">What We <span class="text-accent glitch-text glitch-sm glitch-delay-3"
+                    data-text="Build">Build</span></h2>
+            <p class="section-subtitle">Enterprise-grade digital solutions engineered for performance, scalability, and
+                global impact.</p>
+        </div>
+
+        <div class="services-grid">
+
+            <div class="service-card" id="service-websites">
+                <div class="card-border-glow"></div>
+                <div class="card-inner">
+                    <div class="service-icon-wrap">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="3" y="3" width="18" height="18" rx="2" />
+                                <path d="M3 9h18M9 21V9" />
+                            </svg>
+                        </div>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <h3 class="service-title">Custom Websites</h3>
+                    <p class="service-desc">Blazing-fast, pixel-perfect websites architected with modern frameworks.
+                        Designed to convert, built to last.</p>
+                    <div class="service-tags">
+                        <span>React</span><span>Next.js</span><span>WordPress</span>
+                    </div>
+                    <div class="service-arrow">→</div>
+                </div>
+            </div>
+
+            <div class="service-card" id="service-webapps">
+                <div class="card-border-glow"></div>
+                <div class="card-inner">
+                    <div class="service-icon-wrap">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <h3 class="service-title">Scalable Web Applications</h3>
+                    <p class="service-desc">Full-stack web applications engineered for millions of users. Microservices,
+                        cloud-native, and infinitely scalable.</p>
+                    <div class="service-tags">
+                        <span>Node.js</span><span>AWS</span><span>Docker</span>
+                    </div>
+                    <div class="service-arrow">→</div>
+                </div>
+            </div>
+
+            <div class="service-card" id="service-ecommerce">
+                <div class="card-border-glow"></div>
+                <div class="card-inner">
+                    <div class="service-icon-wrap">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+                                <line x1="3" y1="6" x2="21" y2="6" />
+                                <path d="M16 10a4 4 0 01-8 0" />
+                            </svg>
+                        </div>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <h3 class="service-title">High-Performance E-Commerce</h3>
+                    <p class="service-desc">Revenue-optimized storefronts with lightning checkout flows, AI
+                        recommendations, and zero-downtime architecture.</p>
+                    <div class="service-tags">
+                        <span>Shopify</span><span>WooCommerce</span><span>Custom</span>
+                    </div>
+                    <div class="service-arrow">→</div>
+                </div>
+            </div>
+
+            <div class="service-card" id="service-apps">
+                <div class="card-border-glow"></div>
+                <div class="card-inner">
+                    <div class="service-icon-wrap">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                                <line x1="12" y1="18" x2="12.01" y2="18" />
+                            </svg>
+                        </div>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <h3 class="service-title">Native Android & iOS Apps</h3>
+                    <p class="service-desc">Silky-smooth mobile experiences built natively or with cross-platform
+                        frameworks. From concept to app store approval.</p>
+                    <div class="service-tags">
+                        <span>Flutter</span><span>Swift</span><span>Kotlin</span>
+                    </div>
+                    <div class="service-arrow">→</div>
+                </div>
+            </div>
+
+            <div class="service-card" id="service-seo">
+                <div class="card-border-glow"></div>
+                <div class="card-inner">
+                    <div class="service-icon-wrap">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                            </svg>
+                        </div>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <h3 class="service-title">Data-Driven SEO Strategies</h3>
+                    <p class="service-desc">Algorithm-proof SEO powered by deep analytics. Dominate search rankings and
+                        drive qualified organic traffic at scale.</p>
+                    <div class="service-tags">
+                        <span>Technical SEO</span><span>Content</span><span>Analytics</span>
+                    </div>
+                    <div class="service-arrow">→</div>
+                </div>
+            </div>
+
+            <div class="service-card" id="service-design">
+                <div class="card-border-glow"></div>
+                <div class="card-inner">
+                    <div class="service-icon-wrap">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="3" />
+                                <path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14" />
+                                <path d="M15.54 8.46a5 5 0 010 7.07M8.46 8.46a5 5 0 000 7.07" />
+                            </svg>
+                        </div>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <h3 class="service-title">Modern Graphic Design</h3>
+                    <p class="service-desc">Brand identities that command attention. Logos, UI kits, marketing
+                        collateral — crafted with precision and purpose.</p>
+                    <div class="service-tags">
+                        <span>Branding</span><span>UI/UX</span><span>Motion</span>
+                    </div>
+                    <div class="service-arrow">→</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==================== WHY VISTARA ==================== -->
+    <section class="why-us" id="why-us">
+        <div class="why-bg">
+            <div class="circuit-lines"></div>
+        </div>
+        <div class="why-container">
+            <div class="section-header">
+                <div class="section-badge">WHY CHOOSE US</div>
+                <h2 class="section-title">Why <span class="text-accent glitch-text glitch-sm glitch-delay-1"
+                        data-text="Vistara Tech">Vistara Tech</span> Global</h2>
+                <p class="section-subtitle">We don't just build software — we architect competitive advantages.</p>
+            </div>
+
+            <div class="why-grid">
+                <div class="why-card" id="why-innovation">
+                    <div class="why-number">01</div>
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path
+                                d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18" />
+                        </svg>
+                    </div>
+                    <h3>Innovation Focused</h3>
+                    <p>We leverage emerging technologies — AI, ML, blockchain, and cloud — to keep your business ahead
+                        of the curve.</p>
+                    <div class="why-line"></div>
+                </div>
+
+                <div class="why-card" id="why-scalable">
+                    <div class="why-number">02</div>
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path
+                                d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
+                        </svg>
+                    </div>
+                    <h3>Scalable Solutions</h3>
+                    <p>Architecture designed to grow with you — from startup MVP to enterprise platform, without
+                        rebuilding from scratch.</p>
+                    <div class="why-line"></div>
+                </div>
+
+                <div class="why-card" id="why-global">
+                    <div class="why-number">03</div>
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="2" y1="12" x2="22" y2="12" />
+                            <path
+                                d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+                        </svg>
+                    </div>
+                    <h3>Global Standards</h3>
+                    <p>International quality benchmarks, WCAG compliance, GDPR-ready systems, and globally distributed
+                        infrastructure.</p>
+                    <div class="why-line"></div>
+                </div>
+
+                <div class="why-card" id="why-performance">
+                    <div class="why-number">04</div>
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                    </div>
+                    <h3>Performance & Security</h3>
+                    <p>99.9% uptime SLAs, enterprise-grade security protocols, penetration testing, and optimized Core
+                        Web Vitals.</p>
+                    <div class="why-line"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TECH STACK ==================== -->
+    <section class="tech-stack" id="tech-stack">
+        <div class="section-header">
+            <div class="section-badge">CAPABILITIES</div>
+            <h2 class="section-title">Our <span class="text-accent glitch-text glitch-sm glitch-delay-2"
+                    data-text="Tech Arsenal">Tech Arsenal</span></h2>
+            <p class="section-subtitle">Battle-tested technologies powering next-generation digital experiences.</p>
+        </div>
+
+        <div class="tech-dashboard">
+            <div class="tech-category" id="tech-frontend">
+                <div class="tech-cat-header">
+                    <div class="tech-cat-dot"></div>
+                    <span>Frontend</span>
+                </div>
+                <div class="tech-pills">
+                    <div class="tech-pill"><span class="pill-icon">⚛</span> React.js</div>
+                    <div class="tech-pill"><span class="pill-icon">▲</span> Next.js</div>
+                    <div class="tech-pill"><span class="pill-icon">🔥</span> Vue.js</div>
+                    <div class="tech-pill"><span class="pill-icon">💠</span> TypeScript</div>
+                    <div class="tech-pill"><span class="pill-icon">🎨</span> Tailwind</div>
+                </div>
+            </div>
+
+            <div class="tech-category" id="tech-backend">
+                <div class="tech-cat-header">
+                    <div class="tech-cat-dot"></div>
+                    <span>Backend</span>
+                </div>
+                <div class="tech-pills">
+                    <div class="tech-pill"><span class="pill-icon">🟢</span> Node.js</div>
+                    <div class="tech-pill"><span class="pill-icon">🐍</span> Python</div>
+                    <div class="tech-pill"><span class="pill-icon">☕</span> Java</div>
+                    <div class="tech-pill"><span class="pill-icon">🔷</span> GraphQL</div>
+                    <div class="tech-pill"><span class="pill-icon">⚡</span> REST APIs</div>
+                </div>
+            </div>
+
+            <div class="tech-category" id="tech-mobile">
+                <div class="tech-cat-header">
+                    <div class="tech-cat-dot"></div>
+                    <span>Mobile</span>
+                </div>
+                <div class="tech-pills">
+                    <div class="tech-pill"><span class="pill-icon">💙</span> Flutter</div>
+                    <div class="tech-pill"><span class="pill-icon">🍎</span> Swift</div>
+                    <div class="tech-pill"><span class="pill-icon">🤖</span> Kotlin</div>
+                    <div class="tech-pill"><span class="pill-icon">⚛</span> React Native</div>
+                </div>
+            </div>
+
+            <div class="tech-category" id="tech-cloud">
+                <div class="tech-cat-header">
+                    <div class="tech-cat-dot"></div>
+                    <span>Cloud & DevOps</span>
+                </div>
+                <div class="tech-pills">
+                    <div class="tech-pill"><span class="pill-icon">☁</span> AWS</div>
+                    <div class="tech-pill"><span class="pill-icon">🔵</span> Azure</div>
+                    <div class="tech-pill"><span class="pill-icon">🐋</span> Docker</div>
+                    <div class="tech-pill"><span class="pill-icon">☸</span> Kubernetes</div>
+                    <div class="tech-pill"><span class="pill-icon">🔄</span> CI/CD</div>
+                </div>
+            </div>
+
+            <div class="tech-category" id="tech-database">
+                <div class="tech-cat-header">
+                    <div class="tech-cat-dot"></div>
+                    <span>Database</span>
+                </div>
+                <div class="tech-pills">
+                    <div class="tech-pill"><span class="pill-icon">🐘</span> PostgreSQL</div>
+                    <div class="tech-pill"><span class="pill-icon">🍃</span> MongoDB</div>
+                    <div class="tech-pill"><span class="pill-icon">🔴</span> Redis</div>
+                    <div class="tech-pill"><span class="pill-icon">🔥</span> Firebase</div>
+                </div>
+            </div>
+
+            <div class="tech-category" id="tech-ai">
+                <div class="tech-cat-header">
+                    <div class="tech-cat-dot"></div>
+                    <span>AI & Analytics</span>
+                </div>
+                <div class="tech-pills">
+                    <div class="tech-pill"><span class="pill-icon">🤖</span> OpenAI</div>
+                    <div class="tech-pill"><span class="pill-icon">📊</span> TensorFlow</div>
+                    <div class="tech-pill"><span class="pill-icon">🔍</span> Analytics</div>
+                    <div class="tech-pill"><span class="pill-icon">⚡</span> Vertex AI</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Performance Metrics Bar -->
+        <div class="metrics-strip">
+            <div class="metric">
+                <span class="metric-value">99.9%</span>
+                <span class="metric-label">Uptime SLA</span>
+            </div>
+            <div class="metric-sep"></div>
+            <div class="metric">
+                <span class="metric-value">&lt;1s</span>
+                <span class="metric-label">Avg Load Time</span>
+            </div>
+            <div class="metric-sep"></div>
+            <div class="metric">
+                <span class="metric-value">100</span>
+                <span class="metric-label">Lighthouse Score</span>
+            </div>
+            <div class="metric-sep"></div>
+            <div class="metric">
+                <span class="metric-value">24/7</span>
+                <span class="metric-label">Support</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section class="contact" id="contact">
+        <div class="contact-bg">
+            <div class="contact-grid-lines"></div>
+        </div>
+        <div class="contact-container">
+            <div class="contact-left">
+                <div class="section-badge">REACH US</div>
+                <h2 class="section-title">Start Your <span class="text-accent">Project</span></h2>
+                <p class="contact-desc">Ready to build something extraordinary? Let's discuss your vision and architect
+                    the digital future together.</p>
+
+                <div class="contact-info">
+                    <div class="contact-item" id="contact-email">
+                        <div class="contact-item-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="contact-item-label">Email</span>
+                            <a href="mailto:info.vistaratechglobal@gmail.com"
+                                class="contact-item-value">info.vistaratechglobal@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item" id="contact-phone">
+                        <div class="contact-item-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path
+                                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.09-1.09a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="contact-item-label">Phone</span>
+                            <a href="tel:+918749074438" class="contact-item-value">+91 87490 74438</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="#" class="social-link" id="social-linkedin" aria-label="LinkedIn">in</a>
+                    <a href="#" class="social-link" id="social-twitter" aria-label="Twitter">𝕏</a>
+                    <a href="#" class="social-link" id="social-instagram" aria-label="Instagram">ig</a>
+                    <a href="#" class="social-link" id="social-github" aria-label="GitHub">gh</a>
+                </div>
+            </div>
+
+            <div class="contact-right">
+                <form class="contact-form" id="contactForm" novalidate>
+                    <div class="form-group">
+                        <label for="name" class="form-label">Full Name</label>
+                        <input type="text" id="name" name="name" class="form-input" placeholder="John Doe" required />
+                        <div class="input-glow-line"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="john@company.com"
+                            required />
+                        <div class="input-glow-line"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="service" class="form-label">Service Needed</label>
+                        <select id="service" name="service" class="form-input form-select">
+                            <option value="">Select a service...</option>
+                            <option value="website">Custom Website</option>
+                            <option value="webapp">Web Application</option>
+                            <option value="ecommerce">E-Commerce</option>
+                            <option value="mobile">Mobile App</option>
+                            <option value="seo">SEO Strategy</option>
+                            <option value="design">Graphic Design</option>
+                        </select>
+                        <div class="input-glow-line"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">Project Details</label>
+                        <textarea id="message" name="message" class="form-input form-textarea"
+                            placeholder="Tell us about your project..." rows="4" required></textarea>
+                        <div class="input-glow-line"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
+                        <span class="btn-icon">🚀</span>
+                        Launch Your Project
+                        <span class="btn-glow"></span>
+                    </button>
+                    <div class="form-success" id="formSuccess">
+                        <span>✓</span> Message received! We'll respond within 24 hours.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <img src="WWW.VISTARATECHGLOBAL.COM-removebg-preview.png" alt="Vistara Tech Global" class="footer-logo"
+                    width="120" />
+                <div>
+                    <div class="footer-name">VISTARA TECH GLOBAL</div>
+                    <div class="footer-tagline">Engineering the Digital Future</div>
+                </div>
+            </div>
+            <div class="footer-links-group">
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <a href="#services">Custom Websites</a>
+                    <a href="#services">Web Applications</a>
+                    <a href="#services">E-Commerce</a>
+                    <a href="#services">Mobile Apps</a>
+                    <a href="#services">SEO</a>
+                    <a href="#services">Graphic Design</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="#why-us">Why Us</a>
+                    <a href="#tech-stack">Tech Stack</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Vistara Tech Global. All rights reserved.</span>
+            <span class="footer-status"><span class="status-dot"></span> All systems operational</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
