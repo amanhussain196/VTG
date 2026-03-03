@@ -2491,3 +2491,33 @@ section {
     grid-template-columns: 1fr;
   }
 }
+/* ======================================================
+   MOBILE / TABLET PERFORMANCE OPTIMISATIONS
+   Disable expensive animated layers on small screens
+   ====================================================== */
+@media (max-width: 900px) {
+  /* Grid overlay, scan lines, data streams -- GPU-heavy */
+  .grid-overlay,
+  .data-stream,
+  .scan-line,
+  .scan-line-2,
+  .floating-dots {
+    display: none !important;
+  }
+  /* Reduce particle opacity */
+  #particleCanvas {
+    opacity: 0.25 !important;
+  }
+  /* Disable glow orbs filter blur (very GPU heavy on mobile) */
+  .glow-orb {
+    animation: none !important;
+    filter: none !important;
+    opacity: 0.04 !important;
+  }
+  /* Cursor trail is injected by JS (disabled on touch) -- nothing to do here */
+  /* Simplify hero logo parallax (handled in JS) */
+  .holo-logo {
+    transform: none !important;
+    transition: none !important;
+  }
+}
