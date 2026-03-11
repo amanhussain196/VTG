@@ -1,276 +1,1561 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<meta name="description" content="Revenue-optimized e-commerce stores with lightning checkout, AI recommendations, and zero-downtime architecture."/>
-<title>High-Performance E-Commerce | Vistara Tech Global</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-<style>
-:root{--c:#00e5ff;--cd:#00b8d4;--cg:rgba(0,229,255,0.35);--be:#2979ff;--db:#050810;--dk:#080d18;--dbr:rgba(0,229,255,0.15);--dbh:rgba(0,229,255,0.5);--tp:#e8f4f8;--ts:#7fa3b5;--tm:#3d5a6b;--fd:'Orbitron',monospace;--fb:'Rajdhani',sans-serif;--fu:'Inter',sans-serif;--tr:0.3s cubic-bezier(0.4,0,0.2,1)}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;overflow-x:hidden}body{background:var(--db);color:var(--tp);font-family:var(--fb);font-size:16px;line-height:1.65;overflow-x:hidden}
-::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--db)}::-webkit-scrollbar-thumb{background:var(--cd);border-radius:3px}::selection{background:var(--cg);color:var(--c)}
-#pc{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.45}
-.go{position:fixed;top:0;left:0;width:120%;height:120%;pointer-events:none;z-index:0;background-image:linear-gradient(rgba(0,229,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.025) 1px,transparent 1px);background-size:60px 60px;animation:gd 24s linear infinite}
-@keyframes gd{0%{transform:translate(0,0)}50%{transform:translate(-20px,0)}100%{transform:translate(0,0)}}
-.hbg{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-.hg{position:absolute;inset:0;background-image:radial-gradient(ellipse at 70% 40%,rgba(0,229,255,.06) 0%,transparent 60%),radial-gradient(ellipse at 20% 80%,rgba(41,121,255,.06) 0%,transparent 50%)}
-.sl2{position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(0,229,255,.4),transparent);animation:sd 8s linear infinite}
-@keyframes sd{0%{top:0;opacity:1}100%{top:100vh;opacity:0}}
-.ds{position:absolute;width:1px;height:120px;background:linear-gradient(180deg,transparent,var(--c),transparent);animation:sf linear infinite;opacity:.3}
-.d1{left:8%;animation-duration:4s}.d2{left:28%;animation-duration:5.5s;animation-delay:1.5s}.d3{left:48%;animation-duration:3.5s;animation-delay:.8s}.d4{left:65%;animation-duration:6s;animation-delay:2.2s}.d5{left:80%;animation-duration:4.5s;animation-delay:.4s}.d6{left:92%;animation-duration:3s;animation-delay:1.9s}
-@keyframes sf{0%{top:-120px;opacity:0}10%{opacity:.4}100%{top:110vh;opacity:0}}
-.ob{position:absolute;border-radius:50%;filter:blur(80px);animation:op 6s ease-in-out infinite}
-.o1{width:500px;height:500px;background:radial-gradient(circle,rgba(0,150,200,.12),transparent 70%);top:-100px;right:-100px}
-.o2{width:350px;height:350px;background:radial-gradient(circle,rgba(41,121,255,.1),transparent 70%);bottom:10%;left:5%;animation-delay:3s}
-@keyframes op{0%,100%{transform:scale(1);opacity:.7}50%{transform:scale(1.15);opacity:1}}
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;transition:background var(--tr)}nav.sc{background:rgba(5,8,16,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--dbr)}
-.nc{max-width:1400px;margin:0 auto;padding:0 2rem;height:72px;display:flex;align-items:center;gap:2rem}
-.nl{display:flex;align-items:center;gap:.75rem;text-decoration:none;flex-shrink:0}.li{height:42px;width:auto;filter:drop-shadow(0 0 10px rgba(0,229,255,.55))}
-.lt{font-family:var(--fd);font-size:.95rem;font-weight:700;letter-spacing:.12em;color:var(--tp)}.la{color:var(--c)}
-ul.nls{display:flex;align-items:center;gap:.25rem;list-style:none;margin-left:auto}
-.nk{color:var(--ts);text-decoration:none;font-family:var(--fb);font-weight:600;font-size:.875rem;letter-spacing:.08em;text-transform:uppercase;padding:.5rem 1rem;border-radius:4px;transition:color var(--tr);position:relative}
-.nk::after{content:'';position:absolute;bottom:2px;left:50%;right:50%;height:1px;background:var(--c);transition:left var(--tr),right var(--tr)}
-.nk:hover,.nk.active{color:var(--c)}.nk:hover::after,.nk.active::after{left:1rem;right:1rem}
-.nct{font-family:var(--fd);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--db);background:var(--c);padding:.55rem 1.4rem;border-radius:3px;text-decoration:none;transition:all var(--tr);flex-shrink:0;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%)}
-.nct:hover{background:white;box-shadow:0 0 20px var(--cg);transform:translateY(-1px)}
-.hbtn{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.25rem;margin-left:auto}
-.hbtn span{display:block;width:24px;height:2px;background:var(--c);transition:all var(--tr);transform-origin:center}
-.hbtn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}.hbtn.open span:nth-child(2){opacity:0}.hbtn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.85rem 2rem;font-family:var(--fd);font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;border-radius:3px;transition:all var(--tr);position:relative;overflow:hidden}
-.bp{background:linear-gradient(135deg,var(--c) 0%,var(--be) 100%);color:#030608;clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%)}
-.bp:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,229,255,.55);filter:brightness(1.12)}
-.bg2{position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);transition:left .5s}.bp:hover .bg2{left:100%}
-.bs{background:transparent;color:var(--c);border:1px solid var(--c);clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%)}
-.bs:hover{background:rgba(0,229,255,.1);box-shadow:0 0 24px rgba(0,229,255,.3);transform:translateY(-2px)}
-section{position:relative;z-index:1;padding:7rem 2rem}
-.sh{text-align:center;margin-bottom:4rem}
-.sb{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--fd);font-size:.65rem;font-weight:700;letter-spacing:.3em;color:var(--c);margin-bottom:1rem;padding:.35rem 1rem;border:1px solid rgba(0,229,255,.2);border-radius:2px;background:rgba(0,229,255,.04)}
-.stit{font-family:var(--fd);font-size:clamp(1.8rem,4vw,3.2rem);font-weight:800;letter-spacing:-.01em;line-height:1.1;margin-bottom:1rem}
-.ssu{font-family:var(--fu);font-size:1.05rem;color:var(--ts);max-width:600px;margin:0 auto;font-weight:300}
-.ta{color:var(--c)}.bd{width:6px;height:6px;border-radius:50%;background:var(--c);box-shadow:0 0 8px var(--c);animation:bl 2s ease-in-out infinite}
-@keyframes bl{0%,100%{opacity:1}50%{opacity:.3}}
-.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 4rem}
-.hbdg{display:inline-flex;align-items:center;gap:.7rem;font-family:var(--fd);font-size:.62rem;letter-spacing:.3em;color:var(--c);margin-bottom:2rem;padding:.4rem 1.4rem;border:1px solid rgba(0,229,255,.3);border-radius:2px;background:rgba(0,229,255,.05);animation:fu .7s ease both}
-@keyframes fu{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-.hud{position:relative;display:flex;align-items:center;justify-content:center;width:160px;height:160px;margin:0 auto 2.5rem;animation:fu .8s .1s ease both}
-.hr{position:absolute;border-radius:50%;border:1px solid rgba(0,229,255,.25)}
-.hr1{width:160px;height:160px;animation:spin 20s linear infinite}.hr2{width:120px;height:120px;border-color:rgba(0,229,255,.4);animation:spin 14s linear infinite reverse}.hr3{width:84px;height:84px;border-color:rgba(41,121,255,.5);animation:spin 8s linear infinite}
-@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-.hr1::before,.hr1::after{content:'';position:absolute;width:7px;height:7px;background:var(--c);border-radius:50%;box-shadow:0 0 10px var(--c)}
-.hr1::before{top:0;left:50%;transform:translateX(-50%)}.hr1::after{bottom:0;left:50%;transform:translateX(-50%)}
-.hcore{width:60px;height:60px;border-radius:50%;background:rgba(0,229,255,.08);border:1px solid var(--c);display:flex;align-items:center;justify-content:center;font-size:1.8rem;box-shadow:0 0 30px var(--cg);animation:op 3s ease-in-out infinite}
-.htit{font-family:var(--fd);font-size:clamp(2.2rem,6vw,5rem);font-weight:900;line-height:1.0;letter-spacing:-.01em;margin-bottom:1.5rem;animation:fu .8s .2s ease both}
-.htit span{color:var(--c);animation:tg 2.5s ease-in-out infinite;display:inline-block}
-@keyframes tg{0%,100%{text-shadow:0 0 10px rgba(0,229,255,.4)}50%{text-shadow:0 0 20px rgba(0,229,255,.9),0 0 60px rgba(0,229,255,.5)}}
-.hsub{font-family:var(--fu);font-size:1.15rem;color:var(--ts);max-width:660px;margin:0 auto 2.5rem;font-weight:300;animation:fu .8s .4s ease both}
-.ctag{display:flex;gap:1.2rem;align-items:center;justify-content:center;flex-wrap:wrap;animation:fu .8s .6s ease both}
-.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;max-width:1200px;margin:0 auto}
-.pc{background:var(--dk);border:1px solid var(--dbr);border-radius:6px;padding:2rem;position:relative;overflow:hidden;transition:border-color var(--tr),transform var(--tr),box-shadow var(--tr)}
-.pc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--c),transparent);opacity:0;transition:opacity var(--tr)}
-.pc:hover{border-color:var(--dbh);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,229,255,.1)}.pc:hover::before{opacity:1}
-.pi{width:48px;height:48px;border-radius:8px;background:rgba(0,229,255,.06);border:1px solid rgba(0,229,255,.15);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.2rem}
-.pc:hover .pi{box-shadow:0 0 20px var(--cg)}.pc h3{font-family:var(--fd);font-size:.85rem;font-weight:700;color:var(--tp);margin-bottom:.75rem;letter-spacing:.05em}.pc p{font-family:var(--fu);font-size:.95rem;color:var(--ts);line-height:1.7}
-.appsec{background:linear-gradient(180deg,transparent,rgba(0,229,255,.015),transparent)}
-.tl{display:flex;flex-direction:column;max-width:900px;margin:0 auto;position:relative}
-.tl::before{content:'';position:absolute;left:28px;top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent,var(--c),transparent)}
-.ts{display:flex;gap:2.5rem;align-items:flex-start;padding:2rem 0}
-.sn{flex-shrink:0;width:56px;height:56px;border-radius:50%;border:2px solid var(--c);background:var(--dk);display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:.7rem;font-weight:800;color:var(--c);z-index:1;transition:box-shadow var(--tr)}
-.ts:hover .sn{box-shadow:0 0 24px var(--cg)}.sb2{flex:1;padding:.5rem 0}.slb{font-family:var(--fd);font-size:.6rem;letter-spacing:.3em;color:var(--c);margin-bottom:.5rem;opacity:.7}.st{font-family:var(--fd);font-size:1.1rem;font-weight:700;color:var(--tp);margin-bottom:.5rem}.sd{font-family:var(--fu);font-size:.95rem;color:var(--ts);max-width:560px;line-height:1.7}.sdif{margin-top:.75rem;font-family:var(--fu);font-size:.85rem;color:var(--c);opacity:.8;font-style:italic}
-.teg{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;max-width:1000px;margin:0 auto}
-.tc{display:inline-flex;align-items:center;gap:.6rem;padding:.6rem 1.2rem;background:var(--dk);border:1px solid var(--dbr);border-radius:4px;font-family:var(--fb);font-size:.95rem;font-weight:600;color:var(--tp);letter-spacing:.04em;transition:all var(--tr);cursor:default}
-.tc:hover{border-color:var(--c);color:var(--c);box-shadow:0 0 16px rgba(0,229,255,.2);transform:translateY(-2px)}
-.fw{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:1100px;margin:0 auto}
-.fi{display:flex;gap:1.2rem;align-items:flex-start;padding:1.5rem;background:var(--dk);border:1px solid var(--dbr);border-radius:6px;transition:border-color var(--tr),box-shadow var(--tr)}
-.fi:hover{border-color:rgba(0,229,255,.35);box-shadow:0 0 24px rgba(0,229,255,.07)}
-.fck{flex-shrink:0;width:32px;height:32px;border-radius:50%;background:rgba(0,229,255,.08);border:1px solid rgba(0,229,255,.25);display:flex;align-items:center;justify-content:center;color:var(--c);font-size:.9rem;margin-top:2px}
-.ft h4{font-family:var(--fd);font-size:.8rem;font-weight:700;letter-spacing:.05em;color:var(--tp);margin-bottom:.4rem}.ft p{font-family:var(--fu);font-size:.9rem;color:var(--ts);line-height:1.6}
-.ig{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:1.2rem;max-width:1100px;margin:0 auto}
-.ic{padding:1.8rem 1.2rem;background:var(--dk);border:1px solid var(--dbr);border-radius:6px;text-align:center;transition:all var(--tr);cursor:default}
-.ic:hover{border-color:var(--c);transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,229,255,.12)}.ii{font-size:2rem;margin-bottom:.8rem;display:block}.inn{font-family:var(--fd);font-size:.7rem;font-weight:700;letter-spacing:.1em;color:var(--tp)}
-.wg{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.5rem;max-width:1200px;margin:0 auto}
-.wc{padding:2rem;background:var(--dk);border:1px solid var(--dbr);border-radius:6px;position:relative;overflow:hidden;transition:all var(--tr)}
-.wc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c),var(--be));transform:scaleX(0);transition:transform var(--tr)}
-.wc:hover{border-color:rgba(0,229,255,.3);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,229,255,.1)}.wc:hover::after{transform:scaleX(1)}
-.wm{font-family:var(--fd);font-size:2.2rem;font-weight:900;color:var(--c);margin-bottom:.3rem;text-shadow:0 0 20px rgba(0,229,255,.5)}.wl{font-family:var(--fd);font-size:.7rem;letter-spacing:.1em;color:var(--tm);margin-bottom:.75rem}
-.wc h3{font-family:var(--fd);font-size:.85rem;font-weight:700;color:var(--tp);margin-bottom:.5rem}.wc p{font-family:var(--fu);font-size:.9rem;color:var(--ts);line-height:1.7}
-.fcta{text-align:center;padding:7rem 2rem;position:relative;overflow:hidden}
-.fcta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,229,255,.06) 0%,transparent 70%);pointer-events:none}
-.cgl{position:absolute;inset:0;background-image:linear-gradient(rgba(0,229,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none}
-.gln{width:200px;height:1px;background:linear-gradient(90deg,transparent,var(--c),transparent);margin:2rem auto;animation:glp 2s ease-in-out infinite}
-@keyframes glp{0%,100%{opacity:.4}50%{opacity:1}}
-.ftt{font-family:var(--fd);font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.1;margin-bottom:1.2rem}
-.fts{font-family:var(--fu);font-size:1.05rem;color:var(--ts);max-width:560px;margin:0 auto 2.5rem;font-weight:300}
-.cbg{display:flex;gap:1.2rem;align-items:center;justify-content:center;flex-wrap:wrap}
-footer{position:relative;z-index:1;border-top:1px solid var(--dbr)}
-.ftp{max-width:1200px;margin:0 auto;padding:3rem 2rem;display:flex;gap:3rem;flex-wrap:wrap;justify-content:space-between;align-items:flex-start}
-.fb{display:flex;align-items:center;gap:1rem}.fli{height:40px;width:auto;filter:drop-shadow(0 0 10px rgba(0,229,255,.4))}.fn{font-family:var(--fd);font-size:.8rem;font-weight:700;letter-spacing:.1em;color:var(--tp)}.ftag{font-family:var(--fu);font-size:.8rem;color:var(--tm);margin-top:.25rem}
-.flg{display:flex;gap:3rem;flex-wrap:wrap}.fc h4{font-family:var(--fd);font-size:.65rem;letter-spacing:.2em;color:var(--c);margin-bottom:.75rem}.fc a{display:block;font-family:var(--fu);font-size:.9rem;color:var(--tm);text-decoration:none;margin-bottom:.4rem;transition:color var(--tr)}.fc a:hover{color:var(--c)}
-.ftb{max-width:1200px;margin:0 auto;padding:1.5rem 2rem;border-top:1px solid rgba(0,229,255,.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-family:var(--fu);font-size:.8rem;color:var(--tm)}
-.fst{display:flex;align-items:center;gap:.5rem}.sdt{width:6px;height:6px;background:#00ff87;border-radius:50%;box-shadow:0 0 8px #00ff87;animation:bl 2s ease-in-out infinite}
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:translateY(0)}
-@media(max-width:768px){.fw{grid-template-columns:1fr}.ctag,.cbg{flex-direction:column;align-items:stretch}.btn{justify-content:center}ul.nls{display:none;position:fixed;top:72px;left:0;right:0;background:rgba(5,8,16,.97);backdrop-filter:blur(20px);flex-direction:column;padding:1.5rem;gap:.5rem;border-bottom:1px solid var(--dbr)}ul.nls.open{display:flex}.hbtn{display:flex}.nct{display:none}.ftp{flex-direction:column;gap:2rem}}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta name="description"
+    content="High-performance e-commerce stores engineered to sell. Conversion-optimised platforms by Vistara Tech Global." />
+  <title>E-Commerce Stores | Vistara Tech Global</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <style>
+    /* ============ ECOMMERCE PAGE — EMERALD COMMERCE THEME ============ */
+    :root {
+      --em: #00e676;
+      --em2: #00c853;
+      --em3: #b9f6ca;
+      --em-glow: rgba(0, 230, 118, 0.3);
+      --teal: #1de9b6;
+      --bg: #030a06;
+      --bg2: #061209;
+      --card: #081a0f;
+      --border: rgba(0, 230, 118, 0.15);
+      --border-h: rgba(0, 230, 118, 0.45);
+      --txt: #e8f5e9;
+      --txt2: #81c784;
+      --txt3: #4caf50;
+      --font-h: 'Bebas Neue', sans-serif;
+      --font-b: 'Space Grotesk', sans-serif;
+      --font-m: 'DM Mono', monospace;
+      --tr: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-  /*=== MOBILE / TABLET PERFORMANCE ===*/
-  @media (max-width: 900px) {
-    /* Hide heavy animated background layers */
-    .grid-overlay,
-    .go,
-    .data-stream,
-    .ds,
-    .scan-line, .sl, .sl2,
-    .scan-line-2,
-    .floating-dots {
-      display: none !important;
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
     }
-    /* Reduce particle canvas opacity slightly */
-    #particleCanvas, #pc {
-      opacity: 0.3 !important;
-    }
-    /* Kill expensive filter animations on orbs */
-    .glow-orb, .ob {
-      animation: none !important;
-      filter: none !important;
-      display: none !important;
-    }
-    /* Simplify HUD rings – only keep outer ring, cancel inner spins */
-    .hud-ring-2, .hud-ring-3,
-    .hr2, .hr3 {
-      display: none !important;
-    }
-    .hud-ring-1, .hr1 {
-      animation-duration: 40s !important;
-    }
-    /* Slow down / simplify card glows */
-    .lt-card-glow,
-    .card-border-glow {
-      display: none !important;
-    }
-    /* Reduce hero badge blink frequency */
-    .badge-dot, .bd {
-      animation-duration: 4s !important;
-    }
-  }
 
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--txt);
+      font-family: var(--font-b);
+      overflow-x: hidden;
+      line-height: 1.6
+    }
+
+    ::-webkit-scrollbar {
+      width: 4px
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--em2);
+      border-radius: 2px
+    }
+
+    ::selection {
+      background: var(--em-glow);
+      color: var(--em)
+    }
+
+    /* CANVAS BG */
+    #ec-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      opacity: .2
+    }
+
+    /* AMBIENT GLOW */
+    .amb {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0
+    }
+
+    .amb::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(0, 230, 118, .07), transparent 65%);
+      border-radius: 50%
+    }
+
+    .amb::after {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      left: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(29, 233, 182, .04), transparent 65%);
+      border-radius: 50%
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      transition: background var(--tr)
+    }
+
+    nav.sc {
+      background: rgba(3, 10, 6, .95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border)
+    }
+
+    .nc {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      gap: 2rem
+    }
+
+    .nl {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      text-decoration: none;
+      flex-shrink: 0
+    }
+
+    .li {
+      height: 40px;
+      width: auto;
+      filter: drop-shadow(0 0 8px rgba(0, 230, 118, .5))
+    }
+
+    .lt {
+      font-family: var(--font-h);
+      font-size: 1.1rem;
+      letter-spacing: .08em;
+      color: var(--txt);
+      line-height: 1
+    }
+
+    .lt span {
+      color: var(--em)
+    }
+
+    ul.nls {
+      display: flex;
+      align-items: center;
+      gap: .25rem;
+      list-style: none;
+      margin-left: auto
+    }
+
+    .nk {
+      color: var(--txt2);
+      text-decoration: none;
+      font-family: var(--font-b);
+      font-weight: 500;
+      font-size: .85rem;
+      letter-spacing: .04em;
+      padding: .5rem 1rem;
+      border-radius: 4px;
+      transition: color var(--tr)
+    }
+
+    .nk:hover,
+    .nk.active {
+      color: var(--em)
+    }
+
+    .nct {
+      font-family: var(--font-b);
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      color: var(--bg);
+      background: var(--em);
+      padding: .55rem 1.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all var(--tr);
+      flex-shrink: 0
+    }
+
+    .nct:hover {
+      background: var(--teal);
+      box-shadow: 0 0 20px var(--em-glow)
+    }
+
+    .hbtn {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: .25rem;
+      margin-left: auto
+    }
+
+    .hbtn span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--em);
+      transition: all var(--tr)
+    }
+
+    .hbtn.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg)
+    }
+
+    .hbtn.open span:nth-child(2) {
+      opacity: 0
+    }
+
+    .hbtn.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg)
+    }
+
+    /* ============ HERO — SPLIT LAYOUT ============ */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      padding: 8rem 2rem 4rem;
+      max-width: 1300px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      gap: 3rem
+    }
+
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      font-family: var(--font-m);
+      font-size: .65rem;
+      letter-spacing: .25em;
+      color: var(--em);
+      border: 1px solid var(--border);
+      background: rgba(0, 230, 118, .05);
+      padding: .35rem 1rem;
+      border-radius: 2px;
+      margin-bottom: 2rem;
+      text-transform: uppercase
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--em);
+      box-shadow: 0 0 8px var(--em);
+      animation: pulse 2s ease-in-out infinite
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1)
+      }
+
+      50% {
+        opacity: .5;
+        transform: scale(.8)
+      }
+    }
+
+    .hero-title {
+      font-family: var(--font-h);
+      font-size: clamp(3rem, 5vw, 5.5rem);
+      line-height: .92;
+      letter-spacing: .02em;
+      color: var(--txt);
+      margin-bottom: 1.5rem
+    }
+
+    .hero-title em {
+      color: var(--em);
+      font-style: normal;
+      display: block
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--txt2);
+      max-width: 480px;
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+      font-weight: 300
+    }
+
+    .hero-metrics {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap
+    }
+
+    .hm {
+      border-left: 2px solid var(--em);
+      padding-left: 1rem
+    }
+
+    .hm-val {
+      font-family: var(--font-h);
+      font-size: 2.2rem;
+      color: var(--em);
+      line-height: 1
+    }
+
+    .hm-lbl {
+      font-family: var(--font-m);
+      font-size: .65rem;
+      color: var(--txt3);
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      margin-top: .2rem
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap
+    }
+
+    .btn-prime {
+      font-family: var(--font-b);
+      font-weight: 700;
+      font-size: .9rem;
+      letter-spacing: .03em;
+      color: var(--bg);
+      background: var(--em);
+      padding: .9rem 2.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all var(--tr);
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem
+    }
+
+    .btn-prime:hover {
+      background: var(--teal);
+      box-shadow: 0 0 28px var(--em-glow);
+      transform: translateY(-2px)
+    }
+
+    .btn-ghost {
+      font-family: var(--font-b);
+      font-weight: 600;
+      font-size: .9rem;
+      color: var(--em);
+      border: 1.5px solid var(--em);
+      padding: .9rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all var(--tr);
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem
+    }
+
+    .btn-ghost:hover {
+      background: rgba(0, 230, 118, .08);
+      transform: translateY(-2px)
+    }
+
+    .hero-right {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .hero-img-wrap {
+      width: 100%;
+      max-width: 560px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 0 60px rgba(0, 230, 118, .12), 0 40px 80px rgba(0, 0, 0, .6);
+      position: relative
+    }
+
+    .hero-img-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+      mix-blend-mode: lighten;
+    }
+
+    .hero-img-badge {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      background: rgba(3, 10, 6, .9);
+      border: 1px solid var(--em);
+      border-radius: 8px;
+      padding: .75rem 1rem;
+      backdrop-filter: blur(10px)
+    }
+
+    .hib-stat {
+      font-family: var(--font-h);
+      font-size: 1.8rem;
+      color: var(--em);
+      line-height: 1
+    }
+
+    .hib-lbl {
+      font-family: var(--font-m);
+      font-size: .6rem;
+      color: var(--txt2);
+      letter-spacing: .1em;
+      text-transform: uppercase
+    }
+
+    .floating-pill {
+      position: absolute;
+      top: -2rem;
+      right: -1rem;
+      z-index: 10;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      padding: .6rem 1.2rem;
+      font-family: var(--font-m);
+      font-size: .7rem;
+      color: var(--em);
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      animation: float 4s ease-in-out infinite
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(-10px)
+      }
+    }
+
+    /* ============ SECTION BASE ============ */
+    section {
+      position: relative;
+      z-index: 1;
+      padding: 6rem 2rem
+    }
+
+    .wrap {
+      max-width: 1300px;
+      margin: 0 auto
+    }
+
+    .sh {
+      text-align: center;
+      margin-bottom: 4rem
+    }
+
+    .sh-label {
+      font-family: var(--font-m);
+      font-size: .62rem;
+      letter-spacing: .3em;
+      color: var(--em);
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      margin-bottom: 1rem;
+      padding: .35rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      background: rgba(0, 230, 118, .04)
+    }
+
+    .sh-title {
+      font-family: var(--font-h);
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      color: var(--txt);
+      line-height: 1;
+      letter-spacing: .03em;
+      margin-bottom: 1rem
+    }
+
+    .sh-title em {
+      color: var(--em);
+      font-style: normal
+    }
+
+    .sh-sub {
+      font-size: 1rem;
+      color: var(--txt2);
+      max-width: 580px;
+      margin: 0 auto;
+      font-weight: 300;
+      line-height: 1.75
+    }
+
+    /* ============ PAIN POINTS — HORIZONTAL STRIP ============ */
+    .pain {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border)
+    }
+
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0
+    }
+
+    .pain-card {
+      padding: 2.5rem 2rem;
+      border-right: 1px solid var(--border);
+      position: relative;
+      transition: background var(--tr)
+    }
+
+    .pain-card:last-child {
+      border-right: none
+    }
+
+    .pain-card:hover {
+      background: rgba(0, 230, 118, .03)
+    }
+
+    .pain-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      display: block
+    }
+
+    .pain-title {
+      font-family: var(--font-h);
+      font-size: 1.2rem;
+      color: var(--txt);
+      margin-bottom: .6rem;
+      letter-spacing: .03em
+    }
+
+    .pain-text {
+      font-size: .875rem;
+      color: var(--txt2);
+      line-height: 1.7;
+      font-weight: 300
+    }
+
+    .pain-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--em);
+      transform: scaleX(0);
+      transition: transform var(--tr)
+    }
+
+    .pain-card:hover::before {
+      transform: scaleX(1)
+    }
+
+    /* ============ PROCESS — NUMBERED STEPS ============ */
+    .process-bg {
+      background: linear-gradient(180deg, transparent, rgba(0, 230, 118, .02), transparent)
+    }
+
+    .steps-wrap {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      position: relative
+    }
+
+    .steps-wrap::before {
+      content: '';
+      position: absolute;
+      top: 36px;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--em), transparent);
+      opacity: .25
+    }
+
+    .step {
+      text-align: center;
+      position: relative;
+      z-index: 1
+    }
+
+    .step-num {
+      width: 72px;
+      height: 72px;
+      border-radius: 16px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-family: var(--font-h);
+      font-size: 1.8rem;
+      color: var(--em);
+      transition: all var(--tr)
+    }
+
+    .step:hover .step-num {
+      border-color: var(--em);
+      box-shadow: 0 0 24px var(--em-glow);
+      background: rgba(0, 230, 118, .06)
+    }
+
+    .step-icon {
+      font-size: 1.8rem
+    }
+
+    .step-title {
+      font-family: var(--font-b);
+      font-size: .95rem;
+      font-weight: 700;
+      color: var(--txt);
+      margin-bottom: .5rem
+    }
+
+    .step-desc {
+      font-size: .82rem;
+      color: var(--txt2);
+      line-height: 1.65;
+      font-weight: 300
+    }
+
+    .step-tag {
+      display: inline-block;
+      margin-top: .75rem;
+      font-family: var(--font-m);
+      font-size: .6rem;
+      letter-spacing: .15em;
+      color: var(--em);
+      opacity: .7;
+      text-transform: uppercase
+    }
+
+    /* ============ FEATURES — BIG CARD GRID ============ */
+    .feat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem
+    }
+
+    .feat-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: all var(--tr)
+    }
+
+    .feat-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--em), var(--teal));
+      transform: scaleX(0);
+      transition: transform .4s ease
+    }
+
+    .feat-card:hover {
+      border-color: var(--border-h);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, .4), 0 0 0 1px rgba(0, 230, 118, .08)
+    }
+
+    .feat-card:hover::after {
+      transform: scaleX(1)
+    }
+
+    .feat-emoji {
+      font-size: 2.2rem;
+      margin-bottom: 1.2rem;
+      display: block
+    }
+
+    .feat-title {
+      font-family: var(--font-h);
+      font-size: 1.35rem;
+      color: var(--txt);
+      margin-bottom: .6rem;
+      letter-spacing: .03em
+    }
+
+    .feat-text {
+      font-size: .875rem;
+      color: var(--txt2);
+      line-height: 1.7;
+      font-weight: 300
+    }
+
+    .feat-stat {
+      margin-top: 1.2rem;
+      font-family: var(--font-m);
+      font-size: .75rem;
+      color: var(--em);
+      opacity: .8;
+      display: flex;
+      align-items: center;
+      gap: .4rem
+    }
+
+    .feat-stat::before {
+      content: '>';
+      color: var(--em);
+      font-size: .7rem
+    }
+
+    /* ============ TECH STACK ============ */
+    .tech-bg {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border)
+    }
+
+    .tech-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      justify-content: center
+    }
+
+    .tech-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .55rem 1.2rem;
+      background: rgba(0, 230, 118, .05);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      font-family: var(--font-b);
+      font-size: .85rem;
+      font-weight: 500;
+      color: var(--txt2);
+      transition: all var(--tr);
+      cursor: default
+    }
+
+    .tech-pill:hover {
+      border-color: var(--em);
+      color: var(--em);
+      background: rgba(0, 230, 118, .08);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px var(--em-glow)
+    }
+
+    /* ============ INDUSTRIES ============ */
+    .ind-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem
+    }
+
+    .ind-card {
+      padding: 1.75rem 1.5rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-align: center;
+      transition: all var(--tr);
+      cursor: default
+    }
+
+    .ind-card:hover {
+      border-color: var(--em);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0, 230, 118, .1)
+    }
+
+    .ind-icon {
+      font-size: 2.2rem;
+      display: block;
+      margin-bottom: .75rem
+    }
+
+    .ind-name {
+      font-family: var(--font-b);
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--txt);
+      letter-spacing: .03em
+    }
+
+    /* ============ WHY US ============ */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem
+    }
+
+    .why-card {
+      padding: 2rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+      transition: all var(--tr)
+    }
+
+    .why-card:hover {
+      border-color: var(--border-h);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, .3)
+    }
+
+    .why-num {
+      font-family: var(--font-h);
+      font-size: 3rem;
+      color: var(--em);
+      line-height: 1;
+      margin-bottom: .25rem
+    }
+
+    .why-num-label {
+      font-family: var(--font-m);
+      font-size: .6rem;
+      letter-spacing: .15em;
+      color: var(--txt3);
+      text-transform: uppercase;
+      margin-bottom: .75rem
+    }
+
+    .why-title {
+      font-family: var(--font-b);
+      font-size: .95rem;
+      font-weight: 700;
+      color: var(--txt);
+      margin-bottom: .5rem
+    }
+
+    .why-text {
+      font-size: .85rem;
+      color: var(--txt2);
+      line-height: 1.65;
+      font-weight: 300
+    }
+
+    .why-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 2px;
+      height: 0;
+      background: var(--em);
+      transition: height .4s ease
+    }
+
+    .why-card:hover::before {
+      height: 100%
+    }
+
+    /* ============ FINAL CTA ============ */
+    .fcta {
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid var(--border)
+    }
+
+    .fcta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center 30%, rgba(0, 230, 118, .07), transparent 65%);
+      pointer-events: none
+    }
+
+    .cta-grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(0, 230, 118, .02) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 230, 118, .02) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none
+    }
+
+    .fcta-content {
+      position: relative;
+      z-index: 1
+    }
+
+    .fcta-title {
+      font-family: var(--font-h);
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 1;
+      letter-spacing: .03em;
+      margin-bottom: 1rem;
+      color: var(--txt)
+    }
+
+    .fcta-title em {
+      color: var(--em);
+      font-style: normal;
+      display: block
+    }
+
+    .fcta-sub {
+      font-size: 1.05rem;
+      color: var(--txt2);
+      max-width: 520px;
+      margin: 0 auto 2.5rem;
+      font-weight: 300;
+      line-height: 1.75
+    }
+
+    /* ============ FOOTER ============ */
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border)
+    }
+
+    .ftp {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      display: flex;
+      gap: 3rem;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start
+    }
+
+    .fb {
+      display: flex;
+      align-items: center;
+      gap: 1rem
+    }
+
+    .fli {
+      height: 38px;
+      filter: drop-shadow(0 0 8px rgba(0, 230, 118, .4))
+    }
+
+    .fn {
+      font-family: var(--font-h);
+      font-size: .9rem;
+      letter-spacing: .05em;
+      color: var(--txt)
+    }
+
+    .ftag {
+      font-family: var(--font-m);
+      font-size: .7rem;
+      color: var(--txt3);
+      margin-top: .25rem
+    }
+
+    .flg {
+      display: flex;
+      gap: 3rem;
+      flex-wrap: wrap
+    }
+
+    .fc h4 {
+      font-family: var(--font-m);
+      font-size: .6rem;
+      letter-spacing: .2em;
+      color: var(--em);
+      margin-bottom: .75rem;
+      text-transform: uppercase
+    }
+
+    .fc a {
+      display: block;
+      font-size: .88rem;
+      color: var(--txt3);
+      text-decoration: none;
+      margin-bottom: .4rem;
+      transition: color var(--tr)
+    }
+
+    .fc a:hover {
+      color: var(--em)
+    }
+
+    .ftb {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.25rem 2rem;
+      border-top: 1px solid rgba(0, 230, 118, .06);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-family: var(--font-m);
+      font-size: .75rem;
+      color: var(--txt3)
+    }
+
+    .fst {
+      display: flex;
+      align-items: center;
+      gap: .5rem
+    }
+
+    .sdt {
+      width: 6px;
+      height: 6px;
+      background: var(--em);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--em);
+      animation: pulse 2s ease-in-out infinite
+    }
+
+    /* REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .65s ease, transform .65s ease
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:1200px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 9rem
+      }
+
+      .hero-title {
+        font-size: clamp(3.5rem, 8vw, 6.5rem)
+      }
+    }
+
+    @media(max-width:1024px) {
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .feat-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      ul.nls {
+        display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: rgba(3, 10, 6, .97);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: .5rem;
+        border-bottom: 1px solid var(--border)
+      }
+
+      ul.nls.open {
+        display: flex
+      }
+
+      .hbtn {
+        display: flex
+      }
+
+      .nct {
+        display: none
+      }
+    }
+
+    @media(max-width:768px) {
+      section {
+        padding: 4rem 1.25rem
+      }
+
+      .steps-wrap {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem
+      }
+
+      .steps-wrap::before {
+        display: none
+      }
+
+      .pain-grid {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .pain-card:nth-child(2n) {
+        border-right: none
+      }
+
+      .feat-grid {
+        grid-template-columns: 1fr
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr 1fr
+      }
+    }
+
+    @media(max-width:480px) {
+      .hero {
+        padding: 7rem 1.25rem 3rem
+      }
+
+      .hero-title {
+        font-size: clamp(3rem, 14vw, 5rem)
+      }
+
+      .hero-metrics {
+        gap: 1.25rem
+      }
+
+      .hero-btns {
+        flex-direction: column
+      }
+
+      .btn-prime,
+      .btn-ghost {
+        width: 100%;
+        justify-content: center
+      }
+
+      .steps-wrap {
+        grid-template-columns: 1fr
+      }
+
+      .pain-grid {
+        grid-template-columns: 1fr
+      }
+
+      .pain-card {
+        border-right: none;
+        border-bottom: 1px solid var(--border)
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr
+      }
+
+      .ind-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
   </style>
 </head>
+
 <body>
-<canvas id="pc"></canvas><div class="go"></div>
-<div class="hbg"><div class="hg"></div><div class="sl2"></div><div class="ds d1"></div><div class="ds d2"></div><div class="ds d3"></div><div class="ds d4"></div><div class="ds d5"></div><div class="ds d6"></div><div class="ob o1"></div><div class="ob o2"></div></div>
-<nav id="nav"><div class="nc"><a href="index.html" class="nl"><img src="WWW.VISTARATECHGLOBAL.COM-removebg-preview.png" alt="Vistara Tech Global" class="li"/><span class="lt">VISTARA<span class="la"> TECH</span></span></a><ul class="nls" id="nls"><li><a href="index.html" class="nk">Home</a></li><li><a href="index.html#services" class="nk active">Services</a></li><li><a href="index.html#why-us" class="nk">Why Us</a></li><li><a href="index.html#tech-stack" class="nk">Tech Stack</a></li><li><a href="index.html#contact" class="nk">Contact</a></li></ul><a href="index.html#contact" class="nct">Get Started</a><button class="hbtn" id="hbtn" aria-label="Toggle menu"><span></span><span></span><span></span></button></div></nav>
-<section class="hero" id="home">
-  <div class="hbdg"><span class="bd"></span> VISTARA TECH GLOBAL — E-COMMERCE</div>
-  <div class="hud"><div class="hr hr1"></div><div class="hr hr2"></div><div class="hr hr3"></div><div class="hcore">&#x1F6D2;</div></div>
-  <h1 class="htit">E-Commerce Stores<br><span>Engineered to Sell</span></h1>
-  <p class="hsub">Your store should work harder than your best salesperson — 24/7, across every device. We build conversion-optimized platforms that turn browsers into buying customers at every touchpoint.</p>
-  <div class="ctag"><a href="index.html#contact" class="btn bp" id="hsp"><span>&#x26A1;</span> Start Your Project<span class="bg2"></span></a><a href="index.html#contact" class="btn bs" id="hte"><span>&#x1F4E1;</span> Talk to an Expert</a></div>
-</section>
-<section id="pain"><div class="sh reveal"><div class="sb"><span class="bd"></span> THE REAL PROBLEM</div><h2 class="stit">What's Costing You <span class="ta">Right Now</span></h2><p class="ssu">Real business problems we solve before they cost you more customers and revenue.</p></div><div class="pg"><div class="pc reveal"><div class="pi">&#x1F4B8;</div><h3>70%+ Cart Abandonment Rate</h3><p>Slow checkouts, forced registrations, and hidden fees silently drain revenue. Most stores lose over 70% of potential buyers before they complete purchase.</p></div><div class="pc reveal"><div class="pi">&#x1F422;</div><h3>Slow Pages Kill Conversions</h3><p>Every 100ms delay causes a 1% drop in e-commerce conversions. Bloated themes and unoptimized images cost thousands in lost monthly sales.</p></div><div class="pc reveal"><div class="pi">&#x1F4F1;</div><h3>Mobile Shopping Nightmare</h3><p>72% of e-commerce happens on mobile. Broken layouts and tiny buttons send customers directly to better-optimized competitors with smoother experiences.</p></div><div class="pc reveal"><div class="pi">&#x1F50D;</div><h3>Zero Product Discovery Strategy</h3><p>Without smart search and AI recommendations, customers cannot find what they want — making paid traffic expensive with poor returns.</p></div><div class="pc reveal"><div class="pi">&#x1F4C8;</div><h3>Store Crashes During Peak Sales</h3><p>Your site goes offline during Black Friday or festive season — exactly when you need it most. Cheap hosting cannot handle real traffic spikes.</p></div></div></section>
-<section class="appsec" id="approach"><div class="sh reveal"><div class="sb"><span class="bd"></span> OUR PROCESS</div><h2 class="stit">How We <span class="ta">Build Differently</span></h2><p class="ssu">A proven 4-phase methodology delivering results on schedule and on budget.</p></div>
-<div class="tl">
-<div class="ts reveal"><div class="sn">01</div><div class="sb2"><div class="slb">PHASE ONE</div><div class="st">Discover & Strategy</div><p class="sd">Deep-dive analysis of your goals, audience, competitors, and market. We define the complete architecture and success metrics before any work begins.</p><p class="sdif">Unlike others: Strategy and architecture first. Execution follows a clear, approved plan.</p></div></div>
-<div class="ts reveal"><div class="sn">02</div><div class="sb2"><div class="slb">PHASE TWO</div><div class="st">Design & Prototype</div><p class="sd">High-fidelity designs with every user journey mapped and approved by you. You see the complete vision before we write a single line of code.</p><p class="sdif">Unlike others: Full transparency — you approve everything before any commitment.</p></div></div>
-<div class="ts reveal"><div class="sn">03</div><div class="sb2"><div class="slb">PHASE THREE</div><div class="st">Build & Integrate</div><p class="sd">Agile delivery in 2-week sprints with live demos each cycle. Automated testing, CI/CD pipelines, and staged rollouts guarantee rock-solid quality throughout.</p><p class="sdif">Unlike others: Working deliverables every 2 weeks — not status emails and promises.</p></div></div>
-<div class="ts reveal"><div class="sn">04</div><div class="sb2"><div class="slb">PHASE FOUR</div><div class="st">Launch & Scale</div><p class="sd">Production deployment with full monitoring, team training, and a post-launch optimization roadmap to ensure performance keeps improving month after month.</p><p class="sdif">Unlike others: We stay as your long-term technology partner — not just delivery agents.</p></div></div>
-</div></section>
-<section id="tech"><div class="sh reveal"><div class="sb"><span class="bd"></span> TECH ARSENAL</div><h2 class="stit">Technologies & <span class="ta">Tools</span></h2><p class="ssu">Battle-tested, future-proof technologies chosen specifically for your service needs.</p></div><div class="teg reveal"><div class="tc"><span>&#x1F6CD;&#xFE0F;</span> Shopify Plus</div><div class="tc"><span>&#x1F6D2;</span> WooCommerce</div><div class="tc"><span>&#x26A1;</span> Custom Commerce</div><div class="tc"><span>&#x2764;&#xFE0F;</span> Magento</div><div class="tc"><span>&#x26A1;</span> React.js</div><div class="tc"><span>&#x25B2;</span> Next.js</div><div class="tc"><span>&#x1F4B3;</span> Stripe / Razorpay</div><div class="tc"><span>&#x1F4E6;</span> Shiprocket</div><div class="tc"><span>&#x2601;</span> AWS</div><div class="tc"><span>&#x1F534;</span> Redis Cache</div><div class="tc"><span>&#x1F41D;</span> MongoDB</div><div class="tc"><span>&#x1F4CA;</span> Google Analytics 4</div></div></section>
-<section id="feat" style="background:linear-gradient(180deg,transparent,rgba(0,229,255,.015),transparent)"><div class="sh reveal"><div class="sb"><span class="bd"></span> CAPABILITIES</div><h2 class="stit">Key Features & <span class="ta">Capabilities</span></h2><p class="ssu">Enterprise-grade features built in from day one — not optional add-ons.</p></div><div class="fw"><div class="fi reveal"><div class="fck">&#10022;</div><div class="ft"><h4>One-Click Checkout</h4><p>Streamlined checkout with saved addresses and instant payment — reducing cart abandonment by up to 35% immediately after launch.</p></div></div><div class="fi reveal"><div class="fck">&#10022;</div><div class="ft"><h4>AI Product Recommendations</h4><p>ML-powered upsell and cross-sell engine showing customers exactly what they are most likely to buy next based on behaviour.</p></div></div><div class="fi reveal"><div class="fck">&#10022;</div><div class="ft"><h4>Advanced Search & Filtering</h4><p>Instant search with typo tolerance and faceted filtering so customers find any product in under 3 seconds — guaranteed.</p></div></div><div class="fi reveal"><div class="fck">&#10022;</div><div class="ft"><h4>Peak Traffic Auto-Scaling</h4><p>Cloud infrastructure handling 10,000+ concurrent shoppers during major sales events without a single second of downtime.</p></div></div><div class="fi reveal"><div class="fck">&#10022;</div><div class="ft"><h4>Abandoned Cart Recovery</h4><p>Automated email and SMS sequences that recover 15-25% of abandoned carts — generating revenue on autopilot.</p></div></div><div class="fi reveal"><div class="fck">&#10022;</div><div class="ft"><h4>Multi-Currency & Global Reach</h4><p>Automatic currency conversion, local payment methods, and localized storefront experiences for selling in any country.</p></div></div></div></section>
-<section id="ind"><div class="sh reveal"><div class="sb"><span class="bd"></span> WHO WE SERVE</div><h2 class="stit">Industries We <span class="ta">Empower</span></h2><p class="ssu">Specialized solutions built for your sector's unique demands and regulatory requirements.</p></div><div class="ig"><div class="ic reveal"><span class="ii">&#x1F457;</span><div class="inn">Fashion & Apparel</div></div><div class="ic reveal"><span class="ii">&#x1F3E0;</span><div class="inn">Home & Lifestyle</div></div><div class="ic reveal"><span class="ii">&#x1F34E;</span><div class="inn">Food & Grocery</div></div><div class="ic reveal"><span class="ii">&#x1F484;</span><div class="inn">Beauty & Wellness</div></div><div class="ic reveal"><span class="ii">&#x1F4F1;</span><div class="inn">Electronics</div></div><div class="ic reveal"><span class="ii">&#x1F3E2;</span><div class="inn">B2B & Wholesale</div></div></div></section>
-<section id="why" style="background:linear-gradient(180deg,transparent,rgba(0,229,255,.015),transparent)"><div class="sh reveal"><div class="sb"><span class="bd"></span> THE VISTARA EDGE</div><h2 class="stit">Why Choose <span class="ta">Vistara Tech</span></h2><p class="ssu">Not just vendors — strategic technology partners committed to your long-term success.</p></div><div class="wg"><div class="wc reveal"><div class="wm">3x</div><div class="wl">Revenue Lift</div><h3>Conversion-First Design</h3><p>Our clients average 3x revenue growth within 6 months of launch through scientifically optimized purchase flows and checkout engineering.</p></div><div class="wc reveal"><div class="wm"><1s</div><div class="wl">Page Load Speed</div><h3>Performance Excellence</h3><p>Sub-1-second product pages on mobile. Our performance engineering directly translates to higher conversion rates and better Google rankings.</p></div><div class="wc reveal"><div class="wm">99.9%</div><div class="wl">Uptime SLA</div><h3>Never Miss a Sale</h3><p>Auto-scaling infrastructure ensures your store stays operational during peak traffic — Black Friday, festive sales, major product launches.</p></div><div class="wc reveal"><div class="wm">24/7</div><div class="wl">Active Monitoring</div><h3>Always-On Support</h3><p>Real-time monitoring with instant alerts. Issues are identified and resolved before they ever impact your customers or your daily sales.</p></div></div></section>
-<section class="fcta" id="contact"><div class="cgl"></div><div class="sb reveal"><span class="bd"></span> READY TO BUILD?</div><p class="ftt reveal">Your Store Could Be<br><span class="ta">Selling While You Sleep</span></p><div class="gln"></div><p class="fts reveal">Stop leaving money on the table. Build an e-commerce system that converts better, scales further, and generates revenue around the clock without you lifting a finger.</p><div class="cbg reveal"><a href="index.html#contact" class="btn bp" id="cta1"><span>&#x1F680;</span> Get a Free Consultation<span class="bg2"></span></a><a href="index.html#contact" class="btn bs" id="cta2"><span>&#x26A1;</span> Build With Us</a></div></section>
-<footer><div class="ftp"><div class="fb"><img src="WWW.VISTARATECHGLOBAL.COM-removebg-preview.png" alt="Vistara Tech Global" class="fli"/><div><div class="fn">VISTARA TECH GLOBAL</div><div class="ftag">Engineering the Digital Future</div></div></div><div class="flg"><div class="fc"><h4>Services</h4><a href="service-custom-websites.html">Custom Websites</a><a href="service-web-applications.html">Web Applications</a><a href="service-ecommerce.html">E-Commerce</a><a href="service-mobile-apps.html">Mobile Apps</a><a href="service-seo.html">SEO</a><a href="service-graphic-design.html">Graphic Design</a></div><div class="fc"><h4>Company</h4><a href="index.html#why-us">Why Us</a><a href="index.html#tech-stack">Tech Stack</a><a href="index.html#contact">Contact</a></div></div></div><div class="ftb"><span>&copy; 2026 Vistara Tech Global. All rights reserved.</span><span class="fst"><span class="sdt"></span> All systems operational</span></div></footer>
-<script>
-const nv=document.getElementById('nav');window.addEventListener('scroll',()=>nv.classList.toggle('sc',window.scrollY>30));
-const hb=document.getElementById('hbtn'),nl=document.getElementById('nls');hb.addEventListener('click',()=>{hb.classList.toggle('open');nl.classList.toggle('open')});nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{hb.classList.remove('open');nl.classList.remove('open')}));
-const rv=document.querySelectorAll('.reveal');const io=new IntersectionObserver((e)=>{e.forEach((el,i)=>{if(el.isIntersecting){setTimeout(()=>el.target.classList.add('visible'),i*80);io.unobserve(el.target)}});},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});rv.forEach(el=>io.observe(el));
-/* ── Adaptive Particle Engine ── */
-    (function(){
-      var canvas = document.getElementById('particleCanvas') || document.getElementById('pc');
-      if(!canvas) return;
-      var ctx = canvas.getContext('2d');
-      var W, H;
+  <canvas id="ec-canvas"></canvas>
+  <div class="amb"></div>
 
-      var isMobile  = window.innerWidth <= 600 || (navigator.maxTouchPoints > 0 && window.innerWidth <= 600);
-      var isTablet  = !isMobile && (window.innerWidth <= 900 || navigator.maxTouchPoints > 0);
-      var COUNT     = isMobile ? 18 : isTablet ? 30 : 80;
-      var CONNECT   = !isMobile && !isTablet;          /* connections only on desktop */
-      var CONN_DIST = 120;
-      var FPS       = isMobile ? 20 : isTablet ? 30 : 60;
-      var INTERVAL  = 1000 / FPS;
-      var lastTime  = 0;
+  <nav id="nav">
+    <div class="nc">
+      <a href="index.html" class="nl">
+        <img src="WWW.VISTARATECHGLOBAL.COM-removebg-preview.png" alt="Vistara Tech Global" class="li" />
+        <span class="lt">VISTARA <span>TECH</span></span>
+      </a>
+      <ul class="nls" id="nls">
+        <li><a href="index.html" class="nk">Home</a></li>
+        <li><a href="index.html#services" class="nk active">Services</a></li>
+        <li><a href="index.html#why-us" class="nk">Why Us</a></li>
+        <li><a href="index.html#contact" class="nk">Contact</a></li>
+      </ul>
+      <a href="index.html#contact" class="nct">Get a Quote</a>
+      <button class="hbtn" id="hbtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
 
-      function resize(){
-        W = canvas.width  = window.innerWidth;
-        H = canvas.height = window.innerHeight;
-        isMobile  = W <= 600;
-        isTablet  = !isMobile && (W <= 900 || navigator.maxTouchPoints > 0);
-        COUNT     = isMobile ? 18 : isTablet ? 30 : 80;
-        CONNECT   = !isMobile && !isTablet;
-        FPS       = isMobile ? 20 : isTablet ? 30 : 60;
-        INTERVAL  = 1000 / FPS;
-      }
-      resize();
-      window.addEventListener('resize', resize);
+  <!-- HERO -->
+  <section class="hero" id="home">
+      <div class="hero-left">
+        <div class="hero-badge"><span class="badge-dot"></span> E-COMMERCE · CONVERSION ENGINEERING</div>
+        <h1 class="hero-title">E-Commerce<em>Stores That</em>Actually Sell</h1>
+        <p class="hero-sub">Your store should work harder than your best salesperson — 24/7, across every device. We
+          engineer revenue-optimised platforms with lightning checkout, AI recommendations, and zero-downtime
+          architecture.</p>
+        <div class="hero-metrics">
+          <div class="hm">
+            <div class="hm-val">340%</div>
+            <div class="hm-lbl">Avg. Revenue Increase</div>
+          </div>
+          <div class="hm">
+            <div class="hm-val">1.8s</div>
+            <div class="hm-lbl">Avg. Load Time</div>
+          </div>
+          <div class="hm">
+            <div class="hm-val">4.1×</div>
+            <div class="hm-lbl">Conversion Lift</div>
+          </div>
+        </div>
+        <div class="hero-btns">
+          <a href="index.html#contact" class="btn-prime" id="hbtn-primary">⚡ Launch My Store</a>
+          <a href="index.html#contact" class="btn-ghost" id="hbtn-secondary">📡 Free Audit</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="floating-pill">✓ &nbsp;Shopify Partner</div>
+        <div class="hero-img-wrap">
+          <img src="hero-ecommerce.png" alt="E-Commerce Platform Illustration" />
+          <div class="hero-img-badge">
+            <div class="hib-stat">+340%</div>
+            <div class="hib-lbl">Revenue Growth</div>
+          </div>
+        </div>
+      </div>
+  </section>
 
-      function Particle(){
-        this.reset = function(){
-          this.x  = Math.random() * W;
-          this.y  = Math.random() * H;
-          this.vx = (Math.random() - 0.5) * (isMobile ? 0.2 : 0.3);
-          this.vy = (Math.random() - 0.5) * (isMobile ? 0.2 : 0.3);
-          this.r  = Math.random() * 1.5 + 0.4;
-          this.a  = Math.random() * 0.5 + 0.1;
-          this.c  = Math.random() > 0.5 ? '0,229,255' : '41,121,255';
-        };
-        this.update = function(){
-          this.x += this.vx; this.y += this.vy;
-          if(this.x < 0 || this.x > W || this.y < 0 || this.y > H) this.reset();
-        };
-        this.draw = function(){
-          ctx.beginPath();
-          ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-          ctx.fillStyle = 'rgba(' + this.c + ',' + this.a + ')';
-          ctx.fill();
-        };
-        this.reset();
-      }
+  <!-- PAIN POINTS -->
+  <section class="pain" id="pain">
+    <div class="wrap">
+      <div class="sh reveal">
+        <div class="sh-label"><span class="badge-dot"></span> THE REAL COST</div>
+        <h2 class="sh-title">What's Bleeding <em>Your Revenue</em></h2>
+        <p class="sh-sub">Every slow page and clunky checkout is costing you sales right now.</p>
+      </div>
+      <div class="pain-grid reveal">
+        <div class="pain-card">
+          <i data-lucide="shopping-cart" class="pain-icon" style="color: var(--em); stroke-width: 1.5;"></i>
+          <div class="pain-title">71% Cart Abandonment</div>
+          <p class="pain-text">Industry average cart abandonment destroys revenue. A frictionless, fast checkout flow is
+            your single biggest lever — and most stores get it catastrophically wrong.</p>
+        </div>
+        <div class="pain-card">
+          <i data-lucide="gauge" class="pain-icon" style="color: var(--em); stroke-width: 1.5;"></i>
+          <div class="pain-title">Slow Pages Kill Sales</div>
+          <p class="pain-text">Every 1 second of load time reduces conversions by 7%. Bloated themes, unoptimised
+            images, and poor hosting are silently costing you thousands every month.</p>
+        </div>
+        <div class="pain-card">
+          <i data-lucide="smartphone" class="pain-icon" style="color: var(--em); stroke-width: 1.5;"></i>
+          <div class="pain-title">Broken Mobile Experience</div>
+          <p class="pain-text">72% of shopping happens on mobile — yet most stores have a desktop-first design
+            duct-taped for phones. Poor mobile UX is your biggest source of lost revenue.</p>
+        </div>
+        <div class="pain-card">
+          <i data-lucide="trending-down" class="pain-icon" style="color: var(--em); stroke-width: 1.5;"></i>
+          <div class="pain-title">No Data, No Growth</div>
+          <p class="pain-text">Flying blind without proper analytics, A/B testing, or conversion tracking means you
+            can't optimise what you can't measure. Every campaign decision is a costly guess.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- PROCESS -->
+  <section id="approach" class="process-bg">
+    <div class="wrap">
+      <div class="sh reveal">
+        <div class="sh-label"><span class="badge-dot"></span> OUR PROCESS</div>
+        <h2 class="sh-title">Built to <em>Convert</em></h2>
+        <p class="sh-sub">A proven 4-phase system that turns browsers into buyers.</p>
+      </div>
+      <div class="steps-wrap reveal">
+        <div class="step">
+          <div class="step-num"><i data-lucide="search" style="width: 32px; height: 32px;"></i></div>
+          <div class="step-title">Revenue Audit</div>
+          <p class="step-desc">Deep analysis of your current store's leaks — checkout flow, page speed, UX drop-offs,
+            and competitor benchmarking.</p>
+          <span class="step-tag">Phase 01</span>
+        </div>
+        <div class="step">
+          <div class="step-num"><i data-lucide="target" style="width: 32px; height: 32px;"></i></div>
+          <div class="step-title">CRO Design</div>
+          <p class="step-desc">Conversion-first design that guides every visitor towards purchase. Every element is
+            placed for maximum revenue impact.</p>
+          <span class="step-tag">Phase 02</span>
+        </div>
+        <div class="step">
+          <div class="step-num"><i data-lucide="cpu" style="width: 32px; height: 32px;"></i></div>
+          <div class="step-title">Performance Build</div>
+          <p class="step-desc">Lightning-fast store built on battle-tested infrastructure. Sub-2s load times, 99.99%
+            uptime SLA, secure payments.</p>
+          <span class="step-tag">Phase 03</span>
+        </div>
+        <div class="step">
+          <div class="step-num"><i data-lucide="trending-up" style="width: 32px; height: 32px;"></i></div>
+          <div class="step-title">Scale & Optimise</div>
+          <p class="step-desc">Post-launch A/B testing, analytics dashboards, and ongoing CRO sprints to compound your
+            revenue month over month.</p>
+          <span class="step-tag">Phase 04</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="feat">
+    <div class="wrap">
+      <div class="sh reveal">
+        <div class="sh-label"><span class="badge-dot"></span> CAPABILITIES</div>
+        <h2 class="sh-title">Everything Your Store <em>Needs to Win</em></h2>
+        <p class="sh-sub">Enterprise-grade commerce features built in from day one.</p>
+      </div>
+      <div class="feat-grid">
+        <div class="feat-card reveal">
+          <i data-lucide="zap" class="feat-emoji" style="color: var(--em); stroke-width: 1.5;"></i>
+          <div class="feat-title">Lightning Checkout</div>
+          <p class="feat-text">One-click checkout, guest checkout, autofill-optimised forms, and Apple Pay / Google Pay
+            integration. Reduce checkout friction to near zero.</p>
+          <div class="feat-stat">Reduces cart abandonment by up to 35%</div>
+        </div>
+        <div class="feat-card reveal">
+          <i data-lucide="bot" class="feat-emoji" style="color: var(--em); stroke-width: 1.5;"></i>
+          <div class="feat-title">AI Recommendations</div>
+          <p class="feat-text">Machine learning product recommendations that increase average order value. Personalised
+            upsells and cross-sells based on real customer behaviour.</p>
+          <div class="feat-stat">Avg +22% AOV increase</div>
+        </div>
+        <div class="feat-card reveal">
+          <i data-lucide="bar-chart-3" class="feat-emoji" style="color: var(--em); stroke-width: 1.5;"></i>
+          <div class="feat-title">Live Analytics Dashboard</div>
+          <p class="feat-text">Real-time revenue, conversion funnel visualisation, top-performing products, and customer
+            lifetime value tracking in one unified dashboard.</p>
+          <div class="feat-stat">Full-funnel visibility</div>
+        </div>
+        <div class="feat-card reveal">
+          <i data-lucide="shield-check" class="feat-emoji" style="color: var(--em); stroke-width: 1.5;"></i>
+          <div class="feat-title">Fraud Protection</div>
+          <p class="feat-text">AI-powered fraud detection, chargeback prevention, and automated risk scoring. Stop fraud
+            before it happens and protect your margins.</p>
+          <div class="feat-stat">99.8% fraud detection rate</div>
+        </div>
+        <div class="feat-card reveal">
+          <i data-lucide="globe" class="feat-emoji" style="color: var(--em); stroke-width: 1.5;"></i>
+          <div class="feat-title">Multi-Currency & Localisation</div>
+          <p class="feat-text">Sell globally with automatic currency conversion, local payment methods, tax compliance,
+            and language localisation for 50+ countries.</p>
+          <div class="feat-stat">Expand to any market</div>
+        </div>
+        <div class="feat-card reveal">
+          <i data-lucide="package" class="feat-emoji" style="color: var(--em); stroke-width: 1.5;"></i>
+          <div class="feat-title">Inventory & ERP Integration</div>
+          <p class="feat-text">Real-time stock sync across all sales channels, automated reorder triggers, warehouse
+            management, and seamless ERP/accounting integration.</p>
+          <div class="feat-stat">Zero oversell guarantee</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH STACK -->
+  <section class="tech-bg" id="tech">
+    <div class="wrap">
+      <div class="sh reveal">
+        <div class="sh-label"><span class="badge-dot"></span> TECH ARSENAL</div>
+        <h2 class="sh-title">Best-in-Class <em>Commerce Stack</em></h2>
+      </div>
+      <div class="tech-pills reveal">
+        <div class="tech-pill">🛍️ Shopify Plus</div>
+        <div class="tech-pill">🛒 WooCommerce</div>
+        <div class="tech-pill">⚡ Next.js Commerce</div>
+        <div class="tech-pill">🔮 Medusa.js</div>
+        <div class="tech-pill">💳 Stripe</div>
+        <div class="tech-pill">🏦 Razorpay</div>
+        <div class="tech-pill">🤖 OpenAI Recs Engine</div>
+        <div class="tech-pill">📊 Google Analytics 4</div>
+        <div class="tech-pill">🧪 Optimizely A/B</div>
+        <div class="tech-pill">📦 Algolia Search</div>
+        <div class="tech-pill">☁️ Cloudflare CDN</div>
+        <div class="tech-pill">🔒 PCI DSS Level 1</div>
+        <div class="tech-pill">📱 PWA</div>
+        <div class="tech-pill">🐳 Docker / K8s</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES -->
+  <section id="ind">
+    <div class="wrap">
+      <div class="sh reveal">
+        <div class="sh-label"><span class="badge-dot"></span> WHO WE SERVE</div>
+        <h2 class="sh-title">Industries We <em>Dominate</em></h2>
+      </div>
+      <div class="ind-grid reveal">
+        <div class="ind-card"><i data-lucide="shirt" class="ind-icon" style="color: var(--txt); stroke-width: 1.5; margin: 0 auto 0.75rem;"></i>
+          <div class="ind-name">Fashion &amp; Apparel</div>
+        </div>
+        <div class="ind-card"><i data-lucide="sparkles" class="ind-icon" style="color: var(--txt); stroke-width: 1.5; margin: 0 auto 0.75rem;"></i>
+          <div class="ind-name">Beauty &amp; Cosmetics</div>
+        </div>
+        <div class="ind-card"><i data-lucide="dumbbell" class="ind-icon" style="color: var(--txt); stroke-width: 1.5; margin: 0 auto 0.75rem;"></i>
+          <div class="ind-name">Sports &amp; Fitness</div>
+        </div>
+        <div class="ind-card"><i data-lucide="utensils" class="ind-icon" style="color: var(--txt); stroke-width: 1.5; margin: 0 auto 0.75rem;"></i>
+          <div class="ind-name">Food &amp; Grocery</div>
+        </div>
+        <div class="ind-card"><i data-lucide="laptop" class="ind-icon" style="color: var(--txt); stroke-width: 1.5; margin: 0 auto 0.75rem;"></i>
+          <div class="ind-name">Electronics</div>
+        </div>
+        <div class="ind-card"><i data-lucide="home" class="ind-icon" style="color: var(--txt); stroke-width: 1.5; margin: 0 auto 0.75rem;"></i>
+          <div class="ind-name">Home &amp; Furniture</div>
+        </div>
+        <div class="ind-card"><i data-lucide="pill" class="ind-icon" style="color: var(--txt); stroke-width: 1.5; margin: 0 auto 0.75rem;"></i>
+          <div class="ind-name">Health &amp; Pharma</div>
+        </div>
+        <div class="ind-card"><i data-lucide="gamepad-2" class="ind-icon" style="color: var(--txt); stroke-width: 1.5; margin: 0 auto 0.75rem;"></i>
+          <div class="ind-name">Gaming &amp; Toys</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="why"
+    style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+    <div class="wrap">
+      <div class="sh reveal">
+        <div class="sh-label"><span class="badge-dot"></span> THE VISTARA EDGE</div>
+        <h2 class="sh-title">Why We <em>Outperform</em></h2>
+      </div>
+      <div class="why-grid reveal">
+        <div class="why-card">
+          <div class="why-num">340%</div>
+          <div class="why-num-label">Avg. Revenue Uplift</div>
+          <div class="why-title">Revenue-First Architecture</div>
+          <p class="why-text">Every technical decision is made through a revenue lens. We don't build pretty stores — we
+            build profitable growth machines.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-num">1.8s</div>
+          <div class="why-num-label">Avg. Page Load Speed</div>
+          <div class="why-title">Obsessive Performance</div>
+          <p class="why-text">Core Web Vitals in the green, sub-2s load times, and 99.99% uptime SLA. Speed is your
+            competitive advantage.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-num">90d</div>
+          <div class="why-num-label">Typical Launch Timeline</div>
+          <div class="why-title">Fastest Time to Revenue</div>
+          <p class="why-text">From discovery to live in as little as 90 days. Working sprints with demos every 2 weeks —
+            not status emails.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-num">∞</div>
+          <div class="why-num-label">Ongoing Optimisation</div>
+          <div class="why-title">Long-Term Partnership</div>
+          <p class="why-text">We stay after launch with monthly CRO sprints, ongoing A/B testing, and performance
+            monitoring. Your growth never stops.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="fcta" id="contact">
+    <div class="cta-grid-bg"></div>
+    <div class="wrap fcta-content">
+      <div class="sh-label reveal" style="display:inline-flex;margin-bottom:1.5rem"><span class="badge-dot"></span>
+        START SELLING MORE</div>
+      <h2 class="fcta-title reveal">Ready to <em>3× Your Revenue?</em></h2>
+      <p class="fcta-sub reveal">Every day without a high-performance store is revenue going to your competitors. Let's
+        build yours — starting now.</p>
+      <div class="hero-btns reveal" style="justify-content:center">
+        <a href="index.html#contact" class="btn-prime" id="cta-primary">🚀 Get Free Revenue Audit</a>
+        <a href="index.html#contact" class="btn-ghost" id="cta-secondary">📞 Talk to an Expert</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ftp">
+      <div class="fb"><img src="WWW.VISTARATECHGLOBAL.COM-removebg-preview.png" alt="Vistara Tech Global" class="fli" />
+        <div>
+          <div class="fn">VISTARA TECH GLOBAL</div>
+          <div class="ftag">Engineering Commerce That Converts</div>
+        </div>
+      </div>
+      <div class="flg">
+        <div class="fc">
+          <h4>Services</h4><a href="service-custom-websites.html">Custom Websites</a><a
+            href="service-ecommerce.html">E-Commerce</a><a href="service-mobile-apps.html">Mobile Apps</a><a
+            href="service-seo.html">SEO</a><a href="service-graphic-design.html">Graphic Design</a>
+        </div>
+        <div class="fc">
+          <h4>Company</h4><a href="index.html#why-us">Why Us</a><a href="index.html#tech-stack">Tech Stack</a><a
+            href="index.html#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="ftb"><span>© 2026 Vistara Tech Global. All rights reserved.</span><span class="fst"><span
+          class="sdt"></span> All systems operational</span></div>
+  </footer>
+
+  <script>
+    const nv = document.getElementById('nav');
+    window.addEventListener('scroll', () => nv.classList.toggle('sc', window.scrollY > 30));
+    const hb = document.getElementById('hbtn'), nl = document.getElementById('nls');
+    hb.addEventListener('click', () => { hb.classList.toggle('open'); nl.classList.toggle('open') });
+    nl.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { hb.classList.remove('open'); nl.classList.remove('open') }));
+    const rv = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((e) => { e.forEach((el, i) => { if (el.isIntersecting) { setTimeout(() => el.target.classList.add('visible'), i * 70); io.unobserve(el.target) } }); }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    rv.forEach(el => io.observe(el));
+    // Particle canvas
+    (function () {
+      var c = document.getElementById('ec-canvas');
+      if (!c) return;
+      var ctx = c.getContext('2d'), W, H;
+      function resize() { W = c.width = window.innerWidth; H = c.height = window.innerHeight }
+      resize(); window.addEventListener('resize', resize);
       var pts = [];
-      for(var i = 0; i < COUNT; i++) pts.push(new Particle());
-
-      /* Rebuild particle array when COUNT changes on resize */
-      window.addEventListener('resize', function(){
-        while(pts.length > COUNT) pts.pop();
-        while(pts.length < COUNT) pts.push(new Particle());
-      });
-
-      function drawConnections(){
-        for(var i = 0; i < pts.length; i++){
-          for(var j = i + 1; j < pts.length; j++){
-            var dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y;
-            var d  = Math.sqrt(dx*dx + dy*dy);
-            if(d < CONN_DIST){
-              ctx.beginPath();
-              ctx.moveTo(pts[i].x, pts[i].y);
-              ctx.lineTo(pts[j].x, pts[j].y);
-              ctx.strokeStyle = 'rgba(0,229,255,' + (0.06 * (1 - d / CONN_DIST)) + ')';
-              ctx.lineWidth = 0.5;
-              ctx.stroke();
-            }
-          }
-        }
-      }
-
-      function animate(ts){
-        requestAnimationFrame(animate);
-        if(ts - lastTime < INTERVAL) return;
-        lastTime = ts;
+      for (var i = 0; i < 40; i++)pts.push({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .25, vy: (Math.random() - .5) * .25, r: Math.random() * 1.5 + .3, a: Math.random() * .4 + .1 });
+      function draw() {
         ctx.clearRect(0, 0, W, H);
-        for(var k = 0; k < pts.length; k++){ pts[k].update(); pts[k].draw(); }
-        if(CONNECT) drawConnections();
+        pts.forEach(p => {
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < 0 || p.x > W) p.vx *= -1; if (p.y < 0 || p.y > H) p.vy *= -1;
+          ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(0,230,118,${p.a})`; ctx.fill();
+        });
+        requestAnimationFrame(draw);
       }
-      requestAnimationFrame(animate);
+      draw();
     })();
-</script>
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>lucide.createIcons();</script>
 </body>
+
 </html>

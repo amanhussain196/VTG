@@ -1,276 +1,1509 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<meta name="description" content="Vistara Tech Global — Native and cross-platform mobile apps engineered for performance, 5-star ratings, and app store success."/>
-<title>Native Android & iOS Apps | Vistara Tech Global</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-<style>
-:root{--c:#00e5ff;--cd:#00b8d4;--cg:rgba(0,229,255,0.35);--be:#2979ff;--db:#050810;--dk:#080d18;--dbr:rgba(0,229,255,0.15);--dbh:rgba(0,229,255,0.5);--tp:#e8f4f8;--ts:#7fa3b5;--tm:#3d5a6b;--fd:'Orbitron',monospace;--fb:'Rajdhani',sans-serif;--fu:'Inter',sans-serif;--tr:0.3s cubic-bezier(0.4,0,0.2,1)}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;overflow-x:hidden}body{background:var(--db);color:var(--tp);font-family:var(--fb);font-size:16px;line-height:1.65;overflow-x:hidden}
-::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--db)}::-webkit-scrollbar-thumb{background:var(--cd);border-radius:3px}::selection{background:var(--cg);color:var(--c)}
-#pc{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.45}
-.go{position:fixed;top:0;left:0;width:120%;height:120%;pointer-events:none;z-index:0;background-image:linear-gradient(rgba(0,229,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.025) 1px,transparent 1px);background-size:60px 60px;animation:gd 24s linear infinite}
-@keyframes gd{0%{transform:translate(0,0)}50%{transform:translate(-20px,0)}100%{transform:translate(0,0)}}
-.hbg{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-.hg{position:absolute;inset:0;background-image:radial-gradient(ellipse at 70% 40%,rgba(0,229,255,.06) 0%,transparent 60%),radial-gradient(ellipse at 20% 80%,rgba(41,121,255,.06) 0%,transparent 50%)}
-.sl2{position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(0,229,255,.4),transparent);animation:sd 8s linear infinite}
-@keyframes sd{0%{top:0;opacity:1}100%{top:100vh;opacity:0}}
-.ds{position:absolute;width:1px;height:120px;background:linear-gradient(180deg,transparent,var(--c),transparent);animation:sf linear infinite;opacity:.3}
-.d1{left:8%;animation-duration:4s}.d2{left:28%;animation-duration:5.5s;animation-delay:1.5s}.d3{left:48%;animation-duration:3.5s;animation-delay:.8s}.d4{left:65%;animation-duration:6s;animation-delay:2.2s}.d5{left:80%;animation-duration:4.5s;animation-delay:.4s}.d6{left:92%;animation-duration:3s;animation-delay:1.9s}
-@keyframes sf{0%{top:-120px;opacity:0}10%{opacity:.4}100%{top:110vh;opacity:0}}
-.ob{position:absolute;border-radius:50%;filter:blur(80px);animation:op 6s ease-in-out infinite}
-.o1{width:500px;height:500px;background:radial-gradient(circle,rgba(0,150,200,.12),transparent 70%);top:-100px;right:-100px}
-.o2{width:350px;height:350px;background:radial-gradient(circle,rgba(41,121,255,.1),transparent 70%);bottom:10%;left:5%;animation-delay:3s}
-@keyframes op{0%,100%{transform:scale(1);opacity:.7}50%{transform:scale(1.15);opacity:1}}
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;transition:background var(--tr)}nav.sc{background:rgba(5,8,16,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--dbr)}
-.nc{max-width:1400px;margin:0 auto;padding:0 2rem;height:72px;display:flex;align-items:center;gap:2rem}
-.nl{display:flex;align-items:center;gap:.75rem;text-decoration:none;flex-shrink:0}.li{height:42px;width:auto;filter:drop-shadow(0 0 10px rgba(0,229,255,.55))}
-.lt{font-family:var(--fd);font-size:.95rem;font-weight:700;letter-spacing:.12em;color:var(--tp)}.la{color:var(--c)}
-ul.nls{display:flex;align-items:center;gap:.25rem;list-style:none;margin-left:auto}
-.nk{color:var(--ts);text-decoration:none;font-family:var(--fb);font-weight:600;font-size:.875rem;letter-spacing:.08em;text-transform:uppercase;padding:.5rem 1rem;border-radius:4px;transition:color var(--tr);position:relative}
-.nk::after{content:'';position:absolute;bottom:2px;left:50%;right:50%;height:1px;background:var(--c);transition:left var(--tr),right var(--tr)}
-.nk:hover,.nk.active{color:var(--c)}.nk:hover::after,.nk.active::after{left:1rem;right:1rem}
-.nct{font-family:var(--fd);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--db);background:var(--c);padding:.55rem 1.4rem;border-radius:3px;text-decoration:none;transition:all var(--tr);flex-shrink:0;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%)}
-.nct:hover{background:white;box-shadow:0 0 20px var(--cg);transform:translateY(-1px)}
-.hbtn{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.25rem;margin-left:auto}
-.hbtn span{display:block;width:24px;height:2px;background:var(--c);transition:all var(--tr);transform-origin:center}
-.hbtn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}.hbtn.open span:nth-child(2){opacity:0}.hbtn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.85rem 2rem;font-family:var(--fd);font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;border-radius:3px;transition:all var(--tr);position:relative;overflow:hidden}
-.bp{background:linear-gradient(135deg,var(--c) 0%,var(--be) 100%);color:#030608;clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%)}
-.bp:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,229,255,.55);filter:brightness(1.12)}
-.bg2{position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);transition:left .5s}.bp:hover .bg2{left:100%}
-.bs{background:transparent;color:var(--c);border:1px solid var(--c);clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%)}
-.bs:hover{background:rgba(0,229,255,.1);box-shadow:0 0 24px rgba(0,229,255,.3);transform:translateY(-2px)}
-section{position:relative;z-index:1;padding:7rem 2rem}
-.sh{text-align:center;margin-bottom:4rem}
-.sb{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--fd);font-size:.65rem;font-weight:700;letter-spacing:.3em;color:var(--c);margin-bottom:1rem;padding:.35rem 1rem;border:1px solid rgba(0,229,255,.2);border-radius:2px;background:rgba(0,229,255,.04)}
-.stit{font-family:var(--fd);font-size:clamp(1.8rem,4vw,3.2rem);font-weight:800;letter-spacing:-.01em;line-height:1.1;margin-bottom:1rem}
-.ssu{font-family:var(--fu);font-size:1.05rem;color:var(--ts);max-width:600px;margin:0 auto;font-weight:300}
-.ta{color:var(--c)}.bd{width:6px;height:6px;border-radius:50%;background:var(--c);box-shadow:0 0 8px var(--c);animation:bl 2s ease-in-out infinite}
-@keyframes bl{0%,100%{opacity:1}50%{opacity:.3}}
-.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 4rem}
-.hbdg{display:inline-flex;align-items:center;gap:.7rem;font-family:var(--fd);font-size:.62rem;letter-spacing:.3em;color:var(--c);margin-bottom:2rem;padding:.4rem 1.4rem;border:1px solid rgba(0,229,255,.3);border-radius:2px;background:rgba(0,229,255,.05);animation:fu .7s ease both}
-@keyframes fu{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-.hud{position:relative;display:flex;align-items:center;justify-content:center;width:160px;height:160px;margin:0 auto 2.5rem;animation:fu .8s .1s ease both}
-.hr{position:absolute;border-radius:50%;border:1px solid rgba(0,229,255,.25)}
-.hr1{width:160px;height:160px;animation:spin 20s linear infinite}.hr2{width:120px;height:120px;border-color:rgba(0,229,255,.4);animation:spin 14s linear infinite reverse}.hr3{width:84px;height:84px;border-color:rgba(41,121,255,.5);animation:spin 8s linear infinite}
-@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-.hr1::before,.hr1::after{content:'';position:absolute;width:7px;height:7px;background:var(--c);border-radius:50%;box-shadow:0 0 10px var(--c)}
-.hr1::before{top:0;left:50%;transform:translateX(-50%)}.hr1::after{bottom:0;left:50%;transform:translateX(-50%)}
-.hcore{width:60px;height:60px;border-radius:50%;background:rgba(0,229,255,.08);border:1px solid var(--c);display:flex;align-items:center;justify-content:center;font-size:1.8rem;box-shadow:0 0 30px var(--cg);animation:op 3s ease-in-out infinite}
-.htit{font-family:var(--fd);font-size:clamp(2.2rem,6vw,5rem);font-weight:900;line-height:1.0;letter-spacing:-.01em;margin-bottom:1.5rem;animation:fu .8s .2s ease both}
-.htit span{color:var(--c);animation:tg 2.5s ease-in-out infinite;display:inline-block}
-@keyframes tg{0%,100%{text-shadow:0 0 10px rgba(0,229,255,.4)}50%{text-shadow:0 0 20px rgba(0,229,255,.9),0 0 60px rgba(0,229,255,.5)}}
-.hsub{font-family:var(--fu);font-size:1.15rem;color:var(--ts);max-width:660px;margin:0 auto 2.5rem;font-weight:300;animation:fu .8s .4s ease both}
-.ctag{display:flex;gap:1.2rem;align-items:center;justify-content:center;flex-wrap:wrap;animation:fu .8s .6s ease both}
-.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;max-width:1200px;margin:0 auto}
-.pc{background:var(--dk);border:1px solid var(--dbr);border-radius:6px;padding:2rem;position:relative;overflow:hidden;transition:border-color var(--tr),transform var(--tr),box-shadow var(--tr)}
-.pc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--c),transparent);opacity:0;transition:opacity var(--tr)}
-.pc:hover{border-color:var(--dbh);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,229,255,.1)}.pc:hover::before{opacity:1}
-.pi{width:48px;height:48px;border-radius:8px;background:rgba(0,229,255,.06);border:1px solid rgba(0,229,255,.15);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.2rem}
-.pc:hover .pi{box-shadow:0 0 20px var(--cg)}.pc h3{font-family:var(--fd);font-size:.85rem;font-weight:700;color:var(--tp);margin-bottom:.75rem;letter-spacing:.05em}.pc p{font-family:var(--fu);font-size:.95rem;color:var(--ts);line-height:1.7}
-.appsec{background:linear-gradient(180deg,transparent,rgba(0,229,255,.015),transparent)}
-.tl{display:flex;flex-direction:column;max-width:900px;margin:0 auto;position:relative}
-.tl::before{content:'';position:absolute;left:28px;top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent,var(--c),transparent)}
-.ts{display:flex;gap:2.5rem;align-items:flex-start;padding:2rem 0}
-.sn{flex-shrink:0;width:56px;height:56px;border-radius:50%;border:2px solid var(--c);background:var(--dk);display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:.7rem;font-weight:800;color:var(--c);z-index:1;transition:box-shadow var(--tr)}
-.ts:hover .sn{box-shadow:0 0 24px var(--cg)}.sb2{flex:1;padding:.5rem 0}.slb{font-family:var(--fd);font-size:.6rem;letter-spacing:.3em;color:var(--c);margin-bottom:.5rem;opacity:.7}.st{font-family:var(--fd);font-size:1.1rem;font-weight:700;color:var(--tp);margin-bottom:.5rem}.sd{font-family:var(--fu);font-size:.95rem;color:var(--ts);max-width:560px;line-height:1.7}.sdif{margin-top:.75rem;font-family:var(--fu);font-size:.85rem;color:var(--c);opacity:.8;font-style:italic}
-.teg{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;max-width:1000px;margin:0 auto}
-.tc{display:inline-flex;align-items:center;gap:.6rem;padding:.6rem 1.2rem;background:var(--dk);border:1px solid var(--dbr);border-radius:4px;font-family:var(--fb);font-size:.95rem;font-weight:600;color:var(--tp);letter-spacing:.04em;transition:all var(--tr);cursor:default}
-.tc:hover{border-color:var(--c);color:var(--c);box-shadow:0 0 16px rgba(0,229,255,.2);transform:translateY(-2px)}
-.fw{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:1100px;margin:0 auto}
-.fi{display:flex;gap:1.2rem;align-items:flex-start;padding:1.5rem;background:var(--dk);border:1px solid var(--dbr);border-radius:6px;transition:border-color var(--tr),box-shadow var(--tr)}
-.fi:hover{border-color:rgba(0,229,255,.35);box-shadow:0 0 24px rgba(0,229,255,.07)}
-.fck{flex-shrink:0;width:32px;height:32px;border-radius:50%;background:rgba(0,229,255,.08);border:1px solid rgba(0,229,255,.25);display:flex;align-items:center;justify-content:center;color:var(--c);font-size:.9rem;margin-top:2px}
-.ft h4{font-family:var(--fd);font-size:.8rem;font-weight:700;letter-spacing:.05em;color:var(--tp);margin-bottom:.4rem}.ft p{font-family:var(--fu);font-size:.9rem;color:var(--ts);line-height:1.6}
-.ig{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:1.2rem;max-width:1100px;margin:0 auto}
-.ic{padding:1.8rem 1.2rem;background:var(--dk);border:1px solid var(--dbr);border-radius:6px;text-align:center;transition:all var(--tr);cursor:default}
-.ic:hover{border-color:var(--c);transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,229,255,.12)}.ii{font-size:2rem;margin-bottom:.8rem;display:block}.inn{font-family:var(--fd);font-size:.7rem;font-weight:700;letter-spacing:.1em;color:var(--tp)}
-.wg{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.5rem;max-width:1200px;margin:0 auto}
-.wc{padding:2rem;background:var(--dk);border:1px solid var(--dbr);border-radius:6px;position:relative;overflow:hidden;transition:all var(--tr)}
-.wc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c),var(--be));transform:scaleX(0);transition:transform var(--tr)}
-.wc:hover{border-color:rgba(0,229,255,.3);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,229,255,.1)}.wc:hover::after{transform:scaleX(1)}
-.wm{font-family:var(--fd);font-size:2.2rem;font-weight:900;color:var(--c);margin-bottom:.3rem;text-shadow:0 0 20px rgba(0,229,255,.5)}.wl{font-family:var(--fd);font-size:.7rem;letter-spacing:.1em;color:var(--tm);margin-bottom:.75rem}
-.wc h3{font-family:var(--fd);font-size:.85rem;font-weight:700;color:var(--tp);margin-bottom:.5rem}.wc p{font-family:var(--fu);font-size:.9rem;color:var(--ts);line-height:1.7}
-.fcta{text-align:center;padding:7rem 2rem;position:relative;overflow:hidden}
-.fcta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,229,255,.06) 0%,transparent 70%);pointer-events:none}
-.cgl{position:absolute;inset:0;background-image:linear-gradient(rgba(0,229,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none}
-.gln{width:200px;height:1px;background:linear-gradient(90deg,transparent,var(--c),transparent);margin:2rem auto;animation:glp 2s ease-in-out infinite}
-@keyframes glp{0%,100%{opacity:.4}50%{opacity:1}}
-.ftt{font-family:var(--fd);font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.1;margin-bottom:1.2rem}
-.fts{font-family:var(--fu);font-size:1.05rem;color:var(--ts);max-width:560px;margin:0 auto 2.5rem;font-weight:300}
-.cbg{display:flex;gap:1.2rem;align-items:center;justify-content:center;flex-wrap:wrap}
-footer{position:relative;z-index:1;border-top:1px solid var(--dbr)}
-.ftp{max-width:1200px;margin:0 auto;padding:3rem 2rem;display:flex;gap:3rem;flex-wrap:wrap;justify-content:space-between;align-items:flex-start}
-.fb{display:flex;align-items:center;gap:1rem}.fli{height:40px;width:auto;filter:drop-shadow(0 0 10px rgba(0,229,255,.4))}.fn{font-family:var(--fd);font-size:.8rem;font-weight:700;letter-spacing:.1em;color:var(--tp)}.ftag{font-family:var(--fu);font-size:.8rem;color:var(--tm);margin-top:.25rem}
-.flg{display:flex;gap:3rem;flex-wrap:wrap}.fc h4{font-family:var(--fd);font-size:.65rem;letter-spacing:.2em;color:var(--c);margin-bottom:.75rem}.fc a{display:block;font-family:var(--fu);font-size:.9rem;color:var(--tm);text-decoration:none;margin-bottom:.4rem;transition:color var(--tr)}.fc a:hover{color:var(--c)}
-.ftb{max-width:1200px;margin:0 auto;padding:1.5rem 2rem;border-top:1px solid rgba(0,229,255,.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-family:var(--fu);font-size:.8rem;color:var(--tm)}
-.fst{display:flex;align-items:center;gap:.5rem}.sdt{width:6px;height:6px;background:#00ff87;border-radius:50%;box-shadow:0 0 8px #00ff87;animation:bl 2s ease-in-out infinite}
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:translateY(0)}
-@media(max-width:768px){.fw{grid-template-columns:1fr}.ctag,.cbg{flex-direction:column;align-items:stretch}.btn{justify-content:center}ul.nls{display:none;position:fixed;top:72px;left:0;right:0;background:rgba(5,8,16,.97);backdrop-filter:blur(20px);flex-direction:column;padding:1.5rem;gap:.5rem;border-bottom:1px solid var(--dbr)}ul.nls.open{display:flex}.hbtn{display:flex}.nct{display:none}.ftp{flex-direction:column;gap:2rem}}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta name="description"
+    content="Native Android & iOS apps that users love. Built with Flutter, Swift and Kotlin by Vistara Tech Global." />
+  <title>Mobile Apps | Vistara Tech Global</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <style>
+    /* ============ MOBILE APPS PAGE — VIOLET / AURORA THEME ============ */
+    :root {
+      --v: #b388ff;
+      --v2: #7c4dff;
+      --v3: #e040fb;
+      --v4: #d4b5ff;
+      --vg: rgba(179, 136, 255, 0.28);
+      --bg: #08050f;
+      --bg2: #0d0918;
+      --card: #110c1a;
+      --border: rgba(179, 136, 255, 0.14);
+      --border-h: rgba(179, 136, 255, 0.4);
+      --txt: #f3eeff;
+      --txt2: #b39ddb;
+      --txt3: #7c6a9c;
+      --font-h: 'Syne', sans-serif;
+      --font-b: 'DM Sans', sans-serif;
+      --font-m: 'JetBrains Mono', monospace;
+      --tr: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-  /*=== MOBILE / TABLET PERFORMANCE ===*/
-  @media (max-width: 900px) {
-    /* Hide heavy animated background layers */
-    .grid-overlay,
-    .go,
-    .data-stream,
-    .ds,
-    .scan-line, .sl, .sl2,
-    .scan-line-2,
-    .floating-dots {
-      display: none !important;
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
     }
-    /* Reduce particle canvas opacity slightly */
-    #particleCanvas, #pc {
-      opacity: 0.3 !important;
-    }
-    /* Kill expensive filter animations on orbs */
-    .glow-orb, .ob {
-      animation: none !important;
-      filter: none !important;
-      display: none !important;
-    }
-    /* Simplify HUD rings – only keep outer ring, cancel inner spins */
-    .hud-ring-2, .hud-ring-3,
-    .hr2, .hr3 {
-      display: none !important;
-    }
-    .hud-ring-1, .hr1 {
-      animation-duration: 40s !important;
-    }
-    /* Slow down / simplify card glows */
-    .lt-card-glow,
-    .card-border-glow {
-      display: none !important;
-    }
-    /* Reduce hero badge blink frequency */
-    .badge-dot, .bd {
-      animation-duration: 4s !important;
-    }
-  }
 
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--txt);
+      font-family: var(--font-b);
+      overflow-x: hidden;
+      line-height: 1.65
+    }
+
+    ::-webkit-scrollbar {
+      width: 4px
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--v2)
+    }
+
+    ::selection {
+      background: var(--vg);
+      color: var(--v)
+    }
+
+    #ma-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      opacity: .25
+    }
+
+    /* AURORA GLOW */
+    .aurora {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden
+    }
+
+    .aurora-1 {
+      position: absolute;
+      top: -30%;
+      left: -10%;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(124, 77, 255, .07), transparent 65%);
+      border-radius: 50%;
+      animation: aurora-drift 12s ease-in-out infinite
+    }
+
+    .aurora-2 {
+      position: absolute;
+      bottom: -20%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(224, 64, 251, .05), transparent 65%);
+      border-radius: 50%;
+      animation: aurora-drift 16s ease-in-out infinite reverse
+    }
+
+    @keyframes aurora-drift {
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1)
+      }
+
+      50% {
+        transform: translate(30px, -20px) scale(1.05)
+      }
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      transition: background var(--tr)
+    }
+
+    nav.sc {
+      background: rgba(8, 5, 15, .95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border)
+    }
+
+    .nc {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      gap: 2rem
+    }
+
+    .nl {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      text-decoration: none;
+      flex-shrink: 0
+    }
+
+    .li {
+      height: 40px;
+      filter: drop-shadow(0 0 8px rgba(179, 136, 255, .5))
+    }
+
+    .lt {
+      font-family: var(--font-h);
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: .04em;
+      color: var(--txt)
+    }
+
+    .lt span {
+      color: var(--v)
+    }
+
+    ul.nls {
+      display: flex;
+      align-items: center;
+      gap: .25rem;
+      list-style: none;
+      margin-left: auto
+    }
+
+    .nk {
+      color: var(--txt2);
+      text-decoration: none;
+      font-size: .85rem;
+      font-weight: 500;
+      padding: .5rem 1rem;
+      border-radius: 6px;
+      transition: color var(--tr)
+    }
+
+    .nk:hover,
+    .nk.active {
+      color: var(--v)
+    }
+
+    .nct {
+      font-family: var(--font-b);
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--bg);
+      background: linear-gradient(135deg, var(--v), var(--v2));
+      padding: .55rem 1.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all var(--tr);
+      flex-shrink: 0
+    }
+
+    .nct:hover {
+      box-shadow: 0 0 24px var(--vg);
+      transform: translateY(-1px)
+    }
+
+    .hbtn {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: .25rem;
+      margin-left: auto
+    }
+
+    .hbtn span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--v);
+      transition: all var(--tr)
+    }
+
+    .hbtn.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg)
+    }
+
+    .hbtn.open span:nth-child(2) {
+      opacity: 0
+    }
+
+    .hbtn.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg)
+    }
+
+    /* ============ HERO — CENTRED WITH PHONE MOCK ============ */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 9rem 2rem 5rem;
+      position: relative;
+      z-index: 1
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      font-family: var(--font-m);
+      font-size: .62rem;
+      letter-spacing: .22em;
+      color: var(--v);
+      border: 1px solid var(--border);
+      background: rgba(179, 136, 255, .04);
+      padding: .4rem 1.2rem;
+      border-radius: 50px;
+      margin-bottom: 2.5rem;
+      text-transform: uppercase
+    }
+
+    .pdot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--v);
+      box-shadow: 0 0 8px var(--v);
+      animation: pdp 2s ease-in-out infinite
+    }
+
+    @keyframes pdp {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: .3
+      }
+    }
+
+    .hero-title {
+      font-family: var(--font-h);
+      font-size: clamp(2.8rem, 5.5vw, 5.5rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -.02em;
+      margin-bottom: 1.5rem
+    }
+
+    .hero-title em {
+      background: linear-gradient(135deg, var(--v), var(--v3));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-style: normal;
+      display: block
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--txt2);
+      max-width: 580px;
+      line-height: 1.8;
+      margin: 0 auto 2.5rem;
+      font-weight: 300
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 3.5rem
+    }
+
+    .btn-grad {
+      font-family: var(--font-b);
+      font-weight: 600;
+      font-size: .9rem;
+      color: #fff;
+      background: linear-gradient(135deg, var(--v2), var(--v3));
+      padding: .9rem 2.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all var(--tr);
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      box-shadow: 0 0 0 0 var(--vg)
+    }
+
+    .btn-grad:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 32px var(--vg)
+    }
+
+    .btn-out {
+      font-family: var(--font-b);
+      font-weight: 600;
+      font-size: .9rem;
+      color: var(--v);
+      border: 1.5px solid rgba(179, 136, 255, .4);
+      padding: .9rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all var(--tr);
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem
+    }
+
+    .btn-out:hover {
+      background: rgba(179, 136, 255, .08);
+      transform: translateY(-2px);
+      border-color: var(--v)
+    }
+
+    /* PHONE MOCKUP */
+    .phone-stage {
+      position: relative;
+      display: inline-flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 2rem;
+      max-width: 100%
+    }
+
+    .phone-wrap {
+      position: relative;
+      width: 220px
+    }
+
+    .phone-outer {
+      background: linear-gradient(145deg, #1a0e2e, #0d0820);
+      border: 2px solid rgba(179, 136, 255, .25);
+      border-radius: 36px;
+      padding: 10px;
+      box-shadow: 0 0 60px rgba(124, 77, 255, .2), 0 40px 80px rgba(0, 0, 0, .6);
+      transition: transform .3s ease
+    }
+
+    .phone-outer:hover {
+      transform: translateY(-8px)
+    }
+
+    .phone-screen {
+      background: var(--bg2);
+      border-radius: 28px;
+      overflow: hidden;
+      aspect-ratio: 9/19.5
+    }
+
+    .phone-screen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover
+    }
+
+    .phone-notch {
+      position: absolute;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 14px;
+      background: #0d0820;
+      border-radius: 10px;
+      z-index: 2
+    }
+
+    .phone-float-badge {
+      position: absolute;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: .6rem 1rem;
+      backdrop-filter: blur(10px);
+      animation: float 4s ease-in-out infinite;
+      white-space: nowrap
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(-8px)
+      }
+    }
+
+    .pfb-1 {
+      top: 10%;
+      right: -5rem;
+      animation-delay: 0s
+    }
+
+    .pfb-2 {
+      bottom: 20%;
+      left: -5rem;
+      animation-delay: 1.5s
+    }
+
+    .pfb-val {
+      font-family: var(--font-h);
+      font-size: 1.1rem;
+      color: var(--v);
+      font-weight: 800
+    }
+
+    .pfb-lbl {
+      font-family: var(--font-m);
+      font-size: .55rem;
+      letter-spacing: .1em;
+      color: var(--txt2);
+      text-transform: uppercase
+    }
+
+    .phone-wrap-2 {
+      width: 190px;
+      margin-bottom: 2rem;
+      opacity: .75
+    }
+
+    /* SECTION BASE */
+    section {
+      position: relative;
+      z-index: 1;
+      padding: 6rem 2rem
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto
+    }
+
+    .sh {
+      text-align: center;
+      margin-bottom: 4rem
+    }
+
+    .sh-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-family: var(--font-m);
+      font-size: .6rem;
+      letter-spacing: .25em;
+      color: var(--v);
+      text-transform: uppercase;
+      border: 1px solid var(--border);
+      background: rgba(179, 136, 255, .04);
+      padding: .35rem 1rem;
+      border-radius: 50px;
+      margin-bottom: 1.25rem
+    }
+
+    .sh-title {
+      font-family: var(--font-h);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      color: var(--txt);
+      line-height: 1.05;
+      letter-spacing: -.02em;
+      margin-bottom: 1rem
+    }
+
+    .sh-title em {
+      background: linear-gradient(135deg, var(--v), var(--v3));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-style: normal
+    }
+
+    .sh-sub {
+      font-size: 1rem;
+      color: var(--txt2);
+      max-width: 560px;
+      margin: 0 auto;
+      font-weight: 300;
+      line-height: 1.75
+    }
+
+    /* PAIN POINTS — 2x3 GLASS CARDS */
+    .glass-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem
+    }
+
+    .glass-card {
+      background: rgba(17, 12, 26, .6);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.75rem;
+      backdrop-filter: blur(10px);
+      position: relative;
+      overflow: hidden;
+      transition: all var(--tr)
+    }
+
+    .glass-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(179, 136, 255, .05), rgba(224, 64, 251, .03));
+      opacity: 0;
+      transition: opacity var(--tr)
+    }
+
+    .glass-card:hover::before {
+      opacity: 1
+    }
+
+    .glass-card:hover {
+      border-color: var(--border-h);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, .4), 0 0 0 1px rgba(179, 136, 255, .1)
+    }
+
+    .gc-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      display: block
+    }
+
+    .gc-title {
+      font-family: var(--font-h);
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--txt);
+      margin-bottom: .6rem;
+      letter-spacing: -.01em
+    }
+
+    .gc-text {
+      font-size: .875rem;
+      color: var(--txt2);
+      line-height: 1.7;
+      font-weight: 300
+    }
+
+    /* PROCESS — STAGGERED TIMELINE */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      max-width: 820px;
+      margin: 0 auto;
+      position: relative
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 35px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(180deg, transparent, var(--v), transparent);
+      opacity: .3
+    }
+
+    .tl-item {
+      display: flex;
+      gap: 2.5rem;
+      align-items: flex-start;
+      padding: 2rem 0;
+      position: relative
+    }
+
+    .tl-num {
+      flex-shrink: 0;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(179, 136, 255, .3);
+      background: var(--card);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-h);
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--v);
+      position: relative;
+      z-index: 1;
+      transition: all var(--tr)
+    }
+
+    .tl-item:hover .tl-num {
+      border-color: var(--v);
+      box-shadow: 0 0 24px var(--vg);
+      background: rgba(179, 136, 255, .08)
+    }
+
+    .tl-content {
+      flex: 1;
+      padding: .75rem 0
+    }
+
+    .tl-label {
+      font-family: var(--font-m);
+      font-size: .58rem;
+      letter-spacing: .2em;
+      color: var(--txt3);
+      text-transform: uppercase;
+      margin-bottom: .4rem
+    }
+
+    .tl-title {
+      font-family: var(--font-h);
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--txt);
+      margin-bottom: .6rem;
+      letter-spacing: -.01em
+    }
+
+    .tl-desc {
+      font-size: .9rem;
+      color: var(--txt2);
+      line-height: 1.7;
+      font-weight: 300
+    }
+
+    .tl-vistara {
+      margin-top: .75rem;
+      font-family: var(--font-m);
+      font-size: .8rem;
+      color: var(--v);
+      opacity: .8;
+      font-style: italic
+    }
+
+    /* FEATURES — ASYMMETRIC GRID */
+    .features-asym {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 1.25rem
+    }
+
+    .feat-big {
+      grid-column: 1;
+      grid-row: 1/3;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      transition: all var(--tr)
+    }
+
+    .feat-big:hover {
+      border-color: var(--border-h);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, .4), 0 0 0 1px rgba(179, 136, 255, .08)
+    }
+
+    .feat-small {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: all var(--tr)
+    }
+
+    .feat-small:hover {
+      border-color: var(--border-h);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, .3)
+    }
+
+    .feat-emoji {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      display: block
+    }
+
+    .feat-title {
+      font-family: var(--font-h);
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--txt);
+      margin-bottom: .75rem;
+      letter-spacing: -.01em
+    }
+
+    .feat-title-sm {
+      font-family: var(--font-h);
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--txt);
+      margin-bottom: .5rem;
+      letter-spacing: -.01em
+    }
+
+    .feat-text {
+      font-size: .9rem;
+      color: var(--txt2);
+      line-height: 1.75;
+      font-weight: 300;
+      flex: 1
+    }
+
+    .feat-tag {
+      margin-top: 1.5rem;
+      font-family: var(--font-m);
+      font-size: .65rem;
+      color: var(--v);
+      opacity: .75;
+      letter-spacing: .1em;
+      text-transform: uppercase
+    }
+
+    .feat-text-sm {
+      font-size: .85rem;
+      color: var(--txt2);
+      line-height: 1.65;
+      font-weight: 300
+    }
+
+    /* TECH */
+    .tech-wall {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem
+    }
+
+    .tw-item {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .6rem 1.2rem;
+      background: rgba(179, 136, 255, .04);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      font-size: .85rem;
+      font-weight: 500;
+      color: var(--txt2);
+      transition: all var(--tr);
+      cursor: default
+    }
+
+    .tw-item:hover {
+      border-color: var(--v);
+      color: var(--v);
+      background: rgba(179, 136, 255, .08);
+      transform: translateY(-2px)
+    }
+
+    .tw-cat {
+      font-family: var(--font-m);
+      font-size: .58rem;
+      letter-spacing: .2em;
+      color: var(--txt3);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: .75rem;
+      margin-top: 1.5rem
+    }
+
+    .tw-cat:first-child {
+      margin-top: 0
+    }
+
+    /* WHY US — ROW */
+    .why-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem
+    }
+
+    .why-card {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      transition: all var(--tr)
+    }
+
+    .why-card:hover {
+      border-color: var(--border-h);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, .3)
+    }
+
+    .wc-icon {
+      font-size: 2.5rem;
+      display: block;
+      margin-bottom: 1rem
+    }
+
+    .wc-val {
+      font-family: var(--font-h);
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--v), var(--v3));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: .25rem
+    }
+
+    .wc-lbl {
+      font-family: var(--font-m);
+      font-size: .6rem;
+      letter-spacing: .12em;
+      color: var(--txt3);
+      text-transform: uppercase;
+      margin-bottom: .75rem
+    }
+
+    .wc-title {
+      font-family: var(--font-b);
+      font-size: .9rem;
+      font-weight: 700;
+      color: var(--txt);
+      margin-bottom: .4rem
+    }
+
+    .wc-text {
+      font-size: .82rem;
+      color: var(--txt2);
+      line-height: 1.6;
+      font-weight: 300
+    }
+
+    /* FINAL CTA */
+    .fcta {
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid var(--border)
+    }
+
+    .fcta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 300px;
+      background: radial-gradient(ellipse at center bottom, rgba(124, 77, 255, .1), transparent 65%);
+      pointer-events: none
+    }
+
+    .fcta-title {
+      font-family: var(--font-h);
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -.02em;
+      margin-bottom: 1rem;
+      color: var(--txt)
+    }
+
+    .fcta-title em {
+      background: linear-gradient(135deg, var(--v), var(--v3));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-style: normal;
+      display: block
+    }
+
+    .fcta-sub {
+      font-size: 1.05rem;
+      color: var(--txt2);
+      max-width: 520px;
+      margin: 0 auto 2.5rem;
+      font-weight: 300;
+      line-height: 1.75
+    }
+
+    /* FOOTER */
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border)
+    }
+
+    .ftp {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      display: flex;
+      gap: 3rem;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start
+    }
+
+    .fb {
+      display: flex;
+      align-items: center;
+      gap: 1rem
+    }
+
+    .fli {
+      height: 38px;
+      filter: drop-shadow(0 0 8px rgba(179, 136, 255, .4))
+    }
+
+    .fn {
+      font-family: var(--font-h);
+      font-size: .9rem;
+      font-weight: 800;
+      letter-spacing: .04em;
+      color: var(--txt)
+    }
+
+    .ftag {
+      font-family: var(--font-m);
+      font-size: .68rem;
+      color: var(--txt3);
+      margin-top: .3rem
+    }
+
+    .flg {
+      display: flex;
+      gap: 3rem;
+      flex-wrap: wrap
+    }
+
+    .fc h4 {
+      font-family: var(--font-m);
+      font-size: .58rem;
+      letter-spacing: .2em;
+      color: var(--v);
+      margin-bottom: .75rem;
+      text-transform: uppercase
+    }
+
+    .fc a {
+      display: block;
+      font-size: .88rem;
+      color: var(--txt3);
+      text-decoration: none;
+      margin-bottom: .4rem;
+      transition: color var(--tr)
+    }
+
+    .fc a:hover {
+      color: var(--v)
+    }
+
+    .ftb {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.25rem 2rem;
+      border-top: 1px solid rgba(179, 136, 255, .06);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-family: var(--font-m);
+      font-size: .73rem;
+      color: var(--txt3)
+    }
+
+    .fst {
+      display: flex;
+      align-items: center;
+      gap: .5rem
+    }
+
+    .sdt {
+      width: 6px;
+      height: 6px;
+      background: var(--v);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--v);
+      animation: pdp 2s ease-in-out infinite
+    }
+
+    /* REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .65s ease, transform .65s ease
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:1200px) {
+      .hero-title {
+        font-size: clamp(2.5rem, 6vw, 4.5rem)
+      }
+
+      .phone-wrap-2 {
+        display: none
+      }
+
+      .pfb-1,
+      .pfb-2 {
+        display: none
+      }
+    }
+
+    @media(max-width:1024px) {
+      .glass-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .features-asym {
+        grid-template-columns: 1fr
+      }
+
+      .feat-big {
+        grid-column: auto;
+        grid-row: auto
+      }
+
+      .why-row {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .phone-wrap-2 {
+        display: none
+      }
+
+      ul.nls {
+        display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: rgba(8, 5, 15, .97);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: .5rem;
+        border-bottom: 1px solid var(--border)
+      }
+
+      ul.nls.open {
+        display: flex
+      }
+
+      .hbtn {
+        display: flex
+      }
+
+      .nct {
+        display: none
+      }
+    }
+
+    @media(max-width:768px) {
+      section {
+        padding: 4rem 1.25rem
+      }
+
+      .glass-grid {
+        grid-template-columns: 1fr
+      }
+
+      .why-row {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .pfb-1,
+      .pfb-2 {
+        display: none
+      }
+    }
+
+    @media(max-width:480px) {
+      .hero {
+        padding: 7rem 1.25rem 3rem
+      }
+
+      .hero-btns {
+        flex-direction: column;
+        align-items: center
+      }
+
+      .btn-grad,
+      .btn-out {
+        width: 100%;
+        justify-content: center
+      }
+
+      .phone-stage {
+        width: 100%;
+        justify-content: center
+      }
+
+      .why-row {
+        grid-template-columns: 1fr
+      }
+
+      .features-asym {
+        grid-template-columns: 1fr
+      }
+    }
   </style>
 </head>
+
 <body>
-<canvas id="pc"></canvas><div class="go"></div>
-<div class="hbg"><div class="hg"></div><div class="sl2"></div><div class="ds d1"></div><div class="ds d2"></div><div class="ds d3"></div><div class="ds d4"></div><div class="ds d5"></div><div class="ds d6"></div><div class="ob o1"></div><div class="ob o2"></div></div>
-<nav id="nav"><div class="nc"><a href="index.html" class="nl"><img src="WWW.VISTARATECHGLOBAL.COM-removebg-preview.png" alt="Vistara Tech Global" class="li"/><span class="lt">VISTARA<span class="la"> TECH</span></span></a><ul class="nls" id="nls"><li><a href="index.html" class="nk">Home</a></li><li><a href="index.html#services" class="nk active">Services</a></li><li><a href="index.html#why-us" class="nk">Why Us</a></li><li><a href="index.html#tech-stack" class="nk">Tech Stack</a></li><li><a href="index.html#contact" class="nk">Contact</a></li></ul><a href="index.html#contact" class="nct">Get Started</a><button class="hbtn" id="hbtn" aria-label="Toggle menu"><span></span><span></span><span></span></button></div></nav>
-<section class="hero" id="home">
-  <div class="hbdg"><span class="bd"></span> VISTARA TECH GLOBAL — MOBILE APPS</div>
-  <div class="hud"><div class="hr hr1"></div><div class="hr hr2"></div><div class="hr hr3"></div><div class="hcore">&#x1F4F1;</div></div>
-  <h1 class="htit">Mobile Apps That<br><span>Users Actually Love</span></h1>
-  <p class="hsub">In a world where users spend 4+ hours daily on their phones, a mediocre app is simply invisible. We build native, lightning-fast mobile experiences that get downloaded, opened daily, and rated 5 stars.</p>
-  <div class="ctag"><a href="index.html#contact" class="btn bp" id="hsp"><span>&#x26A1;</span> Start Your Project<span class="bg2"></span></a><a href="index.html#contact" class="btn bs" id="hte"><span>&#x1F4E1;</span> Talk to an Expert</a></div>
-</section>
-<section id="pain"><div class="sh reveal"><div class="sb"><span class="bd"></span> THE REAL PROBLEM</div><h2 class="stit">What's Costing You <span class="ta">Right Now</span></h2><p class="ssu">Real business problems we solve before they cost you more customers and revenue.</p></div><div class="pg"><div class="pc reveal"><div class="pi">&#x1F4A4;</div><h3>Nobody Opens the App After Day 1</h3><p>The average user abandons an app within 30 seconds if it feels slow or confusing. Poor mobile UX is the top cause of uninstalls and 1-star reviews that ruin App Store rankings permanently.</p></div><div class="pc reveal"><div class="pi">&#x1F4A5;</div><h3>Crashes and Performance Issues</h3><p>Laggy animations, freezes, and crashes destroy user trust instantly. A single bad session leads to an uninstall — and negative reviews that hurt future downloads for months.</p></div><div class="pc reveal"><div class="pi">&#x1F50B;</div><h3>Excessive Battery and Data Drain</h3><p>Apps draining battery or consuming excessive mobile data get deleted within days. Performance and efficiency optimization is non-negotiable for user retention at scale.</p></div><div class="pc reveal"><div class="pi">&#x1F512;</div><h3>No Security for Sensitive User Data</h3><p>Mobile apps are prime breach targets. Without proper encryption, secure storage, and certificate pinning, you expose user data and face serious legal liability under GDPR and IT Act.</p></div><div class="pc reveal"><div class="pi">&#x1F422;</div><h3>Releasing Updates Takes Weeks</h3><p>Without automated CI/CD for mobile, every update takes weeks of manual testing. Competitors ship new features while you are still waiting for App Store review approval.</p></div></div></section>
-<section class="appsec" id="approach"><div class="sh reveal"><div class="sb"><span class="bd"></span> OUR PROCESS</div><h2 class="stit">How We <span class="ta">Build Differently</span></h2><p class="ssu">A proven 4-phase methodology delivering results on schedule and on budget.</p></div>
-<div class="tl">
-<div class="ts reveal"><div class="sn">01</div><div class="sb2"><div class="slb">PHASE ONE</div><div class="st">Discover & Strategy</div><p class="sd">Deep-dive analysis of your goals, audience, competitors, and market. We define the complete architecture and success metrics before any work begins.</p><p class="sdif">Unlike others: Strategy and architecture first. Execution follows a clear, approved plan.</p></div></div>
-<div class="ts reveal"><div class="sn">02</div><div class="sb2"><div class="slb">PHASE TWO</div><div class="st">Design & Prototype</div><p class="sd">High-fidelity designs with every user journey mapped and approved by you. You see the complete vision before we write a single line of code.</p><p class="sdif">Unlike others: Full transparency — you approve everything before any commitment.</p></div></div>
-<div class="ts reveal"><div class="sn">03</div><div class="sb2"><div class="slb">PHASE THREE</div><div class="st">Build & Integrate</div><p class="sd">Agile delivery in 2-week sprints with live demos each cycle. Automated testing, CI/CD pipelines, and staged rollouts guarantee rock-solid quality throughout.</p><p class="sdif">Unlike others: Working deliverables every 2 weeks — not status emails and promises.</p></div></div>
-<div class="ts reveal"><div class="sn">04</div><div class="sb2"><div class="slb">PHASE FOUR</div><div class="st">Launch & Scale</div><p class="sd">Production deployment with full monitoring, team training, and a post-launch optimization roadmap to ensure performance keeps improving month after month.</p><p class="sdif">Unlike others: We stay as your long-term technology partner — not just delivery agents.</p></div></div>
-</div></section>
-<section id="tech"><div class="sh reveal"><div class="sb"><span class="bd"></span> TECH ARSENAL</div><h2 class="stit">Technologies & <span class="ta">Tools</span></h2><p class="ssu">Battle-tested, future-proof technologies chosen specifically for your service needs.</p></div><div class="teg reveal"><div class="tc"><span>&#x1F499;</span> Flutter</div><div class="tc"><span>&#x1F34E;</span> Swift / SwiftUI</div><div class="tc"><span>&#x1F916;</span> Kotlin</div><div class="tc"><span>&#x26A1;</span> React Native</div><div class="tc"><span>&#x1F680;</span> Dart</div><div class="tc"><span>&#x1F525;</span> Firebase</div><div class="tc"><span>&#x2601;</span> AWS Amplify</div><div class="tc"><span>&#x1F4CA;</span> Mixpanel</div><div class="tc"><span>&#x1F512;</span> Auth0</div><div class="tc"><span>&#x1F4E6;</span> App Store Connect</div><div class="tc"><span>&#x1F916;</span> Google Play Console</div><div class="tc"><span>&#x1F4CA;</span> Crashlytics</div></div></section>
-<section id="feat" style="background:linear-gradient(180deg,transparent,rgba(0,229,255,.015),transparent)"><div class="sh reveal"><div class="sb"><span class="bd"></span> CAPABILITIES</div><h2 class="stit">Key Features & <span class="ta">Capabilities</span></h2><p class="ssu">Enterprise-grade features built in from day one — not optional add-ons.</p></div><div class="fw"><div class="fi reveal"><div class="fck">&#10022;</div><div class="ft"><h4>Native 60fps Performance</h4><p>Hardware-optimized code delivering fluid 60fps animations and sub-100ms response times. Apps that feel instant on every device model.</p></div></div><div class="fi reveal"><div class="fck">&#10022;</div><div class="ft"><h4>Offline-First Architecture</h4><p>Full functionality without internet using local SQLite and sync queues. No loading spinners — no frustrated users with poor connectivity.</p></div></div><div class="fi reveal"><div class="fck">&#10022;</div><div class="ft"><h4>Push Notification Engine</h4><p>Smart, personalized push campaigns that re-engage users without feeling spammy — increasing 30-day retention by an average of 40%.</p></div></div><div class="fi reveal"><div class="fck">&#10022;</div><div class="ft"><h4>Biometric Authentication</h4><p>Face ID, fingerprint, and PIN authentication built in. Enterprise-grade security with the frictionless convenience users expect today.</p></div></div><div class="fi reveal"><div class="fck">&#10022;</div><div class="ft"><h4>Real-Time Data Sync</h4><p>Live updates across all devices using WebSockets and Firebase. Perfect for chat apps, collaboration tools, and live data dashboards.</p></div></div><div class="fi reveal"><div class="fck">&#10022;</div><div class="ft"><h4>In-App Payments & Subscriptions</h4><p>Seamless Apple Pay, Google Pay, and Stripe integration for frictionless in-app purchasing, subscriptions, and one-time payments.</p></div></div></div></section>
-<section id="ind"><div class="sh reveal"><div class="sb"><span class="bd"></span> WHO WE SERVE</div><h2 class="stit">Industries We <span class="ta">Empower</span></h2><p class="ssu">Specialized solutions built for your sector's unique demands and regulatory requirements.</p></div><div class="ig"><div class="ic reveal"><span class="ii">&#x1F680;</span><div class="inn">Startups & MVP</div></div><div class="ic reveal"><span class="ii">&#x1F6CD;&#xFE0F;</span><div class="inn">Retail & Commerce</div></div><div class="ic reveal"><span class="ii">&#x1F3E5;</span><div class="inn">Healthcare</div></div><div class="ic reveal"><span class="ii">&#x1F3EB;</span><div class="inn">EdTech & Learning</div></div><div class="ic reveal"><span class="ii">&#x1F4B0;</span><div class="inn">FinTech & Banking</div></div><div class="ic reveal"><span class="ii">&#x1F3A8;</span><div class="inn">Media & Content</div></div></div></section>
-<section id="why" style="background:linear-gradient(180deg,transparent,rgba(0,229,255,.015),transparent)"><div class="sh reveal"><div class="sb"><span class="bd"></span> THE VISTARA EDGE</div><h2 class="stit">Why Choose <span class="ta">Vistara Tech</span></h2><p class="ssu">Not just vendors — strategic technology partners committed to your long-term success.</p></div><div class="wg"><div class="wc reveal"><div class="wm">50+</div><div class="wl">Apps Shipped</div><h3>Battle-Tested Expertise</h3><p>Over 50 mobile apps shipped across iOS and Android — from lean MVPs to enterprise platforms serving millions of daily active users globally.</p></div><div class="wc reveal"><div class="wm">4.8★</div><div class="wl">Avg App Store Rating</div><h3>Quality Obsessed</h3><p>Our apps average 4.8 stars across app stores. We design and engineer every interaction for genuine delight, not just minimum functionality.</p></div><div class="wc reveal"><div class="wm">3wk</div><div class="wl">First Prototype</div><h3>Fastest in Market</h3><p>A working prototype in your hands within 3 weeks of project start. Test real software on real devices — not slide deck wireframes.</p></div><div class="wc reveal"><div class="wm">24/7</div><div class="wl">Crash Monitoring</div><h3>Zero Tolerance for Bugs</h3><p>Real-time crash reporting with automated alerts. Your users never experience the same issue twice — we fix root causes, not symptoms.</p></div></div></section>
-<section class="fcta" id="contact"><div class="cgl"></div><div class="sb reveal"><span class="bd"></span> READY TO BUILD?</div><p class="ftt reveal">Your App Should Be<br><span class="ta">In Millions of Pockets</span></p><div class="gln"></div><p class="fts reveal">Stop building apps users delete. Let's engineer a mobile experience so compelling, users recommend it to their friends — and return every single day.</p><div class="cbg reveal"><a href="index.html#contact" class="btn bp" id="cta1"><span>&#x1F680;</span> Get a Free Consultation<span class="bg2"></span></a><a href="index.html#contact" class="btn bs" id="cta2"><span>&#x26A1;</span> Build With Us</a></div></section>
-<footer><div class="ftp"><div class="fb"><img src="WWW.VISTARATECHGLOBAL.COM-removebg-preview.png" alt="Vistara Tech Global" class="fli"/><div><div class="fn">VISTARA TECH GLOBAL</div><div class="ftag">Engineering the Digital Future</div></div></div><div class="flg"><div class="fc"><h4>Services</h4><a href="service-custom-websites.html">Custom Websites</a><a href="service-web-applications.html">Web Applications</a><a href="service-ecommerce.html">E-Commerce</a><a href="service-mobile-apps.html">Mobile Apps</a><a href="service-seo.html">SEO</a><a href="service-graphic-design.html">Graphic Design</a></div><div class="fc"><h4>Company</h4><a href="index.html#why-us">Why Us</a><a href="index.html#tech-stack">Tech Stack</a><a href="index.html#contact">Contact</a></div></div></div><div class="ftb"><span>&copy; 2026 Vistara Tech Global. All rights reserved.</span><span class="fst"><span class="sdt"></span> All systems operational</span></div></footer>
-<script>
-const nv=document.getElementById('nav');window.addEventListener('scroll',()=>nv.classList.toggle('sc',window.scrollY>30));
-const hb=document.getElementById('hbtn'),nl=document.getElementById('nls');hb.addEventListener('click',()=>{hb.classList.toggle('open');nl.classList.toggle('open')});nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{hb.classList.remove('open');nl.classList.remove('open')}));
-const rv=document.querySelectorAll('.reveal');const io=new IntersectionObserver((e)=>{e.forEach((el,i)=>{if(el.isIntersecting){setTimeout(()=>el.target.classList.add('visible'),i*80);io.unobserve(el.target)}});},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});rv.forEach(el=>io.observe(el));
-/* ── Adaptive Particle Engine ── */
-    (function(){
-      var canvas = document.getElementById('particleCanvas') || document.getElementById('pc');
-      if(!canvas) return;
-      var ctx = canvas.getContext('2d');
-      var W, H;
+  <canvas id="ma-canvas"></canvas>
+  <div class="aurora">
+    <div class="aurora-1"></div>
+    <div class="aurora-2"></div>
+  </div>
 
-      var isMobile  = window.innerWidth <= 600 || (navigator.maxTouchPoints > 0 && window.innerWidth <= 600);
-      var isTablet  = !isMobile && (window.innerWidth <= 900 || navigator.maxTouchPoints > 0);
-      var COUNT     = isMobile ? 18 : isTablet ? 30 : 80;
-      var CONNECT   = !isMobile && !isTablet;          /* connections only on desktop */
-      var CONN_DIST = 120;
-      var FPS       = isMobile ? 20 : isTablet ? 30 : 60;
-      var INTERVAL  = 1000 / FPS;
-      var lastTime  = 0;
+  <nav id="nav">
+    <div class="nc">
+      <a href="index.html" class="nl">
+        <img src="WWW.VISTARATECHGLOBAL.COM-removebg-preview.png" alt="Vistara Tech Global" class="li" />
+        <span class="lt">VISTARA <span>TECH</span></span>
+      </a>
+      <ul class="nls" id="nls">
+        <li><a href="index.html" class="nk">Home</a></li>
+        <li><a href="index.html#services" class="nk active">Services</a></li>
+        <li><a href="index.html#why-us" class="nk">Why Us</a></li>
+        <li><a href="index.html#contact" class="nk">Contact</a></li>
+      </ul>
+      <a href="index.html#contact" class="nct">Build My App</a>
+      <button class="hbtn" id="hbtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
 
-      function resize(){
-        W = canvas.width  = window.innerWidth;
-        H = canvas.height = window.innerHeight;
-        isMobile  = W <= 600;
-        isTablet  = !isMobile && (W <= 900 || navigator.maxTouchPoints > 0);
-        COUNT     = isMobile ? 18 : isTablet ? 30 : 80;
-        CONNECT   = !isMobile && !isTablet;
-        FPS       = isMobile ? 20 : isTablet ? 30 : 60;
-        INTERVAL  = 1000 / FPS;
-      }
-      resize();
-      window.addEventListener('resize', resize);
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-badge"><span class="pdot"></span> VISTARA TECH — MOBILE APPS · ANDROID &amp; iOS</div>
+    <h1 class="hero-title">Apps Users<em>Actually Love</em></h1>
+    <p class="hero-sub">In a world where users spend 4+ hours daily on their phones, a mediocre app is invisible. We
+      build native, lightning-fast mobile experiences that get downloaded, opened daily, and rated 5 stars.</p>
+    <div class="hero-btns">
+      <a href="index.html#contact" class="btn-grad" id="hbtn-primary">📱 Start My App</a>
+      <a href="index.html#contact" class="btn-out" id="hbtn-secondary">💡 See Our Process</a>
+    </div>
+    <!-- Phone mockup stage -->
+    <div class="phone-stage">
+      <div class="phone-float-badge pfb-1">
+        <div class="pfb-val">4.9★</div>
+        <div class="pfb-lbl">App Store Rating</div>
+      </div>
+      <div class="phone-wrap-2 phone-wrap">
+        <div class="phone-outer">
+          <div class="phone-screen"
+            style="background:linear-gradient(145deg,#13082a,#0d0520);display:flex;align-items:center;justify-content:center;min-height:360px">
+            <img src="hero-mobile-apps.png" alt="App UI"
+              style="width:100%;height:100%;object-fit:cover;mix-blend-mode:screen;opacity:.85" />
+          </div>
+        </div>
+      </div>
+      <div class="phone-wrap">
+        <div class="phone-notch"></div>
+        <div class="phone-outer">
+          <div class="phone-screen"
+            style="background:linear-gradient(145deg,#0d0820,#160b28);display:flex;align-items:center;justify-content:center;min-height:420px">
+            <img src="hero-mobile-apps.png" alt="App UI"
+              style="width:100%;height:100%;object-fit:cover;mix-blend-mode:lighten" />
+          </div>
+        </div>
+      </div>
+      <div class="phone-float-badge pfb-2">
+        <div class="pfb-val">2.3M+</div>
+        <div class="pfb-lbl">Downloads</div>
+      </div>
+    </div>
+  </section>
 
-      function Particle(){
-        this.reset = function(){
-          this.x  = Math.random() * W;
-          this.y  = Math.random() * H;
-          this.vx = (Math.random() - 0.5) * (isMobile ? 0.2 : 0.3);
-          this.vy = (Math.random() - 0.5) * (isMobile ? 0.2 : 0.3);
-          this.r  = Math.random() * 1.5 + 0.4;
-          this.a  = Math.random() * 0.5 + 0.1;
-          this.c  = Math.random() > 0.5 ? '0,229,255' : '41,121,255';
-        };
-        this.update = function(){
-          this.x += this.vx; this.y += this.vy;
-          if(this.x < 0 || this.x > W || this.y < 0 || this.y > H) this.reset();
-        };
-        this.draw = function(){
-          ctx.beginPath();
-          ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-          ctx.fillStyle = 'rgba(' + this.c + ',' + this.a + ')';
-          ctx.fill();
-        };
-        this.reset();
-      }
+  <!-- PAIN POINTS -->
+  <section id="pain"
+    style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+    <div class="wrap">
+      <div class="sh reveal">
+        <div class="sh-badge"><span class="pdot"></span> THE PAINFUL REALITY</div>
+        <h2 class="sh-title">Why Most Apps <em>Fail Silently</em></h2>
+        <p class="sh-sub">90% of apps are deleted within 30 days of download. Here's what kills them — and how we
+          prevent it.</p>
+      </div>
+      <div class="glass-grid">
+        <div class="glass-card reveal">
+          <span class="gc-icon">⚡</span>
+          <div class="gc-title">Slow &amp; Janky UI</div>
+          <p class="gc-text">Performance below 60fps feels broken to modern users. Laggy animations, slow transitions,
+            and unresponsive touches are the #1 reason users leave and never come back.</p>
+        </div>
+        <div class="glass-card reveal">
+          <span class="gc-icon">📉</span>
+          <div class="gc-title">Zero-Day Crashes</div>
+          <p class="gc-text">A single crash loop during onboarding destroys trust permanently. Poor error handling,
+            untested edge cases, and rushed QA result in 1-star bombs on launch day.</p>
+        </div>
+        <div class="glass-card reveal">
+          <span class="gc-icon">🎭</span>
+          <div class="gc-title">Broken Onboarding</div>
+          <p class="gc-text">Users decide whether to keep an app within the first 60 seconds. Confusing onboarding,
+            forced sign-ups, and unclear value propositions kill retention before it starts.</p>
+        </div>
+        <div class="glass-card reveal">
+          <span class="gc-icon">🔔</span>
+          <div class="gc-title">Push Notification Spam</div>
+          <p class="gc-text">Untargeted, poorly-timed notifications train users to disable them within 24 hours. Without
+            a smart notification strategy, your best re-engagement channel goes dark.</p>
+        </div>
+        <div class="glass-card reveal">
+          <span class="gc-icon">📦</span>
+          <div class="gc-title">App Review Hell</div>
+          <p class="gc-text">App Store rejections and Play Store policy violations delay launches by weeks. Navigating
+            review guidelines requires experience — each rejection is revenue you're not earning.</p>
+        </div>
+        <div class="glass-card reveal">
+          <span class="gc-icon">📶</span>
+          <div class="gc-title">Offline Failure</div>
+          <p class="gc-text">Apps that break the moment connectivity drops feel fragile and unprofessional. Modern users
+            expect seamless experiences regardless of network condition — and punish those that don't deliver.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- PROCESS -->
+  <section id="approach">
+    <div class="wrap">
+      <div class="sh reveal">
+        <div class="sh-badge"><span class="pdot"></span> HOW WE BUILD</div>
+        <h2 class="sh-title">Our <em>App Blueprint</em></h2>
+        <p class="sh-sub">A proven methodology that delivers apps users love and businesses grow from.</p>
+      </div>
+      <div class="timeline reveal">
+        <div class="tl-item">
+          <div class="tl-num">01</div>
+          <div class="tl-content">
+            <div class="tl-label">Phase One</div>
+            <div class="tl-title">Discover &amp; Strategise</div>
+            <p class="tl-desc">Deep dive into your users, business goals, and competitive landscape. We map every user
+              journey, define the MVP feature set, and create technical architecture before writing a line of code.</p>
+            <p class="tl-vistara">Unlike others: Strategy and product thinking first — then engineering.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-num">02</div>
+          <div class="tl-content">
+            <div class="tl-label">Phase Two</div>
+            <div class="tl-title">UI/UX Design &amp; Prototype</div>
+            <p class="tl-desc">High-fidelity, interactive prototypes for every screen and interaction. You test the
+              complete user journey before we build a single component — zero surprises at launch.</p>
+            <p class="tl-vistara">Unlike others: You experience the full app before development begins.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-num">03</div>
+          <div class="tl-content">
+            <div class="tl-label">Phase Three</div>
+            <div class="tl-title">Native Engineering</div>
+            <p class="tl-desc">Agile 2-week sprints with working builds after each cycle. Automated testing suites,
+              CI/CD pipelines, and comprehensive device coverage. 60fps guaranteed, crash rates below 0.1%.</p>
+            <p class="tl-vistara">Unlike others: You see working builds every 2 weeks — not PowerPoint updates.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-num">04</div>
+          <div class="tl-content">
+            <div class="tl-label">Phase Four</div>
+            <div class="tl-title">Launch &amp; Grow</div>
+            <p class="tl-desc">App Store and Play Store submission handled entirely by us. Post-launch monitoring, crash
+              reporting, user analytics, and iterative improvements to grow ratings and retention month over month.</p>
+            <p class="tl-vistara">Unlike others: We're your long-term mobile partner, not just a delivery team.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="feat"
+    style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+    <div class="wrap">
+      <div class="sh reveal">
+        <div class="sh-badge"><span class="pdot"></span> CAPABILITIES</div>
+        <h2 class="sh-title">Built for <em>Perfection</em></h2>
+      </div>
+      <div class="features-asym reveal">
+        <div class="feat-big">
+          <span class="feat-emoji">🚀</span>
+          <div class="feat-title">Native Performance</div>
+          <p class="feat-text">We build truly native apps for iOS (Swift/SwiftUI) and Android (Kotlin/Jetpack Compose)
+            alongside cross-platform Flutter — choosing the right approach for your specific needs, not what's easiest
+            for us. Every animation runs at 60fps, every interaction feels instant, and every screen is pixel-perfect on
+            every device size.</p>
+          <div class="feat-tag">Swift · SwiftUI · Kotlin · Compose · Flutter</div>
+        </div>
+        <div class="feat-small">
+          <span class="feat-emoji" style="font-size:1.75rem;margin-bottom:.75rem;display:block">🔒</span>
+          <div class="feat-title-sm">Enterprise Security</div>
+          <p class="feat-text-sm">Biometric authentication, end-to-end encryption, secure keychain storage, and
+            compliance with GDPR, HIPAA, and PCI DSS standards built in from day one.</p>
+        </div>
+        <div class="feat-small">
+          <span class="feat-emoji" style="font-size:1.75rem;margin-bottom:.75rem;display:block">📶</span>
+          <div class="feat-title-sm">Offline-First Architecture</div>
+          <p class="feat-text-sm">Intelligent data sync, local caching, and offline queuing ensure your app works
+            flawlessly even without connectivity — syncing automatically when back online.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH STACK -->
+  <section id="tech">
+    <div class="wrap">
+      <div class="sh reveal">
+        <div class="sh-badge"><span class="pdot"></span> TECH STACK</div>
+        <h2 class="sh-title">Our <em>Mobile Arsenal</em></h2>
+      </div>
+      <div class="tech-wall reveal">
+        <span class="tw-cat" style="width:100%">Native iOS</span>
+        <div class="tw-item">🍎 Swift 5</div>
+        <div class="tw-item">🎨 SwiftUI</div>
+        <div class="tw-item">📐 UIKit</div>
+        <div class="tw-item">🔗 Combine</div>
+        <div class="tw-item">🗄️ CoreData</div>
+        <span class="tw-cat" style="width:100%">Native Android</span>
+        <div class="tw-item">🤖 Kotlin</div>
+        <div class="tw-item">🧩 Jetpack Compose</div>
+        <div class="tw-item">🔄 Coroutines</div>
+        <div class="tw-item">🏗️ Room DB</div>
+        <span class="tw-cat" style="width:100%">Cross-Platform</span>
+        <div class="tw-item">🐦 Flutter</div>
+        <div class="tw-item">⚛️ React Native</div>
+        <span class="tw-cat" style="width:100%">Backend &amp; Services</span>
+        <div class="tw-item">🔥 Firebase</div>
+        <div class="tw-item">☁️ AWS Amplify</div>
+        <div class="tw-item">📊 Mixpanel</div>
+        <div class="tw-item">💥 Crashlytics</div>
+        <div class="tw-item">🔔 FCM / APNs</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="why"
+    style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+    <div class="wrap">
+      <div class="sh reveal">
+        <div class="sh-badge"><span class="pdot"></span> THE VISTARA EDGE</div>
+        <h2 class="sh-title">Why Choose <em>Vistara Tech</em></h2>
+      </div>
+      <div class="why-row reveal">
+        <div class="why-card">
+          <span class="wc-icon">📱</span>
+          <div class="wc-val">4.9★</div>
+          <div class="wc-lbl">Avg App Store Rating</div>
+          <div class="wc-title">Store-Ready Quality</div>
+          <p class="wc-text">Every app we launch achieves 4.8+ ratings. We obsess over UX detail and edge cases.</p>
+        </div>
+        <div class="why-card">
+          <span class="wc-icon">⚡</span>
+          <div class="wc-val">60fps</div>
+          <div class="wc-lbl">Guaranteed Performance</div>
+          <div class="wc-title">Never Janky</div>
+          <p class="wc-text">Smooth animations and instant responses are non-negotiable. Measured and guaranteed.</p>
+        </div>
+        <div class="why-card">
+          <span class="wc-icon">🚀</span>
+          <div class="wc-val">11wk</div>
+          <div class="wc-lbl">MVP to App Store</div>
+          <div class="wc-title">Fastest Delivery</div>
+          <p class="wc-text">From kickoff to App Store approval in as little as 11 weeks. We've done it consistently.
+          </p>
+        </div>
+        <div class="why-card">
+          <span class="wc-icon">🛡️</span>
+          <div class="wc-val">0.1%</div>
+          <div class="wc-lbl">Max Crash Rate</div>
+          <div class="wc-title">Rock Solid Stability</div>
+          <p class="wc-text">Exhaustive device testing across 200+ hardware configurations before every release.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="fcta" id="contact">
+    <div class="wrap" style="position:relative;z-index:1">
+      <div class="sh-badge reveal" style="display:inline-flex;margin-bottom:1.5rem"><span class="pdot"></span> START
+        BUILDING</div>
+      <h2 class="fcta-title reveal">Your App Idea<em>Deserves to Ship</em></h2>
+      <p class="fcta-sub reveal">Every day you wait is a day your competitors are getting downloads. Let's build
+        something your users will love to open.</p>
+      <div class="hero-btns reveal" style="justify-content:center">
+        <a href="index.html#contact" class="btn-grad" id="cta-primary">📱 Start Building Now</a>
+        <a href="index.html#contact" class="btn-out" id="cta-secondary">💬 Free Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ftp">
+      <div class="fb"><img src="WWW.VISTARATECHGLOBAL.COM-removebg-preview.png" alt="Vistara Tech Global" class="fli" />
+        <div>
+          <div class="fn">VISTARA TECH GLOBAL</div>
+          <div class="ftag">Building Apps Users Love</div>
+        </div>
+      </div>
+      <div class="flg">
+        <div class="fc">
+          <h4>Services</h4><a href="service-custom-websites.html">Custom Websites</a><a
+            href="service-ecommerce.html">E-Commerce</a><a href="service-mobile-apps.html">Mobile Apps</a><a
+            href="service-seo.html">SEO</a><a href="service-graphic-design.html">Graphic Design</a>
+        </div>
+        <div class="fc">
+          <h4>Company</h4><a href="index.html#why-us">Why Us</a><a href="index.html#tech-stack">Tech Stack</a><a
+            href="index.html#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="ftb"><span>© 2026 Vistara Tech Global. All rights reserved.</span><span class="fst"><span
+          class="sdt"></span> All systems operational</span></div>
+  </footer>
+
+  <script>
+    const nv = document.getElementById('nav');
+    window.addEventListener('scroll', () => nv.classList.toggle('sc', window.scrollY > 30));
+    const hb = document.getElementById('hbtn'), nl = document.getElementById('nls');
+    hb.addEventListener('click', () => { hb.classList.toggle('open'); nl.classList.toggle('open') });
+    nl.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { hb.classList.remove('open'); nl.classList.remove('open') }));
+    const rv = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((e) => { e.forEach((el, i) => { if (el.isIntersecting) { setTimeout(() => el.target.classList.add('visible'), i * 70); io.unobserve(el.target) } }); }, { threshold: 0.08 });
+    rv.forEach(el => io.observe(el));
+    (function () {
+      var c = document.getElementById('ma-canvas'); if (!c) return;
+      var ctx = c.getContext('2d'), W, H;
+      function resize() { W = c.width = window.innerWidth; H = c.height = window.innerHeight }
+      resize(); window.addEventListener('resize', resize);
       var pts = [];
-      for(var i = 0; i < COUNT; i++) pts.push(new Particle());
-
-      /* Rebuild particle array when COUNT changes on resize */
-      window.addEventListener('resize', function(){
-        while(pts.length > COUNT) pts.pop();
-        while(pts.length < COUNT) pts.push(new Particle());
-      });
-
-      function drawConnections(){
-        for(var i = 0; i < pts.length; i++){
-          for(var j = i + 1; j < pts.length; j++){
-            var dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y;
-            var d  = Math.sqrt(dx*dx + dy*dy);
-            if(d < CONN_DIST){
-              ctx.beginPath();
-              ctx.moveTo(pts[i].x, pts[i].y);
-              ctx.lineTo(pts[j].x, pts[j].y);
-              ctx.strokeStyle = 'rgba(0,229,255,' + (0.06 * (1 - d / CONN_DIST)) + ')';
-              ctx.lineWidth = 0.5;
-              ctx.stroke();
-            }
-          }
-        }
-      }
-
-      function animate(ts){
-        requestAnimationFrame(animate);
-        if(ts - lastTime < INTERVAL) return;
-        lastTime = ts;
-        ctx.clearRect(0, 0, W, H);
-        for(var k = 0; k < pts.length; k++){ pts[k].update(); pts[k].draw(); }
-        if(CONNECT) drawConnections();
-      }
-      requestAnimationFrame(animate);
+      for (var i = 0; i < 35; i++)pts.push({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .2, vy: (Math.random() - .5) * .2, r: Math.random() * 1.8 + .3, a: Math.random() * .35 + .08, c: Math.random() > .5 ? '179,136,255' : '224,64,251' });
+      function draw() { ctx.clearRect(0, 0, W, H); pts.forEach(p => { p.x += p.vx; p.y += p.vy; if (p.x < 0 || p.x > W) p.vx *= -1; if (p.y < 0 || p.y > H) p.vy *= -1; ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); ctx.fillStyle = `rgba(${p.c},${p.a})`; ctx.fill(); }); requestAnimationFrame(draw); }
+      draw();
     })();
-</script>
+  </script>
 </body>
+
 </html>

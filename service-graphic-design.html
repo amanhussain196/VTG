@@ -1,276 +1,1562 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<meta name="description" content="Brand identities that command attention. Logos, UI kits, motion graphics, and marketing collateral crafted with precision and strategic purpose."/>
-<title>Modern Graphic Design | Vistara Tech Global</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-<style>
-:root{--c:#00e5ff;--cd:#00b8d4;--cg:rgba(0,229,255,0.35);--be:#2979ff;--db:#050810;--dk:#080d18;--dbr:rgba(0,229,255,0.15);--dbh:rgba(0,229,255,0.5);--tp:#e8f4f8;--ts:#7fa3b5;--tm:#3d5a6b;--fd:'Orbitron',monospace;--fb:'Rajdhani',sans-serif;--fu:'Inter',sans-serif;--tr:0.3s cubic-bezier(0.4,0,0.2,1)}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;overflow-x:hidden}body{background:var(--db);color:var(--tp);font-family:var(--fb);font-size:16px;line-height:1.65;overflow-x:hidden}
-::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--db)}::-webkit-scrollbar-thumb{background:var(--cd);border-radius:3px}::selection{background:var(--cg);color:var(--c)}
-#pc{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.45}
-.go{position:fixed;top:0;left:0;width:120%;height:120%;pointer-events:none;z-index:0;background-image:linear-gradient(rgba(0,229,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.025) 1px,transparent 1px);background-size:60px 60px;animation:gd 24s linear infinite}
-@keyframes gd{0%{transform:translate(0,0)}50%{transform:translate(-20px,0)}100%{transform:translate(0,0)}}
-.hbg{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-.hg{position:absolute;inset:0;background-image:radial-gradient(ellipse at 70% 40%,rgba(0,229,255,.06) 0%,transparent 60%),radial-gradient(ellipse at 20% 80%,rgba(41,121,255,.06) 0%,transparent 50%)}
-.sl2{position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(0,229,255,.4),transparent);animation:sd 8s linear infinite}
-@keyframes sd{0%{top:0;opacity:1}100%{top:100vh;opacity:0}}
-.ds{position:absolute;width:1px;height:120px;background:linear-gradient(180deg,transparent,var(--c),transparent);animation:sf linear infinite;opacity:.3}
-.d1{left:8%;animation-duration:4s}.d2{left:28%;animation-duration:5.5s;animation-delay:1.5s}.d3{left:48%;animation-duration:3.5s;animation-delay:.8s}.d4{left:65%;animation-duration:6s;animation-delay:2.2s}.d5{left:80%;animation-duration:4.5s;animation-delay:.4s}.d6{left:92%;animation-duration:3s;animation-delay:1.9s}
-@keyframes sf{0%{top:-120px;opacity:0}10%{opacity:.4}100%{top:110vh;opacity:0}}
-.ob{position:absolute;border-radius:50%;filter:blur(80px);animation:op 6s ease-in-out infinite}
-.o1{width:500px;height:500px;background:radial-gradient(circle,rgba(0,150,200,.12),transparent 70%);top:-100px;right:-100px}
-.o2{width:350px;height:350px;background:radial-gradient(circle,rgba(41,121,255,.1),transparent 70%);bottom:10%;left:5%;animation-delay:3s}
-@keyframes op{0%,100%{transform:scale(1);opacity:.7}50%{transform:scale(1.15);opacity:1}}
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;transition:background var(--tr)}nav.sc{background:rgba(5,8,16,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--dbr)}
-.nc{max-width:1400px;margin:0 auto;padding:0 2rem;height:72px;display:flex;align-items:center;gap:2rem}
-.nl{display:flex;align-items:center;gap:.75rem;text-decoration:none;flex-shrink:0}.li{height:42px;width:auto;filter:drop-shadow(0 0 10px rgba(0,229,255,.55))}
-.lt{font-family:var(--fd);font-size:.95rem;font-weight:700;letter-spacing:.12em;color:var(--tp)}.la{color:var(--c)}
-ul.nls{display:flex;align-items:center;gap:.25rem;list-style:none;margin-left:auto}
-.nk{color:var(--ts);text-decoration:none;font-family:var(--fb);font-weight:600;font-size:.875rem;letter-spacing:.08em;text-transform:uppercase;padding:.5rem 1rem;border-radius:4px;transition:color var(--tr);position:relative}
-.nk::after{content:'';position:absolute;bottom:2px;left:50%;right:50%;height:1px;background:var(--c);transition:left var(--tr),right var(--tr)}
-.nk:hover,.nk.active{color:var(--c)}.nk:hover::after,.nk.active::after{left:1rem;right:1rem}
-.nct{font-family:var(--fd);font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--db);background:var(--c);padding:.55rem 1.4rem;border-radius:3px;text-decoration:none;transition:all var(--tr);flex-shrink:0;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%)}
-.nct:hover{background:white;box-shadow:0 0 20px var(--cg);transform:translateY(-1px)}
-.hbtn{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.25rem;margin-left:auto}
-.hbtn span{display:block;width:24px;height:2px;background:var(--c);transition:all var(--tr);transform-origin:center}
-.hbtn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}.hbtn.open span:nth-child(2){opacity:0}.hbtn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.85rem 2rem;font-family:var(--fd);font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;border-radius:3px;transition:all var(--tr);position:relative;overflow:hidden}
-.bp{background:linear-gradient(135deg,var(--c) 0%,var(--be) 100%);color:#030608;clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%)}
-.bp:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,229,255,.55);filter:brightness(1.12)}
-.bg2{position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);transition:left .5s}.bp:hover .bg2{left:100%}
-.bs{background:transparent;color:var(--c);border:1px solid var(--c);clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%)}
-.bs:hover{background:rgba(0,229,255,.1);box-shadow:0 0 24px rgba(0,229,255,.3);transform:translateY(-2px)}
-section{position:relative;z-index:1;padding:7rem 2rem}
-.sh{text-align:center;margin-bottom:4rem}
-.sb{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--fd);font-size:.65rem;font-weight:700;letter-spacing:.3em;color:var(--c);margin-bottom:1rem;padding:.35rem 1rem;border:1px solid rgba(0,229,255,.2);border-radius:2px;background:rgba(0,229,255,.04)}
-.stit{font-family:var(--fd);font-size:clamp(1.8rem,4vw,3.2rem);font-weight:800;letter-spacing:-.01em;line-height:1.1;margin-bottom:1rem}
-.ssu{font-family:var(--fu);font-size:1.05rem;color:var(--ts);max-width:600px;margin:0 auto;font-weight:300}
-.ta{color:var(--c)}.bd{width:6px;height:6px;border-radius:50%;background:var(--c);box-shadow:0 0 8px var(--c);animation:bl 2s ease-in-out infinite}
-@keyframes bl{0%,100%{opacity:1}50%{opacity:.3}}
-.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 4rem}
-.hbdg{display:inline-flex;align-items:center;gap:.7rem;font-family:var(--fd);font-size:.62rem;letter-spacing:.3em;color:var(--c);margin-bottom:2rem;padding:.4rem 1.4rem;border:1px solid rgba(0,229,255,.3);border-radius:2px;background:rgba(0,229,255,.05);animation:fu .7s ease both}
-@keyframes fu{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-.hud{position:relative;display:flex;align-items:center;justify-content:center;width:160px;height:160px;margin:0 auto 2.5rem;animation:fu .8s .1s ease both}
-.hr{position:absolute;border-radius:50%;border:1px solid rgba(0,229,255,.25)}
-.hr1{width:160px;height:160px;animation:spin 20s linear infinite}.hr2{width:120px;height:120px;border-color:rgba(0,229,255,.4);animation:spin 14s linear infinite reverse}.hr3{width:84px;height:84px;border-color:rgba(41,121,255,.5);animation:spin 8s linear infinite}
-@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-.hr1::before,.hr1::after{content:'';position:absolute;width:7px;height:7px;background:var(--c);border-radius:50%;box-shadow:0 0 10px var(--c)}
-.hr1::before{top:0;left:50%;transform:translateX(-50%)}.hr1::after{bottom:0;left:50%;transform:translateX(-50%)}
-.hcore{width:60px;height:60px;border-radius:50%;background:rgba(0,229,255,.08);border:1px solid var(--c);display:flex;align-items:center;justify-content:center;font-size:1.8rem;box-shadow:0 0 30px var(--cg);animation:op 3s ease-in-out infinite}
-.htit{font-family:var(--fd);font-size:clamp(2.2rem,6vw,5rem);font-weight:900;line-height:1.0;letter-spacing:-.01em;margin-bottom:1.5rem;animation:fu .8s .2s ease both}
-.htit span{color:var(--c);animation:tg 2.5s ease-in-out infinite;display:inline-block}
-@keyframes tg{0%,100%{text-shadow:0 0 10px rgba(0,229,255,.4)}50%{text-shadow:0 0 20px rgba(0,229,255,.9),0 0 60px rgba(0,229,255,.5)}}
-.hsub{font-family:var(--fu);font-size:1.15rem;color:var(--ts);max-width:660px;margin:0 auto 2.5rem;font-weight:300;animation:fu .8s .4s ease both}
-.ctag{display:flex;gap:1.2rem;align-items:center;justify-content:center;flex-wrap:wrap;animation:fu .8s .6s ease both}
-.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;max-width:1200px;margin:0 auto}
-.pc{background:var(--dk);border:1px solid var(--dbr);border-radius:6px;padding:2rem;position:relative;overflow:hidden;transition:border-color var(--tr),transform var(--tr),box-shadow var(--tr)}
-.pc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--c),transparent);opacity:0;transition:opacity var(--tr)}
-.pc:hover{border-color:var(--dbh);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,229,255,.1)}.pc:hover::before{opacity:1}
-.pi{width:48px;height:48px;border-radius:8px;background:rgba(0,229,255,.06);border:1px solid rgba(0,229,255,.15);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.2rem}
-.pc:hover .pi{box-shadow:0 0 20px var(--cg)}.pc h3{font-family:var(--fd);font-size:.85rem;font-weight:700;color:var(--tp);margin-bottom:.75rem;letter-spacing:.05em}.pc p{font-family:var(--fu);font-size:.95rem;color:var(--ts);line-height:1.7}
-.appsec{background:linear-gradient(180deg,transparent,rgba(0,229,255,.015),transparent)}
-.tl{display:flex;flex-direction:column;max-width:900px;margin:0 auto;position:relative}
-.tl::before{content:'';position:absolute;left:28px;top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent,var(--c),transparent)}
-.ts{display:flex;gap:2.5rem;align-items:flex-start;padding:2rem 0}
-.sn{flex-shrink:0;width:56px;height:56px;border-radius:50%;border:2px solid var(--c);background:var(--dk);display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:.7rem;font-weight:800;color:var(--c);z-index:1;transition:box-shadow var(--tr)}
-.ts:hover .sn{box-shadow:0 0 24px var(--cg)}.sb2{flex:1;padding:.5rem 0}.slb{font-family:var(--fd);font-size:.6rem;letter-spacing:.3em;color:var(--c);margin-bottom:.5rem;opacity:.7}.st{font-family:var(--fd);font-size:1.1rem;font-weight:700;color:var(--tp);margin-bottom:.5rem}.sd{font-family:var(--fu);font-size:.95rem;color:var(--ts);max-width:560px;line-height:1.7}.sdif{margin-top:.75rem;font-family:var(--fu);font-size:.85rem;color:var(--c);opacity:.8;font-style:italic}
-.teg{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;max-width:1000px;margin:0 auto}
-.tc{display:inline-flex;align-items:center;gap:.6rem;padding:.6rem 1.2rem;background:var(--dk);border:1px solid var(--dbr);border-radius:4px;font-family:var(--fb);font-size:.95rem;font-weight:600;color:var(--tp);letter-spacing:.04em;transition:all var(--tr);cursor:default}
-.tc:hover{border-color:var(--c);color:var(--c);box-shadow:0 0 16px rgba(0,229,255,.2);transform:translateY(-2px)}
-.fw{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:1100px;margin:0 auto}
-.fi{display:flex;gap:1.2rem;align-items:flex-start;padding:1.5rem;background:var(--dk);border:1px solid var(--dbr);border-radius:6px;transition:border-color var(--tr),box-shadow var(--tr)}
-.fi:hover{border-color:rgba(0,229,255,.35);box-shadow:0 0 24px rgba(0,229,255,.07)}
-.fck{flex-shrink:0;width:32px;height:32px;border-radius:50%;background:rgba(0,229,255,.08);border:1px solid rgba(0,229,255,.25);display:flex;align-items:center;justify-content:center;color:var(--c);font-size:.9rem;margin-top:2px}
-.ft h4{font-family:var(--fd);font-size:.8rem;font-weight:700;letter-spacing:.05em;color:var(--tp);margin-bottom:.4rem}.ft p{font-family:var(--fu);font-size:.9rem;color:var(--ts);line-height:1.6}
-.ig{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:1.2rem;max-width:1100px;margin:0 auto}
-.ic{padding:1.8rem 1.2rem;background:var(--dk);border:1px solid var(--dbr);border-radius:6px;text-align:center;transition:all var(--tr);cursor:default}
-.ic:hover{border-color:var(--c);transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,229,255,.12)}.ii{font-size:2rem;margin-bottom:.8rem;display:block}.inn{font-family:var(--fd);font-size:.7rem;font-weight:700;letter-spacing:.1em;color:var(--tp)}
-.wg{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.5rem;max-width:1200px;margin:0 auto}
-.wc{padding:2rem;background:var(--dk);border:1px solid var(--dbr);border-radius:6px;position:relative;overflow:hidden;transition:all var(--tr)}
-.wc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c),var(--be));transform:scaleX(0);transition:transform var(--tr)}
-.wc:hover{border-color:rgba(0,229,255,.3);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,229,255,.1)}.wc:hover::after{transform:scaleX(1)}
-.wm{font-family:var(--fd);font-size:2.2rem;font-weight:900;color:var(--c);margin-bottom:.3rem;text-shadow:0 0 20px rgba(0,229,255,.5)}.wl{font-family:var(--fd);font-size:.7rem;letter-spacing:.1em;color:var(--tm);margin-bottom:.75rem}
-.wc h3{font-family:var(--fd);font-size:.85rem;font-weight:700;color:var(--tp);margin-bottom:.5rem}.wc p{font-family:var(--fu);font-size:.9rem;color:var(--ts);line-height:1.7}
-.fcta{text-align:center;padding:7rem 2rem;position:relative;overflow:hidden}
-.fcta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,229,255,.06) 0%,transparent 70%);pointer-events:none}
-.cgl{position:absolute;inset:0;background-image:linear-gradient(rgba(0,229,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none}
-.gln{width:200px;height:1px;background:linear-gradient(90deg,transparent,var(--c),transparent);margin:2rem auto;animation:glp 2s ease-in-out infinite}
-@keyframes glp{0%,100%{opacity:.4}50%{opacity:1}}
-.ftt{font-family:var(--fd);font-size:clamp(1.8rem,4vw,3rem);font-weight:900;line-height:1.1;margin-bottom:1.2rem}
-.fts{font-family:var(--fu);font-size:1.05rem;color:var(--ts);max-width:560px;margin:0 auto 2.5rem;font-weight:300}
-.cbg{display:flex;gap:1.2rem;align-items:center;justify-content:center;flex-wrap:wrap}
-footer{position:relative;z-index:1;border-top:1px solid var(--dbr)}
-.ftp{max-width:1200px;margin:0 auto;padding:3rem 2rem;display:flex;gap:3rem;flex-wrap:wrap;justify-content:space-between;align-items:flex-start}
-.fb{display:flex;align-items:center;gap:1rem}.fli{height:40px;width:auto;filter:drop-shadow(0 0 10px rgba(0,229,255,.4))}.fn{font-family:var(--fd);font-size:.8rem;font-weight:700;letter-spacing:.1em;color:var(--tp)}.ftag{font-family:var(--fu);font-size:.8rem;color:var(--tm);margin-top:.25rem}
-.flg{display:flex;gap:3rem;flex-wrap:wrap}.fc h4{font-family:var(--fd);font-size:.65rem;letter-spacing:.2em;color:var(--c);margin-bottom:.75rem}.fc a{display:block;font-family:var(--fu);font-size:.9rem;color:var(--tm);text-decoration:none;margin-bottom:.4rem;transition:color var(--tr)}.fc a:hover{color:var(--c)}
-.ftb{max-width:1200px;margin:0 auto;padding:1.5rem 2rem;border-top:1px solid rgba(0,229,255,.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-family:var(--fu);font-size:.8rem;color:var(--tm)}
-.fst{display:flex;align-items:center;gap:.5rem}.sdt{width:6px;height:6px;background:#00ff87;border-radius:50%;box-shadow:0 0 8px #00ff87;animation:bl 2s ease-in-out infinite}
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:translateY(0)}
-@media(max-width:768px){.fw{grid-template-columns:1fr}.ctag,.cbg{flex-direction:column;align-items:stretch}.btn{justify-content:center}ul.nls{display:none;position:fixed;top:72px;left:0;right:0;background:rgba(5,8,16,.97);backdrop-filter:blur(20px);flex-direction:column;padding:1.5rem;gap:.5rem;border-bottom:1px solid var(--dbr)}ul.nls.open{display:flex}.hbtn{display:flex}.nct{display:none}.ftp{flex-direction:column;gap:2rem}}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta name="description"
+    content="Brand identities that command attention. Logos, UI kits, motion graphics, and marketing collateral by Vistara Tech Global." />
+  <title>Graphic Design | Vistara Tech Global</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <style>
+    /* ============ GRAPHIC DESIGN PAGE — ROSE EDITORIAL THEME ============ */
+    :root {
+      --r: #f06292;
+      --r2: #e91e63;
+      --r3: #ff80ab;
+      --r4: #fce4ec;
+      --rg: rgba(240, 98, 146, 0.25);
+      --gold: #ffd54f;
+      --bg: #0f040a;
+      --bg2: #140608;
+      --card: #180a10;
+      --border: rgba(240, 98, 146, 0.15);
+      --border-h: rgba(240, 98, 146, 0.45);
+      --txt: #fce4ec;
+      --txt2: #f48fb1;
+      --txt3: #9c2752;
+      --font-h: 'Playfair Display', serif;
+      --font-b: 'Plus Jakarta Sans', sans-serif;
+      --font-m: 'Fira Code', monospace;
+      --tr: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-  /*=== MOBILE / TABLET PERFORMANCE ===*/
-  @media (max-width: 900px) {
-    /* Hide heavy animated background layers */
-    .grid-overlay,
-    .go,
-    .data-stream,
-    .ds,
-    .scan-line, .sl, .sl2,
-    .scan-line-2,
-    .floating-dots {
-      display: none !important;
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
     }
-    /* Reduce particle canvas opacity slightly */
-    #particleCanvas, #pc {
-      opacity: 0.3 !important;
-    }
-    /* Kill expensive filter animations on orbs */
-    .glow-orb, .ob {
-      animation: none !important;
-      filter: none !important;
-      display: none !important;
-    }
-    /* Simplify HUD rings – only keep outer ring, cancel inner spins */
-    .hud-ring-2, .hud-ring-3,
-    .hr2, .hr3 {
-      display: none !important;
-    }
-    .hud-ring-1, .hr1 {
-      animation-duration: 40s !important;
-    }
-    /* Slow down / simplify card glows */
-    .lt-card-glow,
-    .card-border-glow {
-      display: none !important;
-    }
-    /* Reduce hero badge blink frequency */
-    .badge-dot, .bd {
-      animation-duration: 4s !important;
-    }
-  }
 
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--txt);
+      font-family: var(--font-b);
+      overflow-x: hidden;
+      line-height: 1.65
+    }
+
+    ::-webkit-scrollbar {
+      width: 4px
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--r2)
+    }
+
+    ::selection {
+      background: var(--rg);
+      color: var(--r3)
+    }
+
+    #gd-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      opacity: .15
+    }
+
+    /* NOISE TEXTURE OVERLAY */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      opacity: .03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0
+    }
+
+    /* AMBIENT GLOW */
+    .amb {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden
+    }
+
+    .amb-1 {
+      position: absolute;
+      top: -20%;
+      left: -10%;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(233, 30, 99, .07), transparent 65%);
+      border-radius: 50%;
+      animation: drift 15s ease-in-out infinite
+    }
+
+    .amb-2 {
+      position: absolute;
+      bottom: -20%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(240, 98, 146, .05), transparent 65%);
+      border-radius: 50%;
+      animation: drift 12s ease-in-out infinite reverse
+    }
+
+    @keyframes drift {
+
+      0%,
+      100% {
+        transform: translate(0, 0)
+      }
+
+      50% {
+        transform: translate(20px, -15px)
+      }
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      transition: background var(--tr)
+    }
+
+    nav.sc {
+      background: rgba(15, 4, 10, .96);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border)
+    }
+
+    .nc {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      gap: 2rem
+    }
+
+    .nl {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      text-decoration: none;
+      flex-shrink: 0
+    }
+
+    .li {
+      height: 40px;
+      filter: drop-shadow(0 0 8px rgba(240, 98, 146, .5))
+    }
+
+    .lt {
+      font-family: var(--font-h);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--txt);
+      letter-spacing: .02em;
+      font-style: italic
+    }
+
+    .lt span {
+      color: var(--r);
+      font-style: normal
+    }
+
+    ul.nls {
+      display: flex;
+      align-items: center;
+      gap: .25rem;
+      list-style: none;
+      margin-left: auto
+    }
+
+    .nk {
+      color: var(--txt2);
+      text-decoration: none;
+      font-family: var(--font-b);
+      font-size: .85rem;
+      font-weight: 500;
+      padding: .5rem 1rem;
+      border-radius: 4px;
+      transition: color var(--tr)
+    }
+
+    .nk:hover,
+    .nk.active {
+      color: var(--r)
+    }
+
+    .nct {
+      font-family: var(--font-b);
+      font-size: .82rem;
+      font-weight: 700;
+      color: var(--txt);
+      background: transparent;
+      border: 1.5px solid var(--r);
+      padding: .52rem 1.4rem;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all var(--tr);
+      flex-shrink: 0
+    }
+
+    .nct:hover {
+      background: var(--r);
+      color: var(--bg);
+      box-shadow: 0 0 20px var(--rg)
+    }
+
+    .hbtn {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: .25rem;
+      margin-left: auto
+    }
+
+    .hbtn span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--r);
+      transition: all var(--tr)
+    }
+
+    .hbtn.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg)
+    }
+
+    .hbtn.open span:nth-child(2) {
+      opacity: 0
+    }
+
+    .hbtn.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg)
+    }
+
+    /* ============ HERO — EDITORIAL MAGAZINE LAYOUT ============ */
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 0 2rem 5rem;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding-top: 8rem;
+      gap: 4rem
+    }
+
+    .hero-left {
+      padding-bottom: 2rem
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-family: var(--font-m);
+      font-size: .62rem;
+      letter-spacing: .15em;
+      color: var(--r3);
+      border-bottom: 1px solid rgba(240, 98, 146, .3);
+      padding-bottom: .4rem;
+      margin-bottom: 2rem;
+      text-transform: uppercase
+    }
+
+    .hero-issue {
+      font-family: var(--font-m);
+      font-size: .65rem;
+      color: var(--txt3);
+      margin-bottom: 3.5rem;
+      letter-spacing: .08em
+    }
+
+    .hero-title {
+      font-family: var(--font-h);
+      font-size: clamp(3rem, 5vw, 6rem);
+      font-weight: 900;
+      line-height: .92;
+      letter-spacing: -.03em;
+      color: var(--txt);
+      margin-bottom: 2rem
+    }
+
+    .hero-title em {
+      color: var(--r);
+      font-style: italic;
+      display: block
+    }
+
+    .hero-rule {
+      width: 60px;
+      height: 2px;
+      background: var(--r);
+      margin: 2rem 0
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--txt2);
+      max-width: 460px;
+      line-height: 1.8;
+      font-weight: 300;
+      margin-bottom: 2.5rem
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap
+    }
+
+    .btn-r {
+      font-family: var(--font-b);
+      font-weight: 700;
+      font-size: .9rem;
+      color: var(--bg);
+      background: var(--r);
+      padding: .9rem 2.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all var(--tr);
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem
+    }
+
+    .btn-r:hover {
+      background: var(--r3);
+      box-shadow: 0 0 28px var(--rg);
+      transform: translateY(-2px)
+    }
+
+    .btn-r-ghost {
+      font-family: var(--font-b);
+      font-weight: 600;
+      font-size: .9rem;
+      color: var(--r);
+      border: 1.5px solid rgba(240, 98, 146, .4);
+      padding: .9rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all var(--tr);
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem
+    }
+
+    .btn-r-ghost:hover {
+      background: rgba(240, 98, 146, .08);
+      transform: translateY(-2px);
+      border-color: var(--r)
+    }
+
+    /* Hero right: creative showcase */
+    .hero-right {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: minmax(180px, 220px) minmax(120px, 150px);
+      gap: 1rem;
+      align-items: stretch
+    }
+
+    .portfolio-card {
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      background: var(--card);
+      border: 1px solid var(--border);
+      transition: all var(--tr)
+    }
+
+    .portfolio-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, .5), 0 0 0 1px rgba(240, 98, 146, .15)
+    }
+
+    .pc-1 {
+      grid-column: 1/3;
+      background: linear-gradient(135deg, #2d0a1a, #1a0610);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden
+    }
+
+    .pc-2 {
+      background: linear-gradient(135deg, rgba(233, 30, 99, .12), transparent);
+      display: flex;
+      align-items: flex-end;
+      padding: 1rem
+    }
+
+    .pc-3 {
+      background: linear-gradient(135deg, rgba(240, 98, 146, .08), transparent);
+      display: flex;
+      align-items: flex-end;
+      padding: 1rem
+    }
+
+    .pc-label {
+      font-family: var(--font-b);
+      font-size: .75rem;
+      font-weight: 600;
+      color: var(--txt2);
+      letter-spacing: .04em
+    }
+
+    .pc-sub {
+      font-family: var(--font-m);
+      font-size: .6rem;
+      color: var(--txt3);
+      letter-spacing: .08em;
+      margin-top: .15rem
+    }
+
+    .pc-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      mix-blend-mode: screen;
+      opacity: .75
+    }
+
+    .color-swatch-row {
+      display: flex;
+      gap: .4rem;
+      padding: 1rem;
+      align-items: flex-end;
+      flex: 1;
+      justify-content: center;
+      align-items: center
+    }
+
+    .swatch {
+      height: 48px;
+      flex: 1;
+      border-radius: 6px
+    }
+
+    /* SECTION BASE */
+    section {
+      position: relative;
+      z-index: 1;
+      padding: 6rem 2rem
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto
+    }
+
+    .sh {
+      margin-bottom: 4rem
+    }
+
+    .sh.center {
+      text-align: center
+    }
+
+    .sh-eyebrow {
+      font-family: var(--font-m);
+      font-size: .62rem;
+      letter-spacing: .2em;
+      color: var(--r);
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: .75rem
+    }
+
+    .sh-eyebrow .line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+      max-width: 60px
+    }
+
+    .sh-title {
+      font-family: var(--font-h);
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 900;
+      color: var(--txt);
+      line-height: 1;
+      letter-spacing: -.02em;
+      margin-bottom: 1rem
+    }
+
+    .sh-title em {
+      color: var(--r);
+      font-style: italic
+    }
+
+    .sh-sub {
+      font-size: 1rem;
+      color: var(--txt2);
+      max-width: 560px;
+      line-height: 1.75;
+      font-weight: 300
+    }
+
+    .sh.center .sh-sub {
+      margin: 0 auto
+    }
+
+    /* PAIN — MAGAZINE CARDS */
+    .mag-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 1.25rem
+    }
+
+    .mag-card-big {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all var(--tr);
+      display: flex;
+      flex-direction: column
+    }
+
+    .mag-card-big:hover {
+      border-color: var(--border-h);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, .4)
+    }
+
+    .mag-card-img {
+      height: 180px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      background: linear-gradient(135deg, rgba(233, 30, 99, .12), rgba(240, 98, 146, .06))
+    }
+
+    .mag-card-body {
+      padding: 1.75rem;
+      flex: 1
+    }
+
+    .mag-card-sm {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: all var(--tr);
+      position: relative;
+      overflow: hidden
+    }
+
+    .mag-card-sm::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--r);
+      transform: scaleX(0);
+      transition: transform .35s ease
+    }
+
+    .mag-card-sm:hover::before {
+      transform: scaleX(1)
+    }
+
+    .mag-card-sm:hover {
+      border-color: var(--border-h);
+      transform: translateY(-4px)
+    }
+
+    .mc-icon {
+      font-size: 2.2rem;
+      display: block;
+      margin-bottom: 1rem
+    }
+
+    .mc-title {
+      font-family: var(--font-h);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--txt);
+      margin-bottom: .6rem;
+      letter-spacing: -.01em
+    }
+
+    .mc-text {
+      font-size: .875rem;
+      color: var(--txt2);
+      line-height: 1.75;
+      font-weight: 300
+    }
+
+    .mc-label {
+      display: inline-block;
+      margin-top: 1rem;
+      font-family: var(--font-m);
+      font-size: .62rem;
+      letter-spacing: .1em;
+      color: var(--r3);
+      text-transform: uppercase;
+      border: 1px solid rgba(240, 98, 146, .2);
+      padding: .25rem .75rem;
+      border-radius: 50px
+    }
+
+    /* PROCESS — CREATIVE PHASES */
+    .phases {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      position: relative
+    }
+
+    .phases::after {
+      content: '';
+      position: absolute;
+      top: 40px;
+      left: 7%;
+      right: 7%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--r), transparent);
+      opacity: .2
+    }
+
+    .phase {
+      text-align: center;
+      position: relative;
+      z-index: 1
+    }
+
+    .phase-circle {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 2rem;
+      transition: all var(--tr);
+      position: relative
+    }
+
+    .phase-circle::after {
+      content: attr(data-num);
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      width: 22px;
+      height: 22px;
+      background: var(--r);
+      border-radius: 50%;
+      font-family: var(--font-m);
+      font-size: .6rem;
+      font-weight: 700;
+      color: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .phase:hover .phase-circle {
+      border-color: var(--r);
+      box-shadow: 0 0 24px var(--rg);
+      transform: scale(1.05)
+    }
+
+    .phase-title {
+      font-family: var(--font-h);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--txt);
+      margin-bottom: .5rem;
+      letter-spacing: -.01em
+    }
+
+    .phase-desc {
+      font-size: .85rem;
+      color: var(--txt2);
+      line-height: 1.65;
+      font-weight: 300
+    }
+
+    /* SERVICES / CAPABILITIES */
+    .caps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem
+    }
+
+    .cap-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: all var(--tr);
+      cursor: default
+    }
+
+    .cap-card:hover {
+      border-color: var(--border-h);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, .35)
+    }
+
+    .cap-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--r2), var(--r3));
+      transform: scaleX(0);
+      transition: transform .4s ease
+    }
+
+    .cap-card:hover::after {
+      transform: scaleX(1)
+    }
+
+    .cap-emoji {
+      font-size: 2.5rem;
+      margin-bottom: 1.2rem;
+      display: block
+    }
+
+    .cap-title {
+      font-family: var(--font-h);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--txt);
+      margin-bottom: .6rem;
+      letter-spacing: -.01em
+    }
+
+    .cap-text {
+      font-size: .875rem;
+      color: var(--txt2);
+      line-height: 1.7;
+      font-weight: 300
+    }
+
+    .cap-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+      margin-top: 1rem
+    }
+
+    .cap-tag {
+      font-family: var(--font-m);
+      font-size: .58rem;
+      letter-spacing: .08em;
+      color: var(--r3);
+      background: rgba(240, 98, 146, .06);
+      border: 1px solid rgba(240, 98, 146, .15);
+      padding: .2rem .6rem;
+      border-radius: 50px
+    }
+
+    /* TECH TOOLS */
+    .tools-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      justify-content: center
+    }
+
+    .tool-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .6rem 1.25rem;
+      background: rgba(240, 98, 146, .04);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      font-family: var(--font-b);
+      font-size: .85rem;
+      font-weight: 500;
+      color: var(--txt2);
+      transition: all var(--tr);
+      cursor: default
+    }
+
+    .tool-badge:hover {
+      border-color: var(--r);
+      color: var(--r);
+      background: rgba(240, 98, 146, .08);
+      transform: translateY(-2px)
+    }
+
+    /* WHY US — SPLIT */
+    .why-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center
+    }
+
+    .why-img-side {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem
+    }
+
+    .wi-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      aspect-ratio: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1.5rem;
+      transition: all var(--tr)
+    }
+
+    .wi-card:hover {
+      border-color: var(--border-h);
+      transform: scale(1.04)
+    }
+
+    .wi-val {
+      font-family: var(--font-h);
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--r);
+      line-height: 1
+    }
+
+    .wi-lbl {
+      font-family: var(--font-b);
+      font-size: .75rem;
+      font-weight: 600;
+      color: var(--txt2);
+      margin-top: .5rem
+    }
+
+    .why-text-side h2 {
+      font-family: var(--font-h);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 900;
+      color: var(--txt);
+      line-height: 1;
+      letter-spacing: -.02em;
+      margin-bottom: 1.5rem
+    }
+
+    .why-text-side h2 em {
+      color: var(--r);
+      font-style: italic;
+      display: block
+    }
+
+    .why-text-side p {
+      font-size: .95rem;
+      color: var(--txt2);
+      line-height: 1.8;
+      font-weight: 300;
+      margin-bottom: 1.5rem
+    }
+
+    .why-bullets {
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+      margin-bottom: 2rem
+    }
+
+    .why-bullet {
+      display: flex;
+      align-items: flex-start;
+      gap: .75rem;
+      font-size: .9rem;
+      color: var(--txt2)
+    }
+
+    .wb-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--r);
+      flex-shrink: 0;
+      margin-top: .35rem;
+      box-shadow: 0 0 6px var(--r)
+    }
+
+    /* FINAL CTA */
+    .fcta {
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid var(--border)
+    }
+
+    .fcta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center 20%, rgba(233, 30, 99, .08), transparent 65%);
+      pointer-events: none
+    }
+
+    .fcta-title {
+      font-family: var(--font-h);
+      font-size: clamp(2.5rem, 6vw, 6rem);
+      font-weight: 900;
+      line-height: .92;
+      letter-spacing: -.03em;
+      color: var(--txt);
+      margin-bottom: 1.25rem
+    }
+
+    .fcta-title em {
+      color: var(--r);
+      font-style: italic;
+      display: block
+    }
+
+    .fcta-sub {
+      font-size: 1.05rem;
+      color: var(--txt2);
+      max-width: 520px;
+      margin: 0 auto 2.5rem;
+      font-weight: 300;
+      line-height: 1.75
+    }
+
+    /* FOOTER */
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border)
+    }
+
+    .ftp {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      display: flex;
+      gap: 3rem;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start
+    }
+
+    .fb {
+      display: flex;
+      align-items: center;
+      gap: 1rem
+    }
+
+    .fli {
+      height: 38px;
+      filter: drop-shadow(0 0 8px rgba(240, 98, 146, .4))
+    }
+
+    .fn {
+      font-family: var(--font-h);
+      font-size: 1rem;
+      font-weight: 900;
+      letter-spacing: .01em;
+      color: var(--txt);
+      font-style: italic
+    }
+
+    .ftag {
+      font-family: var(--font-b);
+      font-size: .72rem;
+      color: var(--txt3);
+      margin-top: .25rem;
+      font-style: italic
+    }
+
+    .flg {
+      display: flex;
+      gap: 3rem;
+      flex-wrap: wrap
+    }
+
+    .fc h4 {
+      font-family: var(--font-m);
+      font-size: .58rem;
+      letter-spacing: .2em;
+      color: var(--r);
+      margin-bottom: .75rem;
+      text-transform: uppercase
+    }
+
+    .fc a {
+      display: block;
+      font-family: var(--font-b);
+      font-size: .88rem;
+      color: var(--txt3);
+      text-decoration: none;
+      margin-bottom: .4rem;
+      transition: color var(--tr)
+    }
+
+    .fc a:hover {
+      color: var(--r)
+    }
+
+    .ftb {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.25rem 2rem;
+      border-top: 1px solid rgba(240, 98, 146, .06);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-family: var(--font-b);
+      font-size: .78rem;
+      color: var(--txt3)
+    }
+
+    .fst {
+      display: flex;
+      align-items: center;
+      gap: .5rem
+    }
+
+    .sdt {
+      width: 6px;
+      height: 6px;
+      background: var(--r);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--r);
+      animation: sdp 2s ease-in-out infinite
+    }
+
+    @keyframes sdp {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: .3
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .65s ease, transform .65s ease
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    @media(max-width:1200px) {
+      .hero {
+        grid-template-columns: 1fr;
+        align-items: flex-start;
+        padding-bottom: 4rem
+      }
+
+      .hero-title {
+        font-size: clamp(3rem, 8vw, 6rem)
+      }
+    }
+
+    @media(max-width:1024px) {
+      .mag-grid {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .caps-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .why-split {
+        grid-template-columns: 1fr
+      }
+
+      ul.nls {
+        display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: rgba(15, 4, 10, .97);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: .5rem;
+        border-bottom: 1px solid var(--border)
+      }
+
+      ul.nls.open {
+        display: flex
+      }
+
+      .hbtn {
+        display: flex
+      }
+
+      .nct {
+        display: none
+      }
+    }
+
+    @media(max-width:768px) {
+      section {
+        padding: 4rem 1.25rem
+      }
+
+      .mag-grid {
+        grid-template-columns: 1fr
+      }
+
+      .phases {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .phases::after {
+        display: none
+      }
+
+      .caps-grid {
+        grid-template-columns: 1fr
+      }
+
+      .why-img-side {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    @media(max-width:480px) {
+      .hero {
+        padding: 7rem 1.25rem 3rem
+      }
+
+      .hero-title {
+        font-size: clamp(3rem, 12vw, 5rem)
+      }
+
+      .hero-btns {
+        flex-direction: column
+      }
+
+      .btn-r,
+      .btn-r-ghost {
+        width: 100%;
+        justify-content: center
+      }
+
+      .phases {
+        grid-template-columns: 1fr
+      }
+    }
   </style>
 </head>
+
 <body>
-<canvas id="pc"></canvas><div class="go"></div>
-<div class="hbg"><div class="hg"></div><div class="sl2"></div><div class="ds d1"></div><div class="ds d2"></div><div class="ds d3"></div><div class="ds d4"></div><div class="ds d5"></div><div class="ds d6"></div><div class="ob o1"></div><div class="ob o2"></div></div>
-<nav id="nav"><div class="nc"><a href="index.html" class="nl"><img src="WWW.VISTARATECHGLOBAL.COM-removebg-preview.png" alt="Vistara Tech Global" class="li"/><span class="lt">VISTARA<span class="la"> TECH</span></span></a><ul class="nls" id="nls"><li><a href="index.html" class="nk">Home</a></li><li><a href="index.html#services" class="nk active">Services</a></li><li><a href="index.html#why-us" class="nk">Why Us</a></li><li><a href="index.html#tech-stack" class="nk">Tech Stack</a></li><li><a href="index.html#contact" class="nk">Contact</a></li></ul><a href="index.html#contact" class="nct">Get Started</a><button class="hbtn" id="hbtn" aria-label="Toggle menu"><span></span><span></span><span></span></button></div></nav>
-<section class="hero" id="home">
-  <div class="hbdg"><span class="bd"></span> VISTARA TECH GLOBAL — GRAPHIC DESIGN</div>
-  <div class="hud"><div class="hr hr1"></div><div class="hr hr2"></div><div class="hr hr3"></div><div class="hcore">&#x1F3A8;</div></div>
-  <h1 class="htit">Design That Commands<br><span>Instant Attention</span></h1>
-  <p class="hsub">Your visual identity is the first impression you never get a second chance to make. We create stunning brand identities and marketing assets that position you as the undeniable premium choice in your market.</p>
-  <div class="ctag"><a href="index.html#contact" class="btn bp" id="hsp"><span>&#x26A1;</span> Start Your Project<span class="bg2"></span></a><a href="index.html#contact" class="btn bs" id="hte"><span>&#x1F4E1;</span> Talk to an Expert</a></div>
-</section>
-<section id="pain"><div class="sh reveal"><div class="sb"><span class="bd"></span> THE REAL PROBLEM</div><h2 class="stit">What's Costing You <span class="ta">Right Now</span></h2><p class="ssu">Real business problems we solve before they cost you more customers and revenue.</p></div><div class="pg"><div class="pc reveal"><div class="pi">&#x1F613;</div><h3>Generic Branding That Blends In</h3><p>Looking identical to every competitor means customers choose on price alone. A distinctive visual identity creates an instant premium perception that commands higher prices and builds loyalty.</p></div><div class="pc reveal"><div class="pi">&#x1F4C9;</div><h3>Inconsistent Brand Across Channels</h3><p>Mismatched logos, fonts, and colours across website, social media, and print materials erode trust and make your business appear unprofessional to discerning buyers.</p></div><div class="pc reveal"><div class="pi">&#x1F512;</div><h3>No Design System or Brand Guidelines</h3><p>Without a defined visual system, every new asset looks different. This inconsistency undermines brand recognition and makes every marketing campaign feel like starting from scratch.</p></div><div class="pc reveal"><div class="pi">&#x23F0;</div><h3>Design Bottlenecks Killing Momentum</h3><p>Waiting weeks for a freelancer to update a social post or design a campaign banner kills marketing momentum and delays time-sensitive revenue opportunities daily.</p></div><div class="pc reveal"><div class="pi">&#x1F4F1;</div><h3>Assets That Look Terrible on Modern Screens</h3><p>Designs not optimized for retina displays, dark mode, and variable aspect ratios look amateur on modern devices — immediately signalling low quality to premium customers.</p></div></div></section>
-<section class="appsec" id="approach"><div class="sh reveal"><div class="sb"><span class="bd"></span> OUR PROCESS</div><h2 class="stit">How We <span class="ta">Build Differently</span></h2><p class="ssu">A proven 4-phase methodology delivering results on schedule and on budget.</p></div>
-<div class="tl">
-<div class="ts reveal"><div class="sn">01</div><div class="sb2"><div class="slb">PHASE ONE</div><div class="st">Discover & Strategy</div><p class="sd">Deep-dive analysis of your goals, audience, competitors, and market. We define the complete architecture and success metrics before any work begins.</p><p class="sdif">Unlike others: Strategy and architecture first. Execution follows a clear, approved plan.</p></div></div>
-<div class="ts reveal"><div class="sn">02</div><div class="sb2"><div class="slb">PHASE TWO</div><div class="st">Design & Prototype</div><p class="sd">High-fidelity designs with every user journey mapped and approved by you. You see the complete vision before we write a single line of code.</p><p class="sdif">Unlike others: Full transparency — you approve everything before any commitment.</p></div></div>
-<div class="ts reveal"><div class="sn">03</div><div class="sb2"><div class="slb">PHASE THREE</div><div class="st">Build & Integrate</div><p class="sd">Agile delivery in 2-week sprints with live demos each cycle. Automated testing, CI/CD pipelines, and staged rollouts guarantee rock-solid quality throughout.</p><p class="sdif">Unlike others: Working deliverables every 2 weeks — not status emails and promises.</p></div></div>
-<div class="ts reveal"><div class="sn">04</div><div class="sb2"><div class="slb">PHASE FOUR</div><div class="st">Launch & Scale</div><p class="sd">Production deployment with full monitoring, team training, and a post-launch optimization roadmap to ensure performance keeps improving month after month.</p><p class="sdif">Unlike others: We stay as your long-term technology partner — not just delivery agents.</p></div></div>
-</div></section>
-<section id="tech"><div class="sh reveal"><div class="sb"><span class="bd"></span> TECH ARSENAL</div><h2 class="stit">Technologies & <span class="ta">Tools</span></h2><p class="ssu">Battle-tested, future-proof technologies chosen specifically for your service needs.</p></div><div class="teg reveal"><div class="tc"><span>&#x1F3A8;</span> Adobe Illustrator</div><div class="tc"><span>&#x1F5A5;&#xFE0F;</span> Photoshop</div><div class="tc"><span>&#x1F4F1;</span> Figma</div><div class="tc"><span>&#x25B6;&#xFE0F;</span> After Effects</div><div class="tc"><span>&#x1F4D0;</span> Adobe InDesign</div><div class="tc"><span>&#x2728;</span> Canva Pro</div><div class="tc"><span>&#x1F3AC;</span> Motion Graphics</div><div class="tc"><span>&#x1F4CA;</span> Infographic Design</div><div class="tc"><span>&#x1F5BC;&#xFE0F;</span> UI/UX Design</div><div class="tc"><span>&#x1F4F0;</span> Print Design</div><div class="tc"><span>&#x1F4F8;</span> Social Media Kits</div><div class="tc"><span>&#x1F173;&#xFE0F;</span> Brand Strategy</div></div></section>
-<section id="feat" style="background:linear-gradient(180deg,transparent,rgba(0,229,255,.015),transparent)"><div class="sh reveal"><div class="sb"><span class="bd"></span> CAPABILITIES</div><h2 class="stit">Key Features & <span class="ta">Capabilities</span></h2><p class="ssu">Enterprise-grade features built in from day one — not optional add-ons.</p></div><div class="fw"><div class="fi reveal"><div class="fck">&#10022;</div><div class="ft"><h4>Logo & Complete Brand Identity</h4><p>Multi-format master logos, complete colour palettes, typography systems, and usage guidelines for perfectly consistent brand application everywhere.</p></div></div><div class="fi reveal"><div class="fck">&#10022;</div><div class="ft"><h4>Comprehensive Brand Guidelines</h4><p>A detailed brand bible covering tone of voice, visual rules, and do-and-don'ts so every asset your team ever creates stays on-brand automatically.</p></div></div><div class="fi reveal"><div class="fck">&#10022;</div><div class="ft"><h4>UI/UX & Digital Interface Design</h4><p>Interface design for websites, apps, and dashboards — visually stunning and rigorously validated for usability, accessibility, and conversion performance.</p></div></div><div class="fi reveal"><div class="fck">&#10022;</div><div class="ft"><h4>Marketing & Campaign Materials</h4><p>Social media templates, digital ad creatives, email headers, pitch decks, and campaign assets built for maximum visual impact and brand consistency.</p></div></div><div class="fi reveal"><div class="fck">&#10022;</div><div class="ft"><h4>Motion Graphics & Animation</h4><p>Animated logos, explainer videos, social media reels, and micro-animations that make your brand feel alive, premium, and shareable across all platforms.</p></div></div><div class="fi reveal"><div class="fck">&#10022;</div><div class="ft"><h4>Print & Packaging Design</h4><p>Business cards, brochures, product packaging, event signage, and trade show materials engineered to command attention in the physical world.</p></div></div></div></section>
-<section id="ind"><div class="sh reveal"><div class="sb"><span class="bd"></span> WHO WE SERVE</div><h2 class="stit">Industries We <span class="ta">Empower</span></h2><p class="ssu">Specialized solutions built for your sector's unique demands and regulatory requirements.</p></div><div class="ig"><div class="ic reveal"><span class="ii">&#x1F680;</span><div class="inn">Startups & Scale-ups</div></div><div class="ic reveal"><span class="ii">&#x1F6CD;&#xFE0F;</span><div class="inn">Retail & FMCG</div></div><div class="ic reveal"><span class="ii">&#x1F3E5;</span><div class="inn">Healthcare</div></div><div class="ic reveal"><span class="ii">&#x1F4BB;</span><div class="inn">SaaS & Tech</div></div><div class="ic reveal"><span class="ii">&#x1F3E8;</span><div class="inn">Finance & Legal</div></div><div class="ic reveal"><span class="ii">&#x1F3A8;</span><div class="inn">Creative & Media</div></div></div></section>
-<section id="why" style="background:linear-gradient(180deg,transparent,rgba(0,229,255,.015),transparent)"><div class="sh reveal"><div class="sb"><span class="bd"></span> THE VISTARA EDGE</div><h2 class="stit">Why Choose <span class="ta">Vistara Tech</span></h2><p class="ssu">Not just vendors — strategic technology partners committed to your long-term success.</p></div><div class="wg"><div class="wc reveal"><div class="wm">48hr</div><div class="wl">First Concepts Delivered</div><h3>Lightning Fast Creativity</h3><p>You see first brand concepts within 48 hours of briefing — not 3 weeks of waiting. We move at the speed your business actually demands.</p></div><div class="wc reveal"><div class="wm">100%</div><div class="wl">Brand Consistency</div><h3>System-Level Thinking</h3><p>Every deliverable follows a rigorous brand system ensuring perfect visual consistency across every channel, medium, and platform — forever.</p></div><div class="wc reveal"><div class="wm">&#x221E;</div><div class="wl">Revision Rounds</div><h3>Until It's Perfect</h3><p>We never cap revisions. We iterate together until you are completely proud of every single asset we deliver — no time limits, no extra charges.</p></div><div class="wc reveal"><div class="wm">5yr+</div><div class="wl">Brand Longevity Designed In</div><h3>Timeless Over Trendy</h3><p>We design brand identities built to remain relevant and powerful for 5+ years — not trend-chasing aesthetics that look dated within 12 months.</p></div></div></section>
-<section class="fcta" id="contact"><div class="cgl"></div><div class="sb reveal"><span class="bd"></span> READY TO BUILD?</div><p class="ftt reveal">Make Your Brand<br><span class="ta">Impossible to Ignore</span></p><div class="gln"></div><p class="fts reveal">Your brand either builds trust and premium value every day — or quietly erodes it. Let's build a visual identity that makes you the obvious, premium choice in your market.</p><div class="cbg reveal"><a href="index.html#contact" class="btn bp" id="cta1"><span>&#x1F680;</span> Get a Free Consultation<span class="bg2"></span></a><a href="index.html#contact" class="btn bs" id="cta2"><span>&#x26A1;</span> Build With Us</a></div></section>
-<footer><div class="ftp"><div class="fb"><img src="WWW.VISTARATECHGLOBAL.COM-removebg-preview.png" alt="Vistara Tech Global" class="fli"/><div><div class="fn">VISTARA TECH GLOBAL</div><div class="ftag">Engineering the Digital Future</div></div></div><div class="flg"><div class="fc"><h4>Services</h4><a href="service-custom-websites.html">Custom Websites</a><a href="service-web-applications.html">Web Applications</a><a href="service-ecommerce.html">E-Commerce</a><a href="service-mobile-apps.html">Mobile Apps</a><a href="service-seo.html">SEO</a><a href="service-graphic-design.html">Graphic Design</a></div><div class="fc"><h4>Company</h4><a href="index.html#why-us">Why Us</a><a href="index.html#tech-stack">Tech Stack</a><a href="index.html#contact">Contact</a></div></div></div><div class="ftb"><span>&copy; 2026 Vistara Tech Global. All rights reserved.</span><span class="fst"><span class="sdt"></span> All systems operational</span></div></footer>
-<script>
-const nv=document.getElementById('nav');window.addEventListener('scroll',()=>nv.classList.toggle('sc',window.scrollY>30));
-const hb=document.getElementById('hbtn'),nl=document.getElementById('nls');hb.addEventListener('click',()=>{hb.classList.toggle('open');nl.classList.toggle('open')});nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{hb.classList.remove('open');nl.classList.remove('open')}));
-const rv=document.querySelectorAll('.reveal');const io=new IntersectionObserver((e)=>{e.forEach((el,i)=>{if(el.isIntersecting){setTimeout(()=>el.target.classList.add('visible'),i*80);io.unobserve(el.target)}});},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});rv.forEach(el=>io.observe(el));
-/* ── Adaptive Particle Engine ── */
-    (function(){
-      var canvas = document.getElementById('particleCanvas') || document.getElementById('pc');
-      if(!canvas) return;
-      var ctx = canvas.getContext('2d');
-      var W, H;
+  <canvas id="gd-canvas"></canvas>
+  <div class="amb">
+    <div class="amb-1"></div>
+    <div class="amb-2"></div>
+  </div>
 
-      var isMobile  = window.innerWidth <= 600 || (navigator.maxTouchPoints > 0 && window.innerWidth <= 600);
-      var isTablet  = !isMobile && (window.innerWidth <= 900 || navigator.maxTouchPoints > 0);
-      var COUNT     = isMobile ? 18 : isTablet ? 30 : 80;
-      var CONNECT   = !isMobile && !isTablet;          /* connections only on desktop */
-      var CONN_DIST = 120;
-      var FPS       = isMobile ? 20 : isTablet ? 30 : 60;
-      var INTERVAL  = 1000 / FPS;
-      var lastTime  = 0;
+  <nav id="nav">
+    <div class="nc">
+      <a href="index.html" class="nl">
+        <img src="WWW.VISTARATECHGLOBAL.COM-removebg-preview.png" alt="Vistara Tech Global" class="li" />
+        <span class="lt">Vistara <span>Tech</span></span>
+      </a>
+      <ul class="nls" id="nls">
+        <li><a href="index.html" class="nk">Home</a></li>
+        <li><a href="index.html#services" class="nk active">Services</a></li>
+        <li><a href="index.html#why-us" class="nk">Why Us</a></li>
+        <li><a href="index.html#contact" class="nk">Contact</a></li>
+      </ul>
+      <a href="index.html#contact" class="nct">Start a Project</a>
+      <button class="hbtn" id="hbtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
 
-      function resize(){
-        W = canvas.width  = window.innerWidth;
-        H = canvas.height = window.innerHeight;
-        isMobile  = W <= 600;
-        isTablet  = !isMobile && (W <= 900 || navigator.maxTouchPoints > 0);
-        COUNT     = isMobile ? 18 : isTablet ? 30 : 80;
-        CONNECT   = !isMobile && !isTablet;
-        FPS       = isMobile ? 20 : isTablet ? 30 : 60;
-        INTERVAL  = 1000 / FPS;
-      }
-      resize();
-      window.addEventListener('resize', resize);
+  <!-- HERO — EDITORIAL -->
+  <div style="position:relative;z-index:1">
+    <div class="hero" id="home">
+      <div class="hero-left">
+        <div class="hero-tag">✦ Creative Studio — Brand Identity &amp; Design</div>
+        <div class="hero-issue">VISTARA CREATIVE · EST. 2020</div>
+        <h1 class="hero-title">Design That<em>Commands</em>Attention</h1>
+        <div class="hero-rule"></div>
+        <p class="hero-sub">Your visual identity is the first impression you never get a second chance to make. We craft
+          brand identities and marketing assets that position you as the undeniable premium choice in your market.</p>
+        <div class="hero-btns">
+          <a href="index.html#contact" class="btn-r" id="hbtn-primary">✦ Start Your Brand</a>
+          <a href="index.html#contact" class="btn-r-ghost" id="hbtn-secondary">View Process</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="portfolio-card pc-1">
+          <img src="hero-graphic-design.png" alt="Creative Design Work" class="pc-img" />
+        </div>
+        <div class="portfolio-card pc-2">
+          <div>
+            <div class="pc-label">Brand Identity</div>
+            <div class="pc-sub">Logo + Guidelines</div>
+          </div>
+        </div>
+        <div class="portfolio-card pc-3">
+          <div>
+            <div class="color-swatch-row">
+              <div class="swatch" style="background:#f06292;height:56px"></div>
+              <div class="swatch" style="background:#e91e63;height:42px"></div>
+              <div class="swatch" style="background:#ff80ab;height:36px"></div>
+              <div class="swatch" style="background:#fce4ec;height:28px"></div>
+              <div class="swatch" style="background:#880e4f;height:22px"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-      function Particle(){
-        this.reset = function(){
-          this.x  = Math.random() * W;
-          this.y  = Math.random() * H;
-          this.vx = (Math.random() - 0.5) * (isMobile ? 0.2 : 0.3);
-          this.vy = (Math.random() - 0.5) * (isMobile ? 0.2 : 0.3);
-          this.r  = Math.random() * 1.5 + 0.4;
-          this.a  = Math.random() * 0.5 + 0.1;
-          this.c  = Math.random() > 0.5 ? '0,229,255' : '41,121,255';
-        };
-        this.update = function(){
-          this.x += this.vx; this.y += this.vy;
-          if(this.x < 0 || this.x > W || this.y < 0 || this.y > H) this.reset();
-        };
-        this.draw = function(){
-          ctx.beginPath();
-          ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-          ctx.fillStyle = 'rgba(' + this.c + ',' + this.a + ')';
-          ctx.fill();
-        };
-        this.reset();
-      }
+  <!-- PAIN POINTS -->
+  <section id="pain"
+    style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+    <div class="wrap">
+      <div class="sh reveal">
+        <div class="sh-eyebrow">
+          <div class="line"></div> The Problem <div class="line"></div>
+        </div>
+        <h2 class="sh-title">Why Generic Design <em>Costs You</em></h2>
+        <p class="sh-sub">Design decisions — made or avoided — directly impact revenue, perception, and competitive
+          advantage.</p>
+      </div>
+      <div class="mag-grid">
+        <div class="mag-card-big reveal">
+          <div class="mag-card-img">🎨</div>
+          <div class="mag-card-body">
+            <div class="mc-title">You Look Like Everyone Else</div>
+            <p class="mc-text">When your brand looks identical to competitors, customers choose on price alone. A
+              distinctive visual identity creates an instant premium perception that commands higher prices and builds
+              fierce loyalty. Generic = commodity. Distinctive = premium.</p>
+            <span class="mc-label">Brand Differentiation</span>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:1.25rem">
+          <div class="mag-card-sm reveal">
+            <span class="mc-icon">📱</span>
+            <div class="mc-title">Broken Across Platforms</div>
+            <p class="mc-text">Mismatched logos, fonts, and colours across website, social, and print materials erode
+              trust and signal unprofessionalism to premium buyers.</p>
+            <span class="mc-label">Brand Consistency</span>
+          </div>
+          <div class="mag-card-sm reveal">
+            <span class="mc-icon">⏰</span>
+            <div class="mc-title">No Design System</div>
+            <p class="mc-text">Without defined visual rules, every new asset looks different. This inconsistency kills
+              brand recognition and makes every campaign feel like starting from scratch.</p>
+            <span class="mc-label">Design Infrastructure</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      var pts = [];
-      for(var i = 0; i < COUNT; i++) pts.push(new Particle());
+  <!-- PROCESS — CREATIVE PHASES -->
+  <section id="approach">
+    <div class="wrap">
+      <div class="sh center reveal">
+        <div class="sh-eyebrow" style="justify-content:center">
+          <div class="line"></div> Creative Process <div class="line"></div>
+        </div>
+        <h2 class="sh-title">How We <em>Create Magic</em></h2>
+        <p class="sh-sub">Strategy-first design that earns its place in every market it enters.</p>
+      </div>
+      <div class="phases reveal">
+        <div class="phase">
+          <div class="phase-circle" data-num="1">🔍</div>
+          <div class="phase-title">Discovery</div>
+          <p class="phase-desc">Brand audit, competitor analysis, audience research, and defining your unique
+            positioning in the market.</p>
+        </div>
+        <div class="phase">
+          <div class="phase-circle" data-num="2">💡</div>
+          <div class="phase-title">Concept</div>
+          <p class="phase-desc">Three distinct creative directions developed and presented. Strategy-backed concepts,
+            not random aesthetics.</p>
+        </div>
+        <div class="phase">
+          <div class="phase-circle" data-num="3">✏️</div>
+          <div class="phase-title">Refine</div>
+          <p class="phase-desc">Iterative refinement with unlimited revision rounds until every asset is exactly right
+            and completely approved.</p>
+        </div>
+        <div class="phase">
+          <div class="phase-circle" data-num="4">🚀</div>
+          <div class="phase-title">Deliver</div>
+          <p class="phase-desc">Full brand package with all source files, usage guidelines, and every format you'll ever
+            need — forever.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      /* Rebuild particle array when COUNT changes on resize */
-      window.addEventListener('resize', function(){
-        while(pts.length > COUNT) pts.pop();
-        while(pts.length < COUNT) pts.push(new Particle());
-      });
+  <!-- CAPABILITIES -->
+  <section id="feat"
+    style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+    <div class="wrap">
+      <div class="sh center reveal">
+        <div class="sh-eyebrow" style="justify-content:center">
+          <div class="line"></div> What We Create <div class="line"></div>
+        </div>
+        <h2 class="sh-title">Design <em>Capabilities</em></h2>
+      </div>
+      <div class="caps-grid">
+        <div class="cap-card reveal">
+          <span class="cap-emoji">🎯</span>
+          <div class="cap-title">Logo &amp; Brand Identity</div>
+          <p class="cap-text">Multi-format master logos, complete colour palettes, typography systems, and brand
+            guidelines for perfectly consistent application everywhere, forever.</p>
+          <div class="cap-tags"><span class="cap-tag">Logo Design</span><span class="cap-tag">Brand System</span><span
+              class="cap-tag">Style Guide</span></div>
+        </div>
+        <div class="cap-card reveal">
+          <span class="cap-emoji">📐</span>
+          <div class="cap-title">UI/UX &amp; Digital Design</div>
+          <p class="cap-text">Interface design for websites, apps, and dashboards — visually stunning and rigorously
+            validated for usability, accessibility, and conversion performance.</p>
+          <div class="cap-tags"><span class="cap-tag">Web UI</span><span class="cap-tag">App Design</span><span
+              class="cap-tag">Prototyping</span></div>
+        </div>
+        <div class="cap-card reveal">
+          <span class="cap-emoji">🎬</span>
+          <div class="cap-title">Motion &amp; Animation</div>
+          <p class="cap-text">Animated logos, explainer videos, social media reels, and micro-animations that make your
+            brand feel alive, premium, and shareable.</p>
+          <div class="cap-tags"><span class="cap-tag">After Effects</span><span class="cap-tag">Lottie</span><span
+              class="cap-tag">Reels</span></div>
+        </div>
+        <div class="cap-card reveal">
+          <span class="cap-emoji">📣</span>
+          <div class="cap-title">Marketing Collateral</div>
+          <p class="cap-text">Social media templates, digital ad creatives, email headers, pitch decks, and campaign
+            assets built for maximum visual impact and brand consistency.</p>
+          <div class="cap-tags"><span class="cap-tag">Social Kits</span><span class="cap-tag">Ad Creatives</span><span
+              class="cap-tag">Pitch Decks</span></div>
+        </div>
+        <div class="cap-card reveal">
+          <span class="cap-emoji">🖨️</span>
+          <div class="cap-title">Print &amp; Packaging</div>
+          <p class="cap-text">Business cards, brochures, product packaging, event signage, and trade show materials
+            engineered to command attention in the physical world.</p>
+          <div class="cap-tags"><span class="cap-tag">Packaging</span><span class="cap-tag">Stationery</span><span
+              class="cap-tag">Signage</span></div>
+        </div>
+        <div class="cap-card reveal">
+          <span class="cap-emoji">📋</span>
+          <div class="cap-title">Brand Guidelines</div>
+          <p class="cap-text">A detailed brand bible covering tone of voice, visual rules, and do's-and-don'ts so every
+            asset your team ever creates stays perfectly on-brand.</p>
+          <div class="cap-tags"><span class="cap-tag">Brand Book</span><span class="cap-tag">Tone of Voice</span><span
+              class="cap-tag">Usage Rules</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      function drawConnections(){
-        for(var i = 0; i < pts.length; i++){
-          for(var j = i + 1; j < pts.length; j++){
-            var dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y;
-            var d  = Math.sqrt(dx*dx + dy*dy);
-            if(d < CONN_DIST){
-              ctx.beginPath();
-              ctx.moveTo(pts[i].x, pts[i].y);
-              ctx.lineTo(pts[j].x, pts[j].y);
-              ctx.strokeStyle = 'rgba(0,229,255,' + (0.06 * (1 - d / CONN_DIST)) + ')';
-              ctx.lineWidth = 0.5;
-              ctx.stroke();
-            }
-          }
-        }
-      }
+  <!-- TOOLS -->
+  <section id="tech">
+    <div class="wrap">
+      <div class="sh center reveal">
+        <div class="sh-eyebrow" style="justify-content:center">
+          <div class="line"></div> Tools &amp; Software <div class="line"></div>
+        </div>
+        <h2 class="sh-title">Our <em>Creative Toolkit</em></h2>
+      </div>
+      <div class="tools-row reveal">
+        <div class="tool-badge">🎨 Adobe Illustrator</div>
+        <div class="tool-badge">🖼 Photoshop</div>
+        <div class="tool-badge">📐 Figma</div>
+        <div class="tool-badge">▶️ After Effects</div>
+        <div class="tool-badge">📰 Adobe InDesign</div>
+        <div class="tool-badge">✨ Canva Pro</div>
+        <div class="tool-badge">🎬 Premiere Pro</div>
+        <div class="tool-badge">⬡ Spline 3D</div>
+        <div class="tool-badge">💎 Sketch</div>
+        <div class="tool-badge">📊 Lottie Files</div>
+        <div class="tool-badge">🌊 Blender</div>
+        <div class="tool-badge">🔤 Typekit</div>
+      </div>
+    </div>
+  </section>
 
-      function animate(ts){
-        requestAnimationFrame(animate);
-        if(ts - lastTime < INTERVAL) return;
-        lastTime = ts;
+  <!-- WHY US -->
+  <section id="why"
+    style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+    <div class="wrap">
+      <div class="why-split reveal">
+        <div class="why-img-side">
+          <div class="wi-card">
+            <div class="wi-val">48hr</div>
+            <div class="wi-lbl">First Concepts</div>
+          </div>
+          <div class="wi-card">
+            <div class="wi-val">100%</div>
+            <div class="wi-lbl">Brand Consistency</div>
+          </div>
+          <div class="wi-card">
+            <div class="wi-val">∞</div>
+            <div class="wi-lbl">Revision Rounds</div>
+          </div>
+          <div class="wi-card">
+            <div class="wi-val">5yr+</div>
+            <div class="wi-lbl">Brand Longevity</div>
+          </div>
+        </div>
+        <div class="why-text-side">
+          <div class="sh-eyebrow" style="margin-bottom:1.25rem">
+            <div class="line"></div> The Vistara Edge <div class="line"></div>
+          </div>
+          <h2>Design That <em>Lasts</em></h2>
+          <p>We don't chase trends. We craft brand identities built to remain relevant and powerful for 5+ years —
+            strategy-backed aesthetics that communicate your value instantly to the right audience.</p>
+          <div class="why-bullets">
+            <div class="why-bullet"><span class="wb-dot"></span>First brand concepts delivered within 48 hours of
+              briefing</div>
+            <div class="why-bullet"><span class="wb-dot"></span>Unlimited revision rounds — we never stop until it's
+              perfect</div>
+            <div class="why-bullet"><span class="wb-dot"></span>Complete brand system, not just a logo — every format
+              included</div>
+            <div class="why-bullet"><span class="wb-dot"></span>Timeless over trendy — designed to last 5+ years by
+              default</div>
+            <div class="why-bullet"><span class="wb-dot"></span>Full IP ownership transferred to you on final payment
+            </div>
+          </div>
+          <a href="index.html#contact" class="btn-r" id="why-cta">✦ Start Your Brand Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="fcta" id="contact">
+    <div class="wrap" style="position:relative;z-index:1">
+      <div class="sh-eyebrow reveal" style="justify-content:center;margin-bottom:2rem">
+        <div class="line" style="max-width:40px"></div> Ready to be Iconic? <div class="line" style="max-width:40px">
+        </div>
+      </div>
+      <h2 class="fcta-title reveal">Make Your Brand<em>Impossible to Ignore</em></h2>
+      <p class="fcta-sub reveal">Your brand either builds trust every day — or quietly erodes it. Let's build a visual
+        identity that makes you the obvious, premium choice in your market.</p>
+      <div class="hero-btns reveal" style="justify-content:center">
+        <a href="index.html#contact" class="btn-r" id="cta-primary">✦ Get a Free Consultation</a>
+        <a href="index.html#contact" class="btn-r-ghost" id="cta-secondary">View Portfolio</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ftp">
+      <div class="fb"><img src="WWW.VISTARATECHGLOBAL.COM-removebg-preview.png" alt="Vistara Tech Global" class="fli" />
+        <div>
+          <div class="fn">Vistara Tech Global</div>
+          <div class="ftag">Designing Brands That Command Attention</div>
+        </div>
+      </div>
+      <div class="flg">
+        <div class="fc">
+          <h4>Services</h4><a href="service-custom-websites.html">Custom Websites</a><a
+            href="service-ecommerce.html">E-Commerce</a><a href="service-mobile-apps.html">Mobile Apps</a><a
+            href="service-seo.html">SEO</a><a href="service-graphic-design.html">Graphic Design</a>
+        </div>
+        <div class="fc">
+          <h4>Studio</h4><a href="index.html#why-us">Why Us</a><a href="index.html#tech-stack">Tech Stack</a><a
+            href="index.html#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="ftb"><span>© 2026 Vistara Tech Global. All rights reserved.</span><span class="fst"><span
+          class="sdt"></span> Creative systems online</span></div>
+  </footer>
+
+  <script>
+    const nv = document.getElementById('nav');
+    window.addEventListener('scroll', () => nv.classList.toggle('sc', window.scrollY > 30));
+    const hb = document.getElementById('hbtn'), nl = document.getElementById('nls');
+    hb.addEventListener('click', () => { hb.classList.toggle('open'); nl.classList.toggle('open') });
+    nl.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { hb.classList.remove('open'); nl.classList.remove('open') }));
+    const rv = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((e) => { e.forEach((el, i) => { if (el.isIntersecting) { setTimeout(() => el.target.classList.add('visible'), i * 70); io.unobserve(el.target) } }); }, { threshold: 0.08 });
+    rv.forEach(el => io.observe(el));
+    (function () {
+      var c = document.getElementById('gd-canvas'); if (!c) return;
+      var ctx = c.getContext('2d'), W, H;
+      function resize() { W = c.width = window.innerWidth; H = c.height = window.innerHeight }
+      resize(); window.addEventListener('resize', resize);
+      // Floating geometric shapes
+      var shapes = [];
+      var colors = ['240,98,146', '233,30,99', '255,128,171', '252,228,236', '255,213,79'];
+      for (var i = 0; i < 18; i++) { shapes.push({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .15, vy: (Math.random() - .5) * .15, size: Math.random() * 3 + 1, a: Math.random() * .25 + .05, c: colors[Math.floor(Math.random() * colors.length)], rot: Math.random() * Math.PI * 2, vr: (Math.random() - .5) * .005 }) }
+      function draw() {
         ctx.clearRect(0, 0, W, H);
-        for(var k = 0; k < pts.length; k++){ pts[k].update(); pts[k].draw(); }
-        if(CONNECT) drawConnections();
+        shapes.forEach(s => {
+          s.x += s.vx; s.y += s.vy; s.rot += s.vr;
+          if (s.x < 0 || s.x > W) s.vx *= -1; if (s.y < 0 || s.y > H) s.vy *= -1;
+          ctx.save(); ctx.translate(s.x, s.y); ctx.rotate(s.rot);
+          ctx.beginPath();
+          ctx.rect(-s.size, -s.size, s.size * 2, s.size * 2);
+          ctx.fillStyle = `rgba(${s.c},${s.a})`; ctx.fill();
+          ctx.restore();
+        });
+        requestAnimationFrame(draw);
       }
-      requestAnimationFrame(animate);
+      draw();
     })();
-</script>
+  </script>
 </body>
+
 </html>
