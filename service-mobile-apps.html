@@ -67,7 +67,8 @@
       color: var(--am)
     }
 
-    #seo-canvas {
+    /* mobile apps particle canvas */
+    #ma-canvas {
       position: fixed;
       top: 0;
       left: 0;
@@ -239,9 +240,9 @@
       grid-template-columns: 1fr 1fr;
       align-items: center;
       gap: 3rem;
-      padding: 0 2rem !important;
+      padding: 120px 2rem 60px !important;
       max-width: 1300px;
-      margin: -70px auto 0;
+      margin: 0 auto;
       min-height: 100vh;
       position: relative;
       z-index: 2
@@ -278,7 +279,28 @@
     .hero-title em {
       color: var(--am);
       font-style: normal;
-      display: block
+      display: block;
+      position: relative;
+      animation: maTitleGlitch 3.1s infinite steps(2, end);
+    }
+
+    @keyframes maTitleGlitch {
+      0%, 88%, 100% {
+        text-shadow: none;
+        opacity: 1;
+      }
+      90% {
+        text-shadow: -1px 0 10px rgba(179, 136, 255, 0.9);
+        opacity: 0.75;
+      }
+      94% {
+        text-shadow: 1px 0 12px rgba(224, 64, 251, 0.9);
+        opacity: 0.9;
+      }
+      96% {
+        text-shadow: 0 0 16px rgba(179, 136, 255, 1);
+        opacity: 0.8;
+      }
     }
 
     .hero-sub {
@@ -1389,6 +1411,8 @@
         grid-template-columns: 1fr;
         text-align: center;
         gap: 4rem;
+        margin: 0 auto;
+        padding-top: 8rem;
       }
       .hero-eyebrow {
         justify-content: center;
@@ -1757,7 +1781,7 @@
     const io = new IntersectionObserver((e) => { e.forEach((el, i) => { if (el.isIntersecting) { setTimeout(() => el.target.classList.add('visible'), i * 70); io.unobserve(el.target) } }); }, { threshold: 0.08 });
     rv.forEach(el => io.observe(el));
     (function () {
-      var c = document.getElementById('seo-canvas'); if (!c) return;
+      var c = document.getElementById('ma-canvas'); if (!c) return;
       var ctx = c.getContext('2d'), W, H;
       function resize() { W = c.width = window.innerWidth; H = c.height = window.innerHeight }
       resize(); window.addEventListener('resize', resize);

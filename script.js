@@ -376,6 +376,60 @@
     document.head.appendChild(s);
   }
 
+  /* ======================================================
+     12. SERVICE CARD CLICK EFFECTS + SOFT TRANSITION
+     ====================================================== */
+  const serviceCards = document.querySelectorAll('.service-card[href]');
+
+  serviceCards.forEach(card => {
+    const url = card.getAttribute('href');
+    if (!url || url.startsWith('#')) return;
+
+    const runClickEffectAndNavigate = (event) => {
+      // Allow Ctrl/Meta click or middle click to open in new tab without animation hijack
+      if (event.ctrlKey || event.metaKey || event.button === 1) return;
+
+      event.preventDefault();
+
+      // Reset any previous animation class so repeated clicks still animate
+      card.classList.remove('service-click');
+      // Force reflow to restart CSS animation if already applied
+      // eslint-disable-next-line no-void
+      void card.offsetWidth;
+      card.classList.add('service-click');
+
+      const navigate = () => {
+        window.location.href = url;
+      };
+
+      // Prefer waiting for animation end, fallback to timeout
+      let navigated = false;
+      const handleAnimationEnd = () => {
+        if (navigated) return;
+        navigated = true;
+        card.removeEventListener('animationend', handleAnimationEnd);
+        navigate();
+      };
+
+      card.addEventListener('animationend', handleAnimationEnd, { once: true });
+
+      setTimeout(() => {
+        if (!navigated) {
+          navigated = true;
+          card.removeEventListener('animationend', handleAnimationEnd);
+          navigate();
+        }
+      }, 500);
+    };
+
+    card.addEventListener('click', runClickEffectAndNavigate);
+    card.addEventListener('keypress', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        runClickEffectAndNavigate(event);
+      }
+    });
+  });
+
   console.log('%c⚡ VISTARA TECH GLOBAL', 'color:#00e5ff;font-size:20px;font-weight:900;font-family:monospace;');
   console.log('%cEngineering the Digital Future', 'color:#7fa3b5;font-size:12px;font-family:monospace;');
 

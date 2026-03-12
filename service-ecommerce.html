@@ -106,8 +106,29 @@
       left: -10%;
       width: 500px;
       height: 500px;
-      background: radial-gradient(circle, rgba(29, 233, 182, .04), transparent 65%);
-      border-radius: 50%
+      background:
+        radial-gradient(circle, rgba(29, 233, 182, .04), transparent 65%),
+        repeating-linear-gradient(
+          90deg,
+          rgba(0, 230, 118, 0.12) 0px,
+          rgba(0, 230, 118, 0.12) 2px,
+          transparent 2px,
+          transparent 10px
+        );
+      border-radius: 50%;
+      animation: ecSweep 22s linear infinite;
+    }
+
+    @keyframes ecSweep {
+      0% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+      }
+      50% {
+        transform: translate3d(30px, -10px, 0) rotate(8deg);
+      }
+      100% {
+        transform: translate3d(0, 0, 0) rotate(16deg);
+      }
     }
 
     /* NAV */
@@ -303,7 +324,20 @@
     .hero-title em {
       color: var(--em);
       font-style: normal;
-      display: block
+      display: block;
+      position: relative;
+      animation: ecTitlePulse 3s infinite ease-in-out;
+    }
+
+    @keyframes ecTitlePulse {
+      0%, 100% {
+        text-shadow: 0 0 0 transparent;
+        letter-spacing: .02em;
+      }
+      50% {
+        text-shadow: 0 0 14px rgba(0, 230, 118, 0.9);
+        letter-spacing: .04em;
+      }
     }
 
     .hero-sub {

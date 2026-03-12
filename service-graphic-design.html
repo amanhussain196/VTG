@@ -67,7 +67,8 @@
       color: var(--am)
     }
 
-    #seo-canvas {
+    /* graphic design particle canvas */
+    #gd-canvas {
       position: fixed;
       top: 0;
       left: 0;
@@ -239,9 +240,9 @@
       grid-template-columns: 1fr 1fr;
       align-items: center;
       gap: 3rem;
-      padding: 0 2rem !important;
+      padding: 120px 2rem 60px !important;
       max-width: 1300px;
-      margin: -70px auto 0;
+      margin: 0 auto;
       min-height: 100vh;
       position: relative;
       z-index: 2
@@ -278,7 +279,20 @@
     .hero-title em {
       color: var(--am);
       font-style: normal;
-      display: block
+      display: block;
+      position: relative;
+      animation: gdTitleGlow 3.4s infinite ease-in-out;
+    }
+
+    @keyframes gdTitleGlow {
+      0%, 100% {
+        text-shadow: 0 0 0 transparent;
+      }
+      50% {
+        text-shadow:
+          0 0 18px rgba(240, 98, 146, 0.9),
+          0 0 32px rgba(240, 98, 146, 0.6);
+      }
     }
 
     .hero-sub {
@@ -1246,7 +1260,8 @@
     @media(max-width:1024px) {
       .hero {
         grid-template-columns: 1fr;
-        padding-top: 8rem
+        padding-top: 8rem;
+        margin: 0 auto;
       }
 
       .terminal {
@@ -1757,7 +1772,7 @@
     const io = new IntersectionObserver((e) => { e.forEach((el, i) => { if (el.isIntersecting) { setTimeout(() => el.target.classList.add('visible'), i * 70); io.unobserve(el.target) } }); }, { threshold: 0.08 });
     rv.forEach(el => io.observe(el));
     (function () {
-      var c = document.getElementById('seo-canvas'); if (!c) return;
+      var c = document.getElementById('gd-canvas'); if (!c) return;
       var ctx = c.getContext('2d'), W, H;
       function resize() { W = c.width = window.innerWidth; H = c.height = window.innerHeight }
       resize(); window.addEventListener('resize', resize);
