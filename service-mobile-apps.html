@@ -8,17 +8,15 @@
     content="Native Android & iOS apps that users love. Built with Flutter, Swift and Kotlin by Vistara Tech Global." />
   <title>Mobile Apps | Vistara Tech Global</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
-    /* ============ MOBILE APPS PAGE — VIOLET / AURORA THEME ============ */
+    /* ============ SEO PAGE — AMBER TERMINAL THEME ============ */
     :root {
-      --v: #b388ff;
-      --v2: #7c4dff;
-      --v3: #e040fb;
-      --v4: #d4b5ff;
-      --vg: rgba(179, 136, 255, 0.28);
+      --am: #b388ff;
+      --am2: #7c4dff;
+      --am3: #e040fb;
+      --am4: #d4b5ff;
+      --ag: rgba(179, 136, 255, 0.28);
       --bg: #08050f;
       --bg2: #0d0918;
       --card: #110c1a;
@@ -27,6 +25,8 @@
       --txt: #f3eeff;
       --txt2: #b39ddb;
       --txt3: #7c6a9c;
+      --txt4: #a98ec7;
+      --green: #00e676;
       --font-h: 'Syne', sans-serif;
       --font-b: 'DM Sans', sans-serif;
       --font-m: 'JetBrains Mono', monospace;
@@ -51,7 +51,7 @@
       color: var(--txt);
       font-family: var(--font-b);
       overflow-x: hidden;
-      line-height: 1.65
+      line-height: 1.6
     }
 
     ::-webkit-scrollbar {
@@ -59,15 +59,15 @@
     }
 
     ::-webkit-scrollbar-thumb {
-      background: var(--v2)
+      background: var(--am2)
     }
 
     ::selection {
-      background: var(--vg);
-      color: var(--v)
+      background: var(--ag);
+      color: var(--am)
     }
 
-    #ma-canvas {
+    #seo-canvas {
       position: fixed;
       top: 0;
       left: 0;
@@ -75,50 +75,37 @@
       height: 100%;
       pointer-events: none;
       z-index: 0;
-      opacity: .25
+      opacity: .15
     }
 
-    /* AURORA GLOW */
-    .aurora {
+    /* SCANLINE EFFECT */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, .08) 2px, rgba(0, 0, 0, .08) 4px);
+      pointer-events: none;
+      z-index: 1;
+      opacity: .35
+    }
+
+    /* AMBIENT */
+    .amb {
       position: fixed;
       inset: 0;
       pointer-events: none;
-      z-index: 0;
-      overflow: hidden
+      z-index: 0
     }
 
-    .aurora-1 {
+    .amb::before {
+      content: '';
       position: absolute;
-      top: -30%;
-      left: -10%;
-      width: 800px;
-      height: 800px;
-      background: radial-gradient(circle, rgba(124, 77, 255, .07), transparent 65%);
-      border-radius: 50%;
-      animation: aurora-drift 12s ease-in-out infinite
-    }
-
-    .aurora-2 {
-      position: absolute;
-      bottom: -20%;
+      top: -20%;
       right: -10%;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(224, 64, 251, .05), transparent 65%);
-      border-radius: 50%;
-      animation: aurora-drift 16s ease-in-out infinite reverse
-    }
-
-    @keyframes aurora-drift {
-
-      0%,
-      100% {
-        transform: translate(0, 0) scale(1)
-      }
-
-      50% {
-        transform: translate(30px, -20px) scale(1.05)
-      }
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(179, 136, 255, .06), transparent 65%);
+      border-radius: 50%
     }
 
     /* NAV */
@@ -132,7 +119,7 @@
     }
 
     nav.sc {
-      background: rgba(8, 5, 15, .95);
+      background: rgba(8, 5, 15, .96);
       backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border)
     }
@@ -161,15 +148,15 @@
     }
 
     .lt {
-      font-family: var(--font-h);
-      font-size: 1rem;
-      font-weight: 800;
-      letter-spacing: .04em;
+      font-family: var(--font-m);
+      font-size: .9rem;
+      font-weight: 600;
+      letter-spacing: .06em;
       color: var(--txt)
     }
 
     .lt span {
-      color: var(--v)
+      color: var(--am)
     }
 
     ul.nls {
@@ -181,36 +168,38 @@
     }
 
     .nk {
-      color: var(--txt2);
+      color: var(--txt3);
       text-decoration: none;
-      font-size: .85rem;
+      font-family: var(--font-m);
+      font-size: .82rem;
       font-weight: 500;
       padding: .5rem 1rem;
-      border-radius: 6px;
+      border-radius: 4px;
       transition: color var(--tr)
     }
 
     .nk:hover,
     .nk.active {
-      color: var(--v)
+      color: var(--am)
     }
 
     .nct {
-      font-family: var(--font-b);
-      font-size: .82rem;
-      font-weight: 600;
+      font-family: var(--font-m);
+      font-size: .78rem;
+      font-weight: 700;
       color: var(--bg);
-      background: linear-gradient(135deg, var(--v), var(--v2));
-      padding: .55rem 1.5rem;
-      border-radius: 50px;
+      background: var(--am);
+      padding: .5rem 1.4rem;
+      border-radius: 3px;
       text-decoration: none;
       transition: all var(--tr);
-      flex-shrink: 0
+      flex-shrink: 0;
+      letter-spacing: .04em
     }
 
     .nct:hover {
-      box-shadow: 0 0 24px var(--vg);
-      transform: translateY(-1px)
+      background: var(--am3);
+      box-shadow: 0 0 16px var(--ag)
     }
 
     .hbtn {
@@ -228,7 +217,7 @@
       display: block;
       width: 22px;
       height: 2px;
-      background: var(--v);
+      background: var(--am);
       transition: all var(--tr)
     }
 
@@ -244,240 +233,297 @@
       transform: translateY(-7px) rotate(-45deg)
     }
 
-    /* ============ HERO — CENTRED WITH PHONE MOCK ============ */
+    /* ============ HERO — TERMINAL SPLIT ============ */
     .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 3rem;
+      padding: 0 2rem !important;
+      max-width: 1300px;
+      margin: -70px auto 0;
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 9rem 2rem 5rem;
       position: relative;
-      z-index: 1
+      z-index: 2
     }
 
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: .6rem;
+    .hero-eyebrow {
       font-family: var(--font-m);
-      font-size: .62rem;
-      letter-spacing: .22em;
-      color: var(--v);
-      border: 1px solid var(--border);
-      background: rgba(179, 136, 255, .04);
-      padding: .4rem 1.2rem;
-      border-radius: 50px;
-      margin-bottom: 2.5rem;
-      text-transform: uppercase
+      font-size: .7rem;
+      letter-spacing: .2em;
+      color: var(--am);
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: .75rem
     }
 
-    .pdot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--v);
-      box-shadow: 0 0 8px var(--v);
-      animation: pdp 2s ease-in-out infinite
-    }
-
-    @keyframes pdp {
-
-      0%,
-      100% {
-        opacity: 1
-      }
-
-      50% {
-        opacity: .3
-      }
+    .hero-eyebrow::before {
+      content: '>';
+      font-size: .9rem
     }
 
     .hero-title {
       font-family: var(--font-h);
-      font-size: clamp(2.8rem, 5.5vw, 5.5rem);
+      font-size: clamp(2.5rem, 4vw, 4.5rem);
       font-weight: 800;
-      line-height: 1;
-      letter-spacing: -.02em;
-      margin-bottom: 1.5rem
+      line-height: .95;
+      letter-spacing: .01em;
+      color: var(--txt);
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
     }
 
     .hero-title em {
-      background: linear-gradient(135deg, var(--v), var(--v3));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--am);
       font-style: normal;
       display: block
     }
 
     .hero-sub {
-      font-size: 1.1rem;
+      font-family: var(--font-b);
+      font-size: 1rem;
       color: var(--txt2);
-      max-width: 580px;
-      line-height: 1.8;
-      margin: 0 auto 2.5rem;
+      max-width: 500px;
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
       font-weight: 300
+    }
+
+    .hero-stats-row {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap
+    }
+
+    .hs-item {
+      border-left: 2px solid var(--am);
+      padding-left: 1rem
+    }
+
+    .hs-val {
+      font-family: var(--font-h);
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--am);
+      letter-spacing: .01em;
+      line-height: 1
+    }
+
+    .hs-lbl {
+      font-family: var(--font-m);
+      font-size: .58rem;
+      letter-spacing: .18em;
+      color: var(--txt3);
+      text-transform: uppercase;
+      margin-top: .2rem
     }
 
     .hero-btns {
       display: flex;
       gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 3.5rem
+      flex-wrap: wrap
     }
 
-    .btn-grad {
-      font-family: var(--font-b);
+    .btn-am {
+      font-family: var(--font-m);
+      font-size: .82rem;
       font-weight: 600;
-      font-size: .9rem;
-      color: #fff;
-      background: linear-gradient(135deg, var(--v2), var(--v3));
-      padding: .9rem 2.2rem;
-      border-radius: 50px;
+      color: var(--bg);
+      background: var(--am);
+      padding: .85rem 2rem;
+      border-radius: 3px;
       text-decoration: none;
       transition: all var(--tr);
       display: inline-flex;
       align-items: center;
       gap: .6rem;
-      box-shadow: 0 0 0 0 var(--vg)
+      letter-spacing: .04em
     }
 
-    .btn-grad:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0 32px var(--vg)
+    .btn-am:hover {
+      background: var(--am3);
+      box-shadow: 0 0 28px var(--ag);
+      transform: translateY(-2px)
     }
 
-    .btn-out {
-      font-family: var(--font-b);
-      font-weight: 600;
-      font-size: .9rem;
-      color: var(--v);
-      border: 1.5px solid rgba(179, 136, 255, .4);
-      padding: .9rem 2rem;
-      border-radius: 50px;
+    .btn-am-out {
+      font-family: var(--font-m);
+      font-size: .82rem;
+      font-weight: 500;
+      color: var(--am);
+      border: 1px solid rgba(179, 136, 255, .4);
+      padding: .85rem 1.8rem;
+      border-radius: 3px;
       text-decoration: none;
       transition: all var(--tr);
       display: inline-flex;
       align-items: center;
-      gap: .6rem
+      gap: .6rem;
+      letter-spacing: .04em
     }
 
-    .btn-out:hover {
-      background: rgba(179, 136, 255, .08);
+    .btn-am-out:hover {
+      background: rgba(179, 136, 255, .06);
       transform: translateY(-2px);
-      border-color: var(--v)
+      border-color: var(--am)
     }
 
-    /* PHONE MOCKUP */
-    .phone-stage {
-      position: relative;
-      display: inline-flex;
-      align-items: flex-end;
-      justify-content: center;
-      gap: 2rem;
-      max-width: 100%
-    }
-
-    .phone-wrap {
-      position: relative;
-      width: 220px
-    }
-
-    .phone-outer {
-      background: linear-gradient(145deg, #1a0e2e, #0d0820);
-      border: 2px solid rgba(179, 136, 255, .25);
-      border-radius: 36px;
-      padding: 10px;
-      box-shadow: 0 0 60px rgba(124, 77, 255, .2), 0 40px 80px rgba(0, 0, 0, .6);
-      transition: transform .3s ease
-    }
-
-    .phone-outer:hover {
-      transform: translateY(-8px)
-    }
-
-    .phone-screen {
-      background: var(--bg2);
-      border-radius: 28px;
-      overflow: hidden;
-      aspect-ratio: 9/19.5
-    }
-
-    .phone-screen img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover
-    }
-
-    .phone-notch {
-      position: absolute;
-      top: 16px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 14px;
-      background: #0d0820;
-      border-radius: 10px;
-      z-index: 2
-    }
-
-    .phone-float-badge {
-      position: absolute;
+    /* TERMINAL PANEL */
+    .terminal {
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: .6rem 1rem;
-      backdrop-filter: blur(10px);
-      animation: float 4s ease-in-out infinite;
-      white-space: nowrap
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 40px rgba(179, 136, 255, .08), 0 40px 80px rgba(0, 0, 0, .5)
     }
 
-    @keyframes float {
+    .terminal-bar {
+      background: #160b28;
+      border-bottom: 1px solid var(--border);
+      padding: .75rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem
+    }
+
+    .t-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%
+    }
+
+    .t-dot-r {
+      background: #ff5f57
+    }
+
+    .t-dot-y {
+      background: #febc2e
+    }
+
+    .t-dot-g {
+      background: #28c840
+    }
+
+    .t-title {
+      font-family: var(--font-m);
+      font-size: .72rem;
+      color: var(--txt4);
+      margin-left: auto;
+      margin-right: auto;
+      letter-spacing: .05em
+    }
+
+    .terminal-body {
+      padding: 1.5rem;
+      font-family: var(--font-m);
+      font-size: .78rem;
+      line-height: 1.9
+    }
+
+    .t-line {
+      display: flex;
+      gap: .75rem;
+      margin-bottom: .3rem
+    }
+
+    .t-prompt {
+      color: var(--green);
+      flex-shrink: 0
+    }
+
+    .t-cmd {
+      color: var(--am)
+    }
+
+    .t-out {
+      color: var(--txt2)
+    }
+
+    .t-comment {
+      color: var(--txt4);
+      font-style: italic
+    }
+
+    .t-success {
+      color: var(--green)
+    }
+
+    .t-num {
+      color: var(--am)
+    }
+
+    .t-cursor {
+      display: inline-block;
+      width: 8px;
+      height: 14px;
+      background: var(--am);
+      animation: blink .7s step-end infinite;
+      vertical-align: middle;
+      margin-left: 2px
+    }
+
+    @keyframes blink {
 
       0%,
-      100% {
-        transform: translateY(0)
-      }
-
       50% {
-        transform: translateY(-8px)
+        opacity: 1
+      }
+
+      51%,
+      100% {
+        opacity: 0
       }
     }
 
-    .pfb-1 {
-      top: 10%;
-      right: -5rem;
-      animation-delay: 0s
+    .rank-bar {
+      margin: 1rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: .5rem
     }
 
-    .pfb-2 {
-      bottom: 20%;
-      left: -5rem;
-      animation-delay: 1.5s
+    .rank-row {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
     }
 
-    .pfb-val {
-      font-family: var(--font-h);
-      font-size: 1.1rem;
-      color: var(--v);
-      font-weight: 800
-    }
-
-    .pfb-lbl {
+    .rank-kw {
       font-family: var(--font-m);
-      font-size: .55rem;
-      letter-spacing: .1em;
-      color: var(--txt2);
-      text-transform: uppercase
+      font-size: .7rem;
+      color: var(--txt3);
+      width: 140px;
+      flex-shrink: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis
     }
 
-    .phone-wrap-2 {
-      width: 190px;
-      margin-bottom: 2rem;
-      opacity: .75
+    .rank-track {
+      flex: 1;
+      height: 6px;
+      background: rgba(179, 136, 255, .08);
+      border-radius: 3px;
+      overflow: hidden
+    }
+
+    .rank-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--am2), var(--am));
+      border-radius: 3px;
+      transition: width .8s ease
+    }
+
+    .rank-pos {
+      font-family: var(--font-m);
+      font-size: .68rem;
+      color: var(--am);
+      width: 24px;
+      text-align: right;
+      flex-shrink: 0
     }
 
     /* SECTION BASE */
@@ -497,41 +543,44 @@
       margin-bottom: 4rem
     }
 
-    .sh-badge {
+    .sh-label {
+      font-family: var(--font-m);
+      font-size: .62rem;
+      letter-spacing: .25em;
+      color: var(--am);
+      text-transform: uppercase;
       display: inline-flex;
       align-items: center;
       gap: .5rem;
-      font-family: var(--font-m);
-      font-size: .6rem;
-      letter-spacing: .25em;
-      color: var(--v);
-      text-transform: uppercase;
-      border: 1px solid var(--border);
-      background: rgba(179, 136, 255, .04);
+      margin-bottom: 1rem;
       padding: .35rem 1rem;
-      border-radius: 50px;
-      margin-bottom: 1.25rem
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      background: rgba(179, 136, 255, .04)
+    }
+
+    .sh-label::before {
+      content: '//';
     }
 
     .sh-title {
       font-family: var(--font-h);
-      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-size: clamp(2.2rem, 5vw, 4rem);
       font-weight: 800;
       color: var(--txt);
-      line-height: 1.05;
-      letter-spacing: -.02em;
+      line-height: .95;
+      letter-spacing: .02em;
+      text-transform: uppercase;
       margin-bottom: 1rem
     }
 
     .sh-title em {
-      background: linear-gradient(135deg, var(--v), var(--v3));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--am);
       font-style: normal
     }
 
     .sh-sub {
+      font-family: var(--font-b);
       font-size: 1rem;
       color: var(--txt2);
       max-width: 560px;
@@ -540,352 +589,476 @@
       line-height: 1.75
     }
 
-    /* PAIN POINTS — 2x3 GLASS CARDS */
-    .glass-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem
-    }
-
-    .glass-card {
-      background: rgba(17, 12, 26, .6);
+    /* PAIN — DATA TABLE STYLE */
+    .pain-table {
       border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 1.75rem;
-      backdrop-filter: blur(10px);
-      position: relative;
-      overflow: hidden;
-      transition: all var(--tr)
+      border-radius: 4px;
+      overflow: hidden
     }
 
-    .glass-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: 16px;
-      background: linear-gradient(135deg, rgba(179, 136, 255, .05), rgba(224, 64, 251, .03));
-      opacity: 0;
-      transition: opacity var(--tr)
+    .pt-header {
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      padding: .75rem 1.5rem;
+      font-family: var(--font-m);
+      font-size: .62rem;
+      letter-spacing: .2em;
+      color: var(--txt3);
+      text-transform: uppercase
     }
 
-    .glass-card:hover::before {
-      opacity: 1
+    .pt-row {
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      transition: background var(--tr);
+      gap: 1.5rem;
+      align-items: start
     }
 
-    .glass-card:hover {
-      border-color: var(--border-h);
-      transform: translateY(-5px);
-      box-shadow: 0 20px 48px rgba(0, 0, 0, .4), 0 0 0 1px rgba(179, 136, 255, .1)
+    .pt-row:last-child {
+      border-bottom: none
     }
 
-    .gc-icon {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      display: block
+    .pt-row:hover {
+      background: rgba(179, 136, 255, .03)
     }
 
-    .gc-title {
-      font-family: var(--font-h);
-      font-size: 1.1rem;
-      font-weight: 800;
+    .pt-problem {
+      font-family: var(--font-b);
+      font-size: .95rem;
+      font-weight: 600;
       color: var(--txt);
-      margin-bottom: .6rem;
-      letter-spacing: -.01em
+      display: flex;
+      align-items: center;
+      gap: .75rem
     }
 
-    .gc-text {
+    .pt-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0
+    }
+
+    .pt-solution {
+      font-family: var(--font-b);
       font-size: .875rem;
       color: var(--txt2);
       line-height: 1.7;
       font-weight: 300
     }
 
-    /* PROCESS — STAGGERED TIMELINE */
-    .timeline {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      max-width: 820px;
-      margin: 0 auto;
+    /* PROCESS — HORIZONTAL NUMBERED */
+    .process-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
       position: relative
     }
 
-    .timeline::before {
+    .process-row::before {
       content: '';
       position: absolute;
-      left: 35px;
-      top: 0;
-      bottom: 0;
-      width: 1px;
-      background: linear-gradient(180deg, transparent, var(--v), transparent);
-      opacity: .3
+      top: 28px;
+      left: 8%;
+      right: 8%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--am), transparent);
+      opacity: .2
     }
 
-    .tl-item {
-      display: flex;
-      gap: 2.5rem;
-      align-items: flex-start;
-      padding: 2rem 0;
-      position: relative
+    .proc-step {
+      position: relative;
+      z-index: 1
     }
 
-    .tl-num {
-      flex-shrink: 0;
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      border: 1.5px solid rgba(179, 136, 255, .3);
+    .proc-num {
+      width: 56px;
+      height: 56px;
       background: var(--card);
+      border: 1px solid var(--border);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: var(--font-h);
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--v);
-      position: relative;
-      z-index: 1;
+      font-family: var(--font-m);
+      font-size: .7rem;
+      font-weight: 700;
+      color: var(--am);
+      margin-bottom: 1.25rem;
       transition: all var(--tr)
     }
 
-    .tl-item:hover .tl-num {
-      border-color: var(--v);
-      box-shadow: 0 0 24px var(--vg);
-      background: rgba(179, 136, 255, .08)
+    .proc-step:hover .proc-num {
+      border-color: var(--am);
+      box-shadow: 0 0 20px var(--ag)
     }
 
-    .tl-content {
-      flex: 1;
-      padding: .75rem 0
-    }
-
-    .tl-label {
-      font-family: var(--font-m);
-      font-size: .58rem;
-      letter-spacing: .2em;
-      color: var(--txt3);
+    .proc-title {
+      font-family: var(--font-h);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--txt);
       text-transform: uppercase;
-      margin-bottom: .4rem
+      letter-spacing: .02em;
+      margin-bottom: .5rem
     }
 
-    .tl-title {
-      font-family: var(--font-h);
-      font-size: 1.3rem;
-      font-weight: 800;
-      color: var(--txt);
-      margin-bottom: .6rem;
-      letter-spacing: -.01em
-    }
-
-    .tl-desc {
-      font-size: .9rem;
-      color: var(--txt2);
-      line-height: 1.7;
-      font-weight: 300
-    }
-
-    .tl-vistara {
-      margin-top: .75rem;
-      font-family: var(--font-m);
-      font-size: .8rem;
-      color: var(--v);
-      opacity: .8;
-      font-style: italic
-    }
-
-    /* FEATURES — ASYMMETRIC GRID */
-    .features-asym {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto auto;
-      gap: 1.25rem
-    }
-
-    .feat-big {
-      grid-column: 1;
-      grid-row: 1/3;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 2.5rem;
-      display: flex;
-      flex-direction: column;
-      transition: all var(--tr)
-    }
-
-    .feat-big:hover {
-      border-color: var(--border-h);
-      box-shadow: 0 24px 60px rgba(0, 0, 0, .4), 0 0 0 1px rgba(179, 136, 255, .08)
-    }
-
-    .feat-small {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 2rem;
-      transition: all var(--tr)
-    }
-
-    .feat-small:hover {
-      border-color: var(--border-h);
-      transform: translateY(-3px);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, .3)
-    }
-
-    .feat-emoji {
-      font-size: 2.5rem;
-      margin-bottom: 1.5rem;
-      display: block
-    }
-
-    .feat-title {
-      font-family: var(--font-h);
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--txt);
-      margin-bottom: .75rem;
-      letter-spacing: -.01em
-    }
-
-    .feat-title-sm {
-      font-family: var(--font-h);
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: var(--txt);
-      margin-bottom: .5rem;
-      letter-spacing: -.01em
-    }
-
-    .feat-text {
-      font-size: .9rem;
-      color: var(--txt2);
-      line-height: 1.75;
-      font-weight: 300;
-      flex: 1
-    }
-
-    .feat-tag {
-      margin-top: 1.5rem;
-      font-family: var(--font-m);
-      font-size: .65rem;
-      color: var(--v);
-      opacity: .75;
-      letter-spacing: .1em;
-      text-transform: uppercase
-    }
-
-    .feat-text-sm {
+    .proc-desc {
+      font-family: var(--font-b);
       font-size: .85rem;
       color: var(--txt2);
       line-height: 1.65;
       font-weight: 300
     }
 
-    /* TECH */
-    .tech-wall {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .75rem
-    }
-
-    .tw-item {
-      display: flex;
-      align-items: center;
-      gap: .6rem;
-      padding: .6rem 1.2rem;
-      background: rgba(179, 136, 255, .04);
-      border: 1px solid var(--border);
-      border-radius: 50px;
-      font-size: .85rem;
-      font-weight: 500;
-      color: var(--txt2);
-      transition: all var(--tr);
-      cursor: default
-    }
-
-    .tw-item:hover {
-      border-color: var(--v);
-      color: var(--v);
-      background: rgba(179, 136, 255, .08);
-      transform: translateY(-2px)
-    }
-
-    .tw-cat {
+    .proc-tag {
+      margin-top: .75rem;
       font-family: var(--font-m);
       font-size: .58rem;
-      letter-spacing: .2em;
-      color: var(--txt3);
-      text-transform: uppercase;
-      display: block;
-      margin-bottom: .75rem;
-      margin-top: 1.5rem
+      letter-spacing: .15em;
+      color: var(--am);
+      opacity: .6;
+      text-transform: uppercase
     }
 
-    .tw-cat:first-child {
-      margin-top: 0
-    }
-
-    /* WHY US — ROW */
-    .why-row {
+    /* FEATURES — ASYMMETRIC */
+    .feat-2col {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: 1.2fr 1fr;
+      gap: 1.5rem;
+      align-items: start
+    }
+
+    .feat-left {
+      display: flex;
+      flex-direction: column;
       gap: 1.25rem
     }
 
-    .why-card {
-      text-align: center;
-      padding: 2rem 1.5rem;
+    .feat-card-h {
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 16px;
+      border-radius: 4px;
+      padding: 2rem;
+      transition: all var(--tr);
+      position: relative;
+      overflow: hidden
+    }
+
+    .feat-card-h::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--am);
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform .35s ease
+    }
+
+    .feat-card-h:hover::before {
+      transform: scaleY(1)
+    }
+
+    .feat-card-h:hover {
+      border-color: var(--border-h);
+      transform: translateX(4px)
+    }
+
+    .feat-emoji {
+      font-size: 1.8rem;
+      margin-bottom: .9rem;
+      display: block
+    }
+
+    .feat-title {
+      font-family: var(--font-h);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--txt);
+      text-transform: uppercase;
+      letter-spacing: .02em;
+      margin-bottom: .5rem
+    }
+
+    .feat-text {
+      font-family: var(--font-b);
+      font-size: .875rem;
+      color: var(--txt2);
+      line-height: 1.7;
+      font-weight: 300
+    }
+
+    .feat-m {
+      font-family: var(--font-m);
+      font-size: .62rem;
+      color: var(--am);
+      opacity: .7;
+      margin-top: .75rem;
+      letter-spacing: .1em;
+      text-transform: uppercase
+    }
+
+    /* Dashboard widget */
+    .seo-dashboard {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      position: sticky;
+      top: 90px
+    }
+
+    .db-header {
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 1.5rem;
+      font-family: var(--font-m);
+      font-size: .7rem;
+      color: var(--am);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: .5rem
+    }
+
+    .db-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 6px var(--green);
+      animation: pulse 2s infinite
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: .4
+      }
+    }
+
+    .db-body {
+      padding: 1.5rem
+    }
+
+    .db-metric {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: .75rem 0;
+      border-bottom: 1px solid rgba(179, 136, 255, .06)
+    }
+
+    .db-metric:last-child {
+      border-bottom: none
+    }
+
+    .db-label {
+      font-family: var(--font-m);
+      font-size: .7rem;
+      color: var(--txt3);
+      text-transform: uppercase;
+      letter-spacing: .1em
+    }
+
+    .db-val {
+      font-family: var(--font-h);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--am2);
+      letter-spacing: .02em
+    }
+
+    .db-delta {
+      font-family: var(--font-m);
+      font-size: .65rem;
+      color: var(--green)
+    }
+
+    .db-chart {
+      height: 60px;
+      margin: 1.25rem 0;
+      display: flex;
+      align-items: flex-end;
+      gap: 4px
+    }
+
+    .dc-bar {
+      flex: 1;
+      background: linear-gradient(180deg, var(--am), var(--am2));
+      border-radius: 2px 2px 0 0;
+      opacity: .7;
+      transition: opacity var(--tr)
+    }
+
+    .dc-bar:hover {
+      opacity: 1
+    }
+
+    /* TECH */
+    .tech-categories {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem
+    }
+
+    .tech-cat {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.5rem
+    }
+
+    .tc-label {
+      font-family: var(--font-m);
+      font-size: .6rem;
+      letter-spacing: .2em;
+      color: var(--am);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      padding-bottom: .5rem;
+      border-bottom: 1px solid var(--border)
+    }
+
+    .tc-items {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem
+    }
+
+    .tc-item {
+      font-family: var(--font-b);
+      font-size: .88rem;
+      color: var(--txt2);
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .3rem 0;
+      transition: color var(--tr)
+    }
+
+    .tc-item:hover {
+      color: var(--am)
+    }
+
+    .tc-item::before {
+      content: '■';
+      font-size: .4rem;
+      color: var(--am2)
+    }
+
+    /* WHY US — EDITORIAL */
+    .why-editorial {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center
+    }
+
+
+
+    .we-title {
+      font-family: var(--font-h);
+      font-size: clamp(1.8rem, 3vw, 3rem);
+      font-weight: 800;
+      color: var(--txt);
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: .02em;
+      margin-bottom: 1.5rem
+    }
+
+    .we-title em {
+      color: var(--am);
+      font-style: normal
+    }
+
+    .we-desc {
+      font-family: var(--font-b);
+      font-size: .95rem;
+      color: var(--txt2);
+      line-height: 1.8;
+      font-weight: 300;
+      margin-bottom: 2rem
+    }
+
+    .we-points {
+      display: flex;
+      flex-direction: column;
+      gap: .75rem
+    }
+
+    .we-point {
+      display: flex;
+      align-items: flex-start;
+      gap: .75rem;
+      font-family: var(--font-b);
+      font-size: .9rem;
+      color: var(--txt2)
+    }
+
+    .we-point::before {
+      content: '✓';
+      color: var(--am);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: .1rem
+    }
+
+    .why-stats-side {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem
+    }
+
+    .ws-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2rem 1.5rem;
+      text-align: center;
       transition: all var(--tr)
     }
 
-    .why-card:hover {
+    .ws-card:hover {
       border-color: var(--border-h);
-      transform: translateY(-5px);
-      box-shadow: 0 20px 48px rgba(0, 0, 0, .3)
+      transform: translateY(-4px)
     }
 
-    .wc-icon {
-      font-size: 2.5rem;
-      display: block;
-      margin-bottom: 1rem
-    }
-
-    .wc-val {
+    .ws-val {
       font-family: var(--font-h);
-      font-size: 2.5rem;
+      font-size: 3rem;
       font-weight: 800;
-      background: linear-gradient(135deg, var(--v), var(--v3));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      line-height: 1;
-      margin-bottom: .25rem
+      color: var(--am);
+      line-height: 1
     }
 
-    .wc-lbl {
+    .ws-lbl {
       font-family: var(--font-m);
-      font-size: .6rem;
-      letter-spacing: .12em;
+      font-size: .58rem;
+      letter-spacing: .15em;
       color: var(--txt3);
       text-transform: uppercase;
-      margin-bottom: .75rem
+      margin-top: .25rem;
+      margin-bottom: .6rem
     }
 
-    .wc-title {
+    .ws-desc {
       font-family: var(--font-b);
-      font-size: .9rem;
-      font-weight: 700;
-      color: var(--txt);
-      margin-bottom: .4rem
-    }
-
-    .wc-text {
-      font-size: .82rem;
+      font-size: .8rem;
       color: var(--txt2);
-      line-height: 1.6;
+      line-height: 1.55;
       font-weight: 300
     }
 
@@ -901,35 +1074,48 @@
       content: '';
       position: absolute;
       top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 600px;
-      height: 300px;
-      background: radial-gradient(ellipse at center bottom, rgba(124, 77, 255, .1), transparent 65%);
-      pointer-events: none
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--am), transparent)
+    }
+
+    .fcta-eyebrow {
+      font-family: var(--font-m);
+      font-size: .65rem;
+      letter-spacing: .2em;
+      color: var(--am);
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      margin-bottom: 1.5rem
+    }
+
+    .fcta-eyebrow::before {
+      content: '>';
     }
 
     .fcta-title {
       font-family: var(--font-h);
-      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-size: clamp(2.5rem, 6vw, 5.5rem);
       font-weight: 800;
-      line-height: 1;
-      letter-spacing: -.02em;
-      margin-bottom: 1rem;
-      color: var(--txt)
+      line-height: .92;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+      color: var(--txt);
+      margin-bottom: 1rem
     }
 
     .fcta-title em {
-      background: linear-gradient(135deg, var(--v), var(--v3));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--am);
       font-style: normal;
       display: block
     }
 
     .fcta-sub {
-      font-size: 1.05rem;
+      font-family: var(--font-b);
+      font-size: 1rem;
       color: var(--txt2);
       max-width: 520px;
       margin: 0 auto 2.5rem;
@@ -967,17 +1153,17 @@
     }
 
     .fn {
-      font-family: var(--font-h);
-      font-size: .9rem;
-      font-weight: 800;
-      letter-spacing: .04em;
+      font-family: var(--font-m);
+      font-size: .85rem;
+      font-weight: 700;
+      letter-spacing: .06em;
       color: var(--txt)
     }
 
     .ftag {
       font-family: var(--font-m);
-      font-size: .68rem;
-      color: var(--txt3);
+      font-size: .65rem;
+      color: var(--txt4);
       margin-top: .3rem
     }
 
@@ -991,37 +1177,38 @@
       font-family: var(--font-m);
       font-size: .58rem;
       letter-spacing: .2em;
-      color: var(--v);
+      color: var(--am);
       margin-bottom: .75rem;
       text-transform: uppercase
     }
 
     .fc a {
       display: block;
+      font-family: var(--font-b);
       font-size: .88rem;
-      color: var(--txt3);
+      color: var(--txt4);
       text-decoration: none;
       margin-bottom: .4rem;
       transition: color var(--tr)
     }
 
     .fc a:hover {
-      color: var(--v)
+      color: var(--am)
     }
 
     .ftb {
       max-width: 1200px;
       margin: 0 auto;
       padding: 1.25rem 2rem;
-      border-top: 1px solid rgba(179, 136, 255, .06);
+      border-top: 1px solid rgba(179, 136, 255, .05);
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       gap: 1rem;
       font-family: var(--font-m);
-      font-size: .73rem;
-      color: var(--txt3)
+      font-size: .72rem;
+      color: var(--txt4)
     }
 
     .fst {
@@ -1033,13 +1220,12 @@
     .sdt {
       width: 6px;
       height: 6px;
-      background: var(--v);
+      background: var(--green);
       border-radius: 50%;
-      box-shadow: 0 0 8px var(--v);
-      animation: pdp 2s ease-in-out infinite
+      box-shadow: 0 0 6px var(--green);
+      animation: pulse 2s infinite
     }
 
-    /* REVEAL */
     .reveal {
       opacity: 0;
       transform: translateY(28px);
@@ -1051,42 +1237,66 @@
       transform: translateY(0)
     }
 
-    /* RESPONSIVE */
-    @media(max-width:1200px) {
-      .hero-title {
-        font-size: clamp(2.5rem, 6vw, 4.5rem)
-      }
-
-      .phone-wrap-2 {
-        display: none
-      }
-
-      .pfb-1,
-      .pfb-2 {
+    @media(max-width:1100px) {
+      .terminal {
         display: none
       }
     }
 
     @media(max-width:1024px) {
-      .glass-grid {
-        grid-template-columns: repeat(2, 1fr)
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 8rem
       }
 
-      .features-asym {
+      .terminal {
+        display: none
+      }
+
+      .feat-2col {
         grid-template-columns: 1fr
       }
 
-      .feat-big {
-        grid-column: auto;
-        grid-row: auto
+      .seo-dashboard {
+        position: static
       }
 
-      .why-row {
+      .tech-categories {
         grid-template-columns: repeat(2, 1fr)
       }
 
-      .phone-wrap-2 {
+      .why-editorial {
+        grid-template-columns: 1fr
+      }
+    }
+
+    @media(max-width:768px) {
+      section {
+        padding: 4rem 1.25rem
+      }
+
+      .process-row {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .process-row::before {
         display: none
+      }
+
+      .pt-header {
+        display: none
+      }
+
+      .pt-row {
+        grid-template-columns: 1fr
+      }
+
+      .tech-categories {
+        grid-template-columns: 1fr
+      }
+
+      .why-stats-side {
+        grid-template-columns: 1fr 1fr
       }
 
       ul.nls {
@@ -1095,7 +1305,7 @@
         top: 70px;
         left: 0;
         right: 0;
-        background: rgba(8, 5, 15, .97);
+        background: rgba(10, 8, 0, .97);
         backdrop-filter: blur(20px);
         flex-direction: column;
         padding: 1.5rem;
@@ -1116,63 +1326,91 @@
       }
     }
 
-    @media(max-width:768px) {
-      section {
-        padding: 4rem 1.25rem
-      }
-
-      .glass-grid {
-        grid-template-columns: 1fr
-      }
-
-      .why-row {
-        grid-template-columns: 1fr 1fr
-      }
-
-      .pfb-1,
-      .pfb-2 {
-        display: none
-      }
-    }
-
     @media(max-width:480px) {
       .hero {
         padding: 7rem 1.25rem 3rem
       }
 
+      .hero-title {
+        font-size: clamp(3rem, 14vw, 5rem)
+      }
+
+      .hero-stats-row {
+        gap: 1rem
+      }
+
+      .process-row {
+        grid-template-columns: 1fr
+      }
+
       .hero-btns {
-        flex-direction: column;
-        align-items: center
+        flex-direction: column
       }
 
-      .btn-grad,
-      .btn-out {
+      .btn-am,
+      .btn-am-out {
         width: 100%;
         justify-content: center
       }
 
-      .phone-stage {
-        width: 100%;
-        justify-content: center
-      }
-
-      .why-row {
-        grid-template-columns: 1fr
-      }
-
-      .features-asym {
-        grid-template-columns: 1fr
+      .why-stats-side {
+        grid-template-columns: 1fr 1fr
       }
     }
-  </style>
+  
+    .hero-image-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      perspective: 1000px;
+    }
+    
+    .hero-app-img {
+      max-width: 85%;
+      max-height: 550px;
+      object-fit: cover;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: 0 0 60px rgba(179, 136, 255, 0.4), 0 30px 60px rgba(0, 0, 0, 0.6);
+      border: 1px solid var(--border);
+      animation: float 6s ease-in-out infinite;
+      transform-style: preserve-3d;
+      transform: rotateY(-10deg) rotateX(5deg);
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotateY(-10deg) rotateX(5deg); }
+      50% { transform: translateY(-15px) rotateY(-10deg) rotateX(5deg); }
+    }
+    
+    @media(max-width: 1024px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 4rem;
+      }
+      .hero-eyebrow {
+        justify-content: center;
+      }
+      .hero-stats-row {
+        justify-content: center;
+      }
+      .hero-btns {
+        justify-content: center;
+      }
+      .hero-sub {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    
+</style>
 </head>
 
 <body>
   <canvas id="ma-canvas"></canvas>
-  <div class="aurora">
-    <div class="aurora-1"></div>
-    <div class="aurora-2"></div>
-  </div>
+  <div class="amb"></div>
 
   <nav id="nav">
     <div class="nc">
@@ -1193,92 +1431,71 @@
 
   <!-- HERO -->
   <section class="hero" id="home">
-    <div class="hero-badge"><span class="pdot"></span> VISTARA TECH — MOBILE APPS · ANDROID &amp; iOS</div>
-    <h1 class="hero-title">Apps Users<em>Actually Love</em></h1>
-    <p class="hero-sub">In a world where users spend 4+ hours daily on their phones, a mediocre app is invisible. We
-      build native, lightning-fast mobile experiences that get downloaded, opened daily, and rated 5 stars.</p>
-    <div class="hero-btns">
-      <a href="index.html#contact" class="btn-grad" id="hbtn-primary">📱 Start My App</a>
-      <a href="index.html#contact" class="btn-out" id="hbtn-secondary">💡 See Our Process</a>
+    <div class="hero-left">
+      <div class="hero-eyebrow">NATIVE & CROSS-PLATFORM</div>
+      <h1 class="hero-title">Apps Users<br><em>Actually Love</em></h1>
+      <p class="hero-sub">In a world where users spend 4+ hours daily on their phones, a mediocre app is invisible. We build native, lightning-fast mobile experiences that get downloaded, opened daily, and rated 5 stars.</p>
+      <div class="hero-stats-row">
+        <div class="hs-item">
+          <div class="hs-val">4.9</div>
+          <div class="hs-lbl">Avg App Store Rating</div>
+        </div>
+        <div class="hs-item">
+          <div class="hs-val">60fps</div>
+          <div class="hs-lbl">Guaranteed Performance</div>
+        </div>
+        <div class="hs-item">
+          <div class="hs-val">11wk</div>
+          <div class="hs-lbl">MVP to Launch</div>
+        </div>
+      </div>
+      <div class="hero-btns">
+        <a href="index.html#contact" class="btn-am" id="hbtn-primary">📱 Start My App</a>
+        <a href="index.html#contact" class="btn-am-out" id="hbtn-secondary">$ view_portfolio()</a>
+      </div>
     </div>
-    <!-- Phone mockup stage -->
-    <div class="phone-stage">
-      <div class="phone-float-badge pfb-1">
-        <div class="pfb-val">4.9★</div>
-        <div class="pfb-lbl">App Store Rating</div>
-      </div>
-      <div class="phone-wrap-2 phone-wrap">
-        <div class="phone-outer">
-          <div class="phone-screen"
-            style="background:linear-gradient(145deg,#13082a,#0d0520);display:flex;align-items:center;justify-content:center;min-height:360px">
-            <img src="hero-mobile-apps.png" alt="App UI"
-              style="width:100%;height:100%;object-fit:cover;mix-blend-mode:screen;opacity:.85" />
-          </div>
-        </div>
-      </div>
-      <div class="phone-wrap">
-        <div class="phone-notch"></div>
-        <div class="phone-outer">
-          <div class="phone-screen"
-            style="background:linear-gradient(145deg,#0d0820,#160b28);display:flex;align-items:center;justify-content:center;min-height:420px">
-            <img src="hero-mobile-apps.png" alt="App UI"
-              style="width:100%;height:100%;object-fit:cover;mix-blend-mode:lighten" />
-          </div>
-        </div>
-      </div>
-      <div class="phone-float-badge pfb-2">
-        <div class="pfb-val">2.3M+</div>
-        <div class="pfb-lbl">Downloads</div>
-      </div>
+
+    <!-- Terminal widget -->
+    <div class="hero-image-wrapper">
+      <img src="mobile-hero-app.png" alt="Sleek Mobile App Interface" class="hero-app-img" />
     </div>
   </section>
 
-  <!-- PAIN POINTS -->
+  <!-- PAIN POINTS TABLE -->
   <section id="pain"
     style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
     <div class="wrap">
       <div class="sh reveal">
-        <div class="sh-badge"><span class="pdot"></span> THE PAINFUL REALITY</div>
+        <div class="sh-label">// THE PAINFUL REALITY</div>
         <h2 class="sh-title">Why Most Apps <em>Fail Silently</em></h2>
-        <p class="sh-sub">90% of apps are deleted within 30 days of download. Here's what kills them — and how we
-          prevent it.</p>
+        <p class="sh-sub">90% of apps are deleted within 30 days of download. Here's what kills them.</p>
       </div>
-      <div class="glass-grid">
-        <div class="glass-card reveal">
-          <span class="gc-icon">⚡</span>
-          <div class="gc-title">Slow &amp; Janky UI</div>
-          <p class="gc-text">Performance below 60fps feels broken to modern users. Laggy animations, slow transitions,
-            and unresponsive touches are the #1 reason users leave and never come back.</p>
+      <div class="pain-table reveal">
+        <div class="pt-header"><span>PROBLEM</span><span>IMPACT &amp; SOLUTION</span></div>
+        <div class="pt-row">
+          <div class="pt-problem"><span class="pt-icon">📉</span>Slow & Janky UI</div>
+          <p class="pt-solution">Poor indexation, crawl blocks, and technical errors mean Google simply cannot find your
+            pages. We fix crawl architecture, sitemaps, and indexing signals so every page can rank.</p>
         </div>
-        <div class="glass-card reveal">
-          <span class="gc-icon">📉</span>
-          <div class="gc-title">Zero-Day Crashes</div>
-          <p class="gc-text">A single crash loop during onboarding destroys trust permanently. Poor error handling,
-            untested edge cases, and rushed QA result in 1-star bombs on launch day.</p>
+        <div class="pt-row">
+          <div class="pt-problem"><span class="pt-icon">💸</span>Zero-Day Crashes</div>
+          <p class="pt-solution">Paying for every visitor is unsustainable. We build organic traffic that compounds
+            month over month — reducing your cost-per-acquisition to near zero over time.</p>
         </div>
-        <div class="glass-card reveal">
-          <span class="gc-icon">🎭</span>
-          <div class="gc-title">Broken Onboarding</div>
-          <p class="gc-text">Users decide whether to keep an app within the first 60 seconds. Confusing onboarding,
-            forced sign-ups, and unclear value propositions kill retention before it starts.</p>
+        <div class="pt-row">
+          <div class="pt-problem"><span class="pt-icon">🔗</span>Broken Onboarding</div>
+          <p class="pt-solution">Without high-quality backlinks you cannot outrank established competitors regardless of
+            content quality. Our link acquisition campaigns build real authority from trusted domains.</p>
         </div>
-        <div class="glass-card reveal">
-          <span class="gc-icon">🔔</span>
-          <div class="gc-title">Push Notification Spam</div>
-          <p class="gc-text">Untargeted, poorly-timed notifications train users to disable them within 24 hours. Without
-            a smart notification strategy, your best re-engagement channel goes dark.</p>
+        <div class="pt-row">
+          <div class="pt-problem"><span class="pt-icon">🐌</span>Push Notification Spam</div>
+          <p class="pt-solution">Google's page experience signals directly affect rankings. Slow LCP, poor CLS, and high
+            FID scores are silently suppressing your position on every keyword you target.</p>
         </div>
-        <div class="glass-card reveal">
-          <span class="gc-icon">📦</span>
-          <div class="gc-title">App Review Hell</div>
-          <p class="gc-text">App Store rejections and Play Store policy violations delay launches by weeks. Navigating
-            review guidelines requires experience — each rejection is revenue you're not earning.</p>
-        </div>
-        <div class="glass-card reveal">
-          <span class="gc-icon">📶</span>
-          <div class="gc-title">Offline Failure</div>
-          <p class="gc-text">Apps that break the moment connectivity drops feel fragile and unprofessional. Modern users
-            expect seamless experiences regardless of network condition — and punish those that don't deliver.</p>
+        <div class="pt-row">
+          <div class="pt-problem"><span class="pt-icon">🎯</span>App Review Hell</div>
+          <p class="pt-solution">Targeting high-competition vanity keywords instead of high-intent, commercially
+            valuable terms wastes years of effort. We map your keyword universe to actual revenue outcomes.</p>
         </div>
       </div>
     </div>
@@ -1288,84 +1505,119 @@
   <section id="approach">
     <div class="wrap">
       <div class="sh reveal">
-        <div class="sh-badge"><span class="pdot"></span> HOW WE BUILD</div>
+        <div class="sh-label">// EXECUTION PROTOCOL</div>
         <h2 class="sh-title">Our <em>App Blueprint</em></h2>
-        <p class="sh-sub">A proven methodology that delivers apps users love and businesses grow from.</p>
       </div>
-      <div class="timeline reveal">
-        <div class="tl-item">
-          <div class="tl-num">01</div>
-          <div class="tl-content">
-            <div class="tl-label">Phase One</div>
-            <div class="tl-title">Discover &amp; Strategise</div>
-            <p class="tl-desc">Deep dive into your users, business goals, and competitive landscape. We map every user
-              journey, define the MVP feature set, and create technical architecture before writing a line of code.</p>
-            <p class="tl-vistara">Unlike others: Strategy and product thinking first — then engineering.</p>
-          </div>
+      <div class="process-row reveal">
+        <div class="proc-step">
+          <div class="proc-num">01</div>
+          <div class="proc-title">Discover & Strategise</div>
+          <p class="proc-desc">Complete crawl analysis, indexation audit, Core Web Vitals assessment, structured data
+            review, and competitor gap mapping.</p>
+          <div class="proc-tag">// Week 1-2</div>
         </div>
-        <div class="tl-item">
-          <div class="tl-num">02</div>
-          <div class="tl-content">
-            <div class="tl-label">Phase Two</div>
-            <div class="tl-title">UI/UX Design &amp; Prototype</div>
-            <p class="tl-desc">High-fidelity, interactive prototypes for every screen and interaction. You test the
-              complete user journey before we build a single component — zero surprises at launch.</p>
-            <p class="tl-vistara">Unlike others: You experience the full app before development begins.</p>
-          </div>
+        <div class="proc-step">
+          <div class="proc-num">02</div>
+          <div class="proc-title">UI/UX Prototyping</div>
+          <p class="proc-desc">Intent-based keyword research, topical authority mapping, content cluster strategy, and
+            keyword-to-page assignment framework.</p>
+          <div class="proc-tag">// Week 2-3</div>
         </div>
-        <div class="tl-item">
-          <div class="tl-num">03</div>
-          <div class="tl-content">
-            <div class="tl-label">Phase Three</div>
-            <div class="tl-title">Native Engineering</div>
-            <p class="tl-desc">Agile 2-week sprints with working builds after each cycle. Automated testing suites,
-              CI/CD pipelines, and comprehensive device coverage. 60fps guaranteed, crash rates below 0.1%.</p>
-            <p class="tl-vistara">Unlike others: You see working builds every 2 weeks — not PowerPoint updates.</p>
-          </div>
+        <div class="proc-step">
+          <div class="proc-num">03</div>
+          <div class="proc-title">Native Engineering</div>
+          <p class="proc-desc">Expert-level content creation, on-page optimisation, internal linking architecture, and
+            authoritative backlink acquisition.</p>
+          <div class="proc-tag">// Ongoing</div>
         </div>
-        <div class="tl-item">
-          <div class="tl-num">04</div>
-          <div class="tl-content">
-            <div class="tl-label">Phase Four</div>
-            <div class="tl-title">Launch &amp; Grow</div>
-            <p class="tl-desc">App Store and Play Store submission handled entirely by us. Post-launch monitoring, crash
-              reporting, user analytics, and iterative improvements to grow ratings and retention month over month.</p>
-            <p class="tl-vistara">Unlike others: We're your long-term mobile partner, not just a delivery team.</p>
-          </div>
+        <div class="proc-step">
+          <div class="proc-num">04</div>
+          <div class="proc-title">Launch & Grow</div>
+          <p class="proc-desc">Monthly ranking reports, traffic analytics, conversion tracking, and continuous
+            optimisation as you climb to position #1.</p>
+          <div class="proc-tag">// Monthly</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FEATURES -->
+  <!-- FEATURES + DASHBOARD -->
   <section id="feat"
     style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
     <div class="wrap">
       <div class="sh reveal">
-        <div class="sh-badge"><span class="pdot"></span> CAPABILITIES</div>
+        <div class="sh-label">// CAPABILITIES</div>
         <h2 class="sh-title">Built for <em>Perfection</em></h2>
       </div>
-      <div class="features-asym reveal">
-        <div class="feat-big">
-          <span class="feat-emoji">🚀</span>
-          <div class="feat-title">Native Performance</div>
-          <p class="feat-text">We build truly native apps for iOS (Swift/SwiftUI) and Android (Kotlin/Jetpack Compose)
-            alongside cross-platform Flutter — choosing the right approach for your specific needs, not what's easiest
-            for us. Every animation runs at 60fps, every interaction feels instant, and every screen is pixel-perfect on
-            every device size.</p>
-          <div class="feat-tag">Swift · SwiftUI · Kotlin · Compose · Flutter</div>
+      <div class="feat-2col reveal">
+        <div class="feat-left">
+          <div class="feat-card-h">
+            <span class="feat-emoji">🔧</span>
+            <div class="feat-title">Native Performance</div>
+            <p class="feat-text">Site architecture, crawl budget, Core Web Vitals, structured data, hreflang, canonical
+              tags, log file analysis, and JavaScript SEO. We make your site technically unbeatable.</p>
+            <div class="feat-m">Swift · SwiftUI · Kotlin · Compose · Flutter</div>
+          </div>
+          <div class="feat-card-h">
+            <span class="feat-emoji">✍️</span>
+            <div class="feat-title">Enterprise Security</div>
+            <p class="feat-text">Expert-written content informed by search intent analysis, semantic keyword clusters,
+              and E-E-A-T optimisation. Content that ranks and converts simultaneously.</p>
+            <div class="feat-m">Biometrics · E2EE · SOC2 Ready</div>
+          </div>
+          <div class="feat-card-h">
+            <span class="feat-emoji">🔗</span>
+            <div class="feat-title">Offline-First</div>
+            <p class="feat-text">White-hat link acquisition from industry-relevant, high-DR domains. Digital PR, broken
+              link building, guest posts, and resource page outreach that actually moves rankings.</p>
+            <div class="feat-m">Local Caching · Sync Queues · CoreData</div>
+          </div>
         </div>
-        <div class="feat-small">
-          <span class="feat-emoji" style="font-size:1.75rem;margin-bottom:.75rem;display:block">🔒</span>
-          <div class="feat-title-sm">Enterprise Security</div>
-          <p class="feat-text-sm">Biometric authentication, end-to-end encryption, secure keychain storage, and
-            compliance with GDPR, HIPAA, and PCI DSS standards built in from day one.</p>
-        </div>
-        <div class="feat-small">
-          <span class="feat-emoji" style="font-size:1.75rem;margin-bottom:.75rem;display:block">📶</span>
-          <div class="feat-title-sm">Offline-First Architecture</div>
-          <p class="feat-text-sm">Intelligent data sync, local caching, and offline queuing ensure your app works
-            flawlessly even without connectivity — syncing automatically when back online.</p>
+        <div class="seo-dashboard">
+          <div class="db-header"><span class="db-dot"></span> LIVE APP DASHBOARD</div>
+          <div class="db-body">
+            <div
+              style="font-family:var(--font-m);font-size:.62rem;color:var(--txt3);letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem">
+              TRAFFIC GROWTH (12 MONTHS)</div>
+            <div class="db-chart">
+              <div class="dc-bar" style="height:15%"></div>
+              <div class="dc-bar" style="height:22%"></div>
+              <div class="dc-bar" style="height:18%"></div>
+              <div class="dc-bar" style="height:30%"></div>
+              <div class="dc-bar" style="height:28%"></div>
+              <div class="dc-bar" style="height:42%"></div>
+              <div class="dc-bar" style="height:55%"></div>
+              <div class="dc-bar" style="height:65%"></div>
+              <div class="dc-bar" style="height:72%"></div>
+              <div class="dc-bar" style="height:80%"></div>
+              <div class="dc-bar" style="height:90%"></div>
+              <div class="dc-bar" style="height:100%"></div>
+            </div>
+            <div class="db-metric"><span class="db-label">Downloads</span>
+              <div style="text-align:right">
+                <div class="db-val">2.3M+</div>
+                <div class="db-delta">↑ +42% MoM</div>
+              </div>
+            </div>
+            <div class="db-metric"><span class="db-label">Crash-Free Users</span>
+              <div style="text-align:right">
+                <div class="db-val" style="font-size:1.2rem">500k+</div>
+                <div class="db-delta">Top 1% in category</div>
+              </div>
+            </div>
+            <div class="db-metric"><span class="db-label">App Store Rating</span>
+              <div style="text-align:right">
+                <div class="db-val" style="font-size:1.2rem">4.9</div>
+                <div class="db-delta">From 12,400 reviews</div>
+              </div>
+            </div>
+            <div class="db-metric"><span class="db-label">Session Length</span>
+              <div style="text-align:right">
+                <div class="db-val" style="font-size:1.2rem">8m 14s</div>
+                <div class="db-delta">↑ +12% this month</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1375,30 +1627,40 @@
   <section id="tech">
     <div class="wrap">
       <div class="sh reveal">
-        <div class="sh-badge"><span class="pdot"></span> TECH STACK</div>
-        <h2 class="sh-title">Our <em>Mobile Arsenal</em></h2>
+        <div class="sh-label">// TOOLS &amp; PLATFORMS</div>
+        <h2 class="sh-title">Our <em>Tech Arsenal</em></h2>
       </div>
-      <div class="tech-wall reveal">
-        <span class="tw-cat" style="width:100%">Native iOS</span>
-        <div class="tw-item">🍎 Swift 5</div>
-        <div class="tw-item">🎨 SwiftUI</div>
-        <div class="tw-item">📐 UIKit</div>
-        <div class="tw-item">🔗 Combine</div>
-        <div class="tw-item">🗄️ CoreData</div>
-        <span class="tw-cat" style="width:100%">Native Android</span>
-        <div class="tw-item">🤖 Kotlin</div>
-        <div class="tw-item">🧩 Jetpack Compose</div>
-        <div class="tw-item">🔄 Coroutines</div>
-        <div class="tw-item">🏗️ Room DB</div>
-        <span class="tw-cat" style="width:100%">Cross-Platform</span>
-        <div class="tw-item">🐦 Flutter</div>
-        <div class="tw-item">⚛️ React Native</div>
-        <span class="tw-cat" style="width:100%">Backend &amp; Services</span>
-        <div class="tw-item">🔥 Firebase</div>
-        <div class="tw-item">☁️ AWS Amplify</div>
-        <div class="tw-item">📊 Mixpanel</div>
-        <div class="tw-item">💥 Crashlytics</div>
-        <div class="tw-item">🔔 FCM / APNs</div>
+      <div class="tech-categories reveal">
+        <div class="tech-cat">
+          <div class="tc-label">Native iOS</div>
+          <div class="tc-items">
+            <div class="tc-item">Swift 5</div>
+            <div class="tc-item">SwiftUI</div>
+            <div class="tc-item">UIKit</div>
+            <div class="tc-item">Combine</div>
+            <div class="tc-item">CoreData</div>
+          </div>
+        </div>
+        <div class="tech-cat">
+          <div class="tc-label">Native Android</div>
+          <div class="tc-items">
+            <div class="tc-item">Kotlin</div>
+            <div class="tc-item">Jetpack Compose</div>
+            <div class="tc-item">Coroutines</div>
+            <div class="tc-item">Room DB</div>
+            <div class="tc-item">Dagger/Hilt</div>
+          </div>
+        </div>
+        <div class="tech-cat">
+          <div class="tc-label">Cross-Platform</div>
+          <div class="tc-items">
+            <div class="tc-item">Flutter</div>
+            <div class="tc-item">React Native</div>
+            <div class="tc-item">Dart</div>
+            <div class="tc-item">Firebase</div>
+            <div class="tc-item">Supabase</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1407,39 +1669,41 @@
   <section id="why"
     style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
     <div class="wrap">
-      <div class="sh reveal">
-        <div class="sh-badge"><span class="pdot"></span> THE VISTARA EDGE</div>
-        <h2 class="sh-title">Why Choose <em>Vistara Tech</em></h2>
-      </div>
-      <div class="why-row reveal">
-        <div class="why-card">
-          <span class="wc-icon">📱</span>
-          <div class="wc-val">4.9★</div>
-          <div class="wc-lbl">Avg App Store Rating</div>
-          <div class="wc-title">Store-Ready Quality</div>
-          <p class="wc-text">Every app we launch achieves 4.8+ ratings. We obsess over UX detail and edge cases.</p>
+      <div class="why-editorial reveal">
+        <div class="why-text-side">
+          <div class="sh-label" style="margin-bottom:1.5rem">// WHY VISTARA</div>
+          <h2 class="we-title">World Class,<em>Not Mediocre</em></h2>
+          <p class="we-desc">Most SEO agencies send monthly PDFs full of vanity metrics and confusing jargon. We measure
+            one thing: did your rankings and revenue go up this month?</p>
+          <div class="we-points">
+            <div class="we-point">Every app we launch achieves 4.8+ ratings.</div>
+            <div class="we-point">Smooth animations and instant responses are non-negotiable.</div>
+            <div class="we-point">From kickoff to App Store approval in as little as 11 weeks.</div>
+            <div class="we-point">Exhaustive device testing across 200+ hardware configurations.</div>
+            <div class="we-point">We obsess over UX detail and edge cases so you don't have to.</div>
+          </div>
         </div>
-        <div class="why-card">
-          <span class="wc-icon">⚡</span>
-          <div class="wc-val">60fps</div>
-          <div class="wc-lbl">Guaranteed Performance</div>
-          <div class="wc-title">Never Janky</div>
-          <p class="wc-text">Smooth animations and instant responses are non-negotiable. Measured and guaranteed.</p>
-        </div>
-        <div class="why-card">
-          <span class="wc-icon">🚀</span>
-          <div class="wc-val">11wk</div>
-          <div class="wc-lbl">MVP to App Store</div>
-          <div class="wc-title">Fastest Delivery</div>
-          <p class="wc-text">From kickoff to App Store approval in as little as 11 weeks. We've done it consistently.
-          </p>
-        </div>
-        <div class="why-card">
-          <span class="wc-icon">🛡️</span>
-          <div class="wc-val">0.1%</div>
-          <div class="wc-lbl">Max Crash Rate</div>
-          <div class="wc-title">Rock Solid Stability</div>
-          <p class="wc-text">Exhaustive device testing across 200+ hardware configurations before every release.</p>
+        <div class="why-stats-side">
+          <div class="ws-card">
+            <div class="ws-val">4.9</div>
+            <div class="ws-lbl">Avg App Store Rating</div>
+            <p class="ws-desc">Store-Ready Quality. We obsess over UX detail and edge cases.</p>
+          </div>
+          <div class="ws-card">
+            <div class="ws-val">60fps</div>
+            <div class="ws-lbl">Guaranteed Performance</div>
+            <p class="ws-desc">Never Janky. Smooth animations and instant responses are measured.</p>
+          </div>
+          <div class="ws-card">
+            <div class="ws-val">11wk</div>
+            <div class="ws-lbl">MVP to App Store</div>
+            <p class="ws-desc">Fastest Delivery. From kickoff to App Store approval.</p>
+          </div>
+          <div class="ws-card">
+            <div class="ws-val">0.1%</div>
+            <div class="ws-lbl">Crash Rate</div>
+            <p class="ws-desc">Exhaustive device testing across 200+ hardware configurations.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -1448,14 +1712,13 @@
   <!-- FINAL CTA -->
   <section class="fcta" id="contact">
     <div class="wrap" style="position:relative;z-index:1">
-      <div class="sh-badge reveal" style="display:inline-flex;margin-bottom:1.5rem"><span class="pdot"></span> START
-        BUILDING</div>
+      <div class="fcta-eyebrow reveal">EXECUTE APP PROTOCOL</div>
       <h2 class="fcta-title reveal">Your App Idea<em>Deserves to Ship</em></h2>
-      <p class="fcta-sub reveal">Every day you wait is a day your competitors are getting downloads. Let's build
-        something your users will love to open.</p>
+      <p class="fcta-sub reveal">Every day you're not on page 1 is a day your competitors are capturing customers who
+        should be yours. Start your SEO engine today.</p>
       <div class="hero-btns reveal" style="justify-content:center">
-        <a href="index.html#contact" class="btn-grad" id="cta-primary">📱 Start Building Now</a>
-        <a href="index.html#contact" class="btn-out" id="cta-secondary">💬 Free Consultation</a>
+        <a href="index.html#contact" class="btn-am" id="cta-primary">📱 Start Building Now</a>
+        <a href="index.html#contact" class="btn-am-out" id="cta-secondary">💬 Free Consultation</a>
       </div>
     </div>
   </section>
@@ -1465,14 +1728,14 @@
       <div class="fb"><img src="WWW.VISTARATECHGLOBAL.COM-removebg-preview.png" alt="Vistara Tech Global" class="fli" />
         <div>
           <div class="fn">VISTARA TECH GLOBAL</div>
-          <div class="ftag">Building Apps Users Love</div>
+          <div class="ftag">// data-driven results, not reports</div>
         </div>
       </div>
       <div class="flg">
         <div class="fc">
           <h4>Services</h4><a href="service-custom-websites.html">Custom Websites</a><a
             href="service-ecommerce.html">E-Commerce</a><a href="service-mobile-apps.html">Mobile Apps</a><a
-            href="service-seo.html">SEO</a><a href="service-graphic-design.html">Graphic Design</a>
+            href="service-mobile-apps.html">SEO</a><a href="service-graphic-design.html">Graphic Design</a>
         </div>
         <div class="fc">
           <h4>Company</h4><a href="index.html#why-us">Why Us</a><a href="index.html#tech-stack">Tech Stack</a><a
@@ -1481,7 +1744,7 @@
       </div>
     </div>
     <div class="ftb"><span>© 2026 Vistara Tech Global. All rights reserved.</span><span class="fst"><span
-          class="sdt"></span> All systems operational</span></div>
+          class="sdt"></span> All systems profitable</span></div>
   </footer>
 
   <script>
@@ -1494,13 +1757,25 @@
     const io = new IntersectionObserver((e) => { e.forEach((el, i) => { if (el.isIntersecting) { setTimeout(() => el.target.classList.add('visible'), i * 70); io.unobserve(el.target) } }); }, { threshold: 0.08 });
     rv.forEach(el => io.observe(el));
     (function () {
-      var c = document.getElementById('ma-canvas'); if (!c) return;
+      var c = document.getElementById('seo-canvas'); if (!c) return;
       var ctx = c.getContext('2d'), W, H;
       function resize() { W = c.width = window.innerWidth; H = c.height = window.innerHeight }
       resize(); window.addEventListener('resize', resize);
-      var pts = [];
-      for (var i = 0; i < 35; i++)pts.push({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .2, vy: (Math.random() - .5) * .2, r: Math.random() * 1.8 + .3, a: Math.random() * .35 + .08, c: Math.random() > .5 ? '179,136,255' : '224,64,251' });
-      function draw() { ctx.clearRect(0, 0, W, H); pts.forEach(p => { p.x += p.vx; p.y += p.vy; if (p.x < 0 || p.x > W) p.vx *= -1; if (p.y < 0 || p.y > H) p.vy *= -1; ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); ctx.fillStyle = `rgba(${p.c},${p.a})`; ctx.fill(); }); requestAnimationFrame(draw); }
+      // Data stream particles
+      var lines = [];
+      for (var i = 0; i < 20; i++)lines.push({ x: Math.random() * W, y: Math.random() * H, speed: Math.random() * 1.5 + .5, len: Math.random() * 80 + 30, a: Math.random() * .3 + .1 });
+      function draw() {
+        ctx.clearRect(0, 0, W, H);
+        lines.forEach(l => {
+          var grad = ctx.createLinearGradient(l.x, l.y - l.len, l.x, l.y);
+          grad.addColorStop(0, 'transparent');
+          grad.addColorStop(1, `rgba(255,179,0,${l.a})`);
+          ctx.beginPath(); ctx.moveTo(l.x, l.y - l.len); ctx.lineTo(l.x, l.y);
+          ctx.strokeStyle = grad; ctx.lineWidth = 1; ctx.stroke();
+          l.y += l.speed; if (l.y > H + l.len) l.y = -l.len;
+        });
+        requestAnimationFrame(draw);
+      }
       draw();
     })();
   </script>

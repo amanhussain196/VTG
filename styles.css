@@ -2200,6 +2200,26 @@ section {
 
   .nav-container {
     gap: 0;
+    padding: 0 1rem;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    gap: 0.5rem;
+    flex-shrink: 1;
+    min-width: 0;
+  }
+
+  .logo-img {
+    height: 32px;
+  }
+
+  .logo-text {
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .services-grid {
