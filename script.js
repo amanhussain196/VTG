@@ -10,6 +10,7 @@
      1. PARTICLE SYSTEM
      ====================================================== */
   const canvas = document.getElementById('particleCanvas');
+  if (!canvas) return; 
   const ctx = canvas.getContext('2d');
 
   let particles = [];
@@ -434,3 +435,4 @@
   console.log('%cEngineering the Digital Future', 'color:#7fa3b5;font-size:12px;font-family:monospace;');
 
 })();
+

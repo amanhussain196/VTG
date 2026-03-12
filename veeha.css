@@ -1,0 +1,418 @@
+/* ============================================================
+   VEEHA AI ASSISTANT CHATBOT — GLOBAL STYLES
+   ============================================================ */
+:root {
+  --veeha-cyan: #00e5ff;
+  --veeha-blue: #2979ff;
+  --veeha-dark: #0b1120;
+  --veeha-border: rgba(0, 229, 255, 0.15);
+  --veeha-text: #e8f4f8;
+}
+
+.veeha-chat-wrapper {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 2147483647;
+  font-family: 'Inter', sans-serif;
+  pointer-events: none;
+}
+
+.veeha-trigger {
+  width: 65px;
+  height: 65px;
+  background: black;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 32px rgba(0, 229, 255, 0.4);
+  display: block;
+  padding: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  pointer-events: auto;
+}
+
+.veeha-trigger:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 12px 40px rgba(0, 229, 255, 0.6);
+}
+
+.veeha-trigger img {
+  transition: transform 0.3s;
+}
+
+.veeha-trigger:hover img {
+  transform: scale(1.1);
+}
+
+.veeha-trigger-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, white 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.veeha-trigger:hover .veeha-trigger-glow {
+  opacity: 0.2;
+}
+
+.veeha-chat-window {
+  position: absolute;
+  bottom: 85px;
+  right: 0;
+  width: 400px;
+  height: min(600px, calc(100vh - 120px));
+  background: #0a1118;
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 229, 255, 0.05);
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.95);
+  transform-origin: bottom right;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  backdrop-filter: blur(25px);
+  pointer-events: auto;
+  z-index: 1000;
+}
+
+.veeha-chat-window.veeha-active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.veeha-chat-header {
+  padding: 1.25rem 1.5rem;
+  background: rgba(10, 17, 24, 0.9);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  backdrop-filter: blur(20px);
+}
+
+.veeha-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.veeha-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+  background: #000;
+}
+
+.veeha-title-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.veeha-name {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--veeha-cyan);
+  letter-spacing: 1px;
+}
+
+.veeha-status {
+  font-size: 0.65rem;
+  color: #00bfa5;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.veeha-status::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: #00bfa5;
+  border-radius: 50%;
+  animation: veehaPulse 2s infinite;
+}
+
+@keyframes veehaPulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.veeha-close {
+  background: none;
+  border: none;
+  color: #7fa3b5;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: color 0.3s;
+}
+
+.veeha-close:hover {
+  color: var(--veeha-cyan);
+}
+
+.veeha-messages {
+  flex: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: #0a1118;
+  /* Cleaner "Schematic" Doodle Background */
+  background-image: 
+    linear-gradient(rgba(0, 229, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 255, 0.03) 1px, transparent 1px),
+    url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2300e5ff' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='10' cy='10' r='1'/%3E%3Cpath d='M50 10h20v1H50zM10 50v20h1v-20zM90 90h20v1H90z'/%3E%3Ccircle cx='60' cy='60' r='2'/%3E%3Cpath d='M100 20l10 10M20 100l10 10' stroke='%2300e5ff' stroke-opacity='0.05'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 40px 40px, 40px 40px, 120px 120px;
+}
+
+.veeha-msg {
+  max-width: 85%;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  font-size: 0.95rem;
+  animation: veehaFadeIn 0.3s ease-out;
+}
+
+@keyframes veehaFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.veeha-msg-bot {
+  align-self: flex-start;
+}
+
+.veeha-msg-user {
+  align-self: flex-end;
+}
+
+.veeha-msg span {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 18px;
+  position: relative;
+}
+
+.veeha-msg-bot span {
+  background: rgba(255, 255, 255, 0.04);
+  color: #e8f4f8;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px 20px 20px 4px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.veeha-msg-user span {
+  background: linear-gradient(135deg, #00e5ff, #00b8d4);
+  color: #050810;
+  border-radius: 20px 20px 4px 20px;
+  font-weight: 500;
+  box-shadow: 0 4px 15px rgba(0, 229, 255, 0.15);
+}
+
+/* NOTIFICATION BUBBLE (PROACTIVE) */
+.veeha-notification {
+  position: absolute;
+  bottom: 85px;
+  right: 0;
+  background: rgba(10, 15, 20, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--veeha-border);
+  padding: 12px 18px;
+  border-radius: 18px 18px 2px 18px;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(10px) scale(0.9);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.veeha-notification.veeha-active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.veeha-notification::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  right: 15px;
+  width: 12px;
+  height: 12px;
+  background: inherit;
+  border-right: 1px solid var(--veeha-border);
+  border-bottom: 1px solid var(--veeha-border);
+  transform: rotate(45deg);
+}
+
+
+
+.veeha-msg-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding: 0.5rem 1rem;
+  background: rgba(0, 229, 255, 0.1);
+  border: 1px solid var(--veeha-border);
+  border-radius: 8px;
+  color: var(--veeha-cyan);
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all 0.3s;
+  width: fit-content;
+}
+
+.veeha-msg-link:hover {
+  background: var(--veeha-cyan);
+  color: #030608;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 229, 255, 0.2);
+}
+
+.veeha-msg-link svg {
+  width: 14px;
+  height: 14px;
+}
+
+.veeha-msg-user {
+  align-self: flex-end;
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.1) 0%, rgba(21, 101, 192, 0.1) 100%);
+  color: var(--veeha-cyan);
+  border-bottom-right-radius: 2px;
+  border: 1px solid var(--veeha-border);
+}
+
+.veeha-chat-input-area {
+  padding: 1.25rem;
+  background: rgba(5, 8, 16, 0.8);
+  border-top: 1px solid var(--veeha-border);
+}
+
+.veeha-input-container {
+  display: flex;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.5rem 0.5rem 0.5rem 1.1rem;
+  border-radius: 12px;
+  border: 1px solid var(--veeha-border);
+  transition: all 0.3s;
+}
+
+.veeha-input-container:focus-within {
+  border-color: var(--veeha-cyan);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.1);
+}
+
+.veeha-input {
+  flex: 1;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.veeha-input::placeholder {
+  color: #3d5a6b;
+}
+
+.veeha-send {
+  width: 36px;
+  height: 36px;
+  background: var(--veeha-cyan);
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  color: #030608;
+}
+
+.veeha-send:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px var(--veeha-cyan);
+}
+
+.veeha-send svg {
+  width: 18px;
+  height: 18px;
+}
+
+.veeha-typing {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.75rem 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(0, 229, 255, 0.1);
+  border-radius: 20px;
+  width: fit-content;
+  border-bottom-left-radius: 4px;
+}
+
+.veeha-typing-orb {
+  width: 8px;
+  height: 8px;
+  background: var(--veeha-cyan);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 10px var(--veeha-cyan);
+}
+
+.veeha-typing-orb::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border: 1px solid var(--veeha-cyan);
+  border-radius: 50%;
+  animation: veehaOrbPulse 1.5s infinite;
+}
+
+.veeha-typing text {
+  font-size: 0.75rem;
+  color: #7fa3b5;
+  font-family: 'Rajdhani', sans-serif;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+@keyframes veehaOrbPulse {
+  0% { transform: scale(0.8); opacity: 0; }
+  50% { opacity: 0.5; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+@media (max-width: 480px) {
+  .veeha-chat-window {
+    width: calc(100vw - 40px);
+    height: 60vh;
+    bottom: 70px;
+    right: 0;
+  }
+}
