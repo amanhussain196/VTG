@@ -1069,6 +1069,12 @@ section {
   animation: fadeIn 1.2s 0.5s ease both;
 }
 
+@media (min-width: 1101px) {
+  .hero-visual {
+    margin-top: -8rem;
+  }
+}
+
 /* Logo hologram — bigger */
 .logo-hologram {
   position: relative;
@@ -1123,12 +1129,21 @@ section {
   }
 }
 
+@keyframes holoSpinY {
+  from {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+  to {
+    transform: perspective(1000px) rotateY(360deg);
+  }
+}
+
 .holo-logo {
   width: 200px;
   height: auto;
   filter:
     drop-shadow(0 0 18px rgba(0, 229, 255, 0.7)) drop-shadow(0 0 50px rgba(0, 229, 255, 0.3)) drop-shadow(0 0 90px rgba(41, 121, 255, 0.2));
-  animation: holoPulse 3s ease-in-out infinite;
+  animation: holoPulse 3s ease-in-out infinite, holoSpinY 10s linear infinite;
   position: relative;
   z-index: 2;
 }
@@ -2673,35 +2688,41 @@ section {
 
 /* ======================================================
    MOBILE / TABLET PERFORMANCE OPTIMISATIONS
-   Disable expensive animated layers on small screens
+   Balance visuals with performance on small screens
    ====================================================== */
 @media (max-width: 900px) {
 
-  /* Grid overlay, scan lines, data streams -- GPU-heavy */
-  .grid-overlay,
-  .data-stream,
-  .scan-line,
-  .scan-line-2,
-  .floating-dots {
+  /* Tone down grid overlay without hiding it */
+  .grid-overlay {
+    opacity: 0.6 !important;
+  }
+
+  /* Hide excess streams to save GPU, keep the core ones */
+  .stream-3,
+  .stream-4,
+  .stream-5,
+  .stream-6,
+  .scan-line-2 {
     display: none !important;
   }
 
-  /* Reduce particle opacity */
+  /* Keep particle visibility relatively normal */
   #particleCanvas {
-    opacity: 0.25 !important;
+    opacity: 0.45 !important;
   }
 
-  /* Disable glow orbs filter blur & size on mobile to prevent layout expansion */
+  /* Restore glow orbs securely inside bounds, reduce blur for performance */
   .glow-orb {
-    display: none !important;
+    filter: blur(35px) !important;
+    opacity: 0.4 !important;
+    animation: none !important;
   }
 
-  /* Cursor trail is injected by JS (disabled on touch) -- nothing to do here */
-  /* Simplify hero logo parallax (handled in JS) */
-  .holo-logo {
-    transform: none !important;
-    transition: none !important;
-  }
+  /* Reduce the physical size of the glow orbs to guarantee they don't break width on ancient browsers */
+  .orb-1 { width: 300px; height: 300px; right: -50px; top: -50px; }
+  .orb-2 { width: 250px; height: 250px; left: -20px; bottom: 5%; }
+
+  /* Note: Removed transform disable on .holo-logo to allow the 3D rotating animation to play on mobile! */
 }
 
 /* ============================================================
