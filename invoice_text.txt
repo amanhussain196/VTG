@@ -1,0 +1,48 @@
+Crafted with ease using 
+Visit  to create truly professional invoices zoho.com/invoice
+1Sub Total 5,700.00
+CGST9 (9%) 513.00
+SGST9 (9%) 513.00
+Total ₹6,726.00
+Authorized SignatureTotal In Words
+Indian Rupee Six Thousand Seven Hundred Twenty-Six Only
+Notes
+Sunseaz technologies pvt ltd. Account No: 259700080096 IFSC :
+INDB0000570 Bank name : INDUSIND BANK Branch : Tarnaka..Google 
+pay or Phone pay : 9700080096
+Terms & Conditions
+1. Pricing may vary according to the client’s demand for extra or special 
+requirements or features, for which a separate order form will have to 
+be issued.2. If any queries please call us 9948233863, 9985736236 3. 
+This is a Computerized Invoice. 4. The Source Code of the Website will 
+be owned by Company upon receiving full payment for the project. 5. 
+After delivery of the project, Company will have all legal rights on the 
+Website 6. Payment once received is not refundable
+Sunseaz Technologies Pvt Ltd
+H.NO.12-5-35/A/B,F.No.4F9,Ballad Estate
+Tarnaka
+Hyderabad Telangana 500017
+India
+GSTIN 36AAWCS9097C2ZJ ESTIMATE
+  # : EST-000227
+  Estimate Date : 06/03/2026
+ Expiry Date : 09/03/2026 Place Of Supply : Telangana (36)
+Bill To Ship To
+S.R EVENTS
+Plot No. 65, Road No. 4, Ravi Colony Mahindra hills, East Mareedpally, 
+Secunderabad
+Hyderabad
+500026 Telangana
+India
+GSTIN 36HWKPK5305M1Z1Plot No. 65, Road No. 4, Ravi Colony Mahindra hills, East Mareedpally, 
+Secunderabad
+Hyderabad
+500026 Telangana
+India
+# Item & DescriptionHSN
+/SAC Qty RateCGST SGST
+Amount % Amt % Amt
+1 "Domain" 995435 1.00
+pcs1,380.00 9% 124.20 9% 124.20 1,380.00
+2 "Server " 995435 1.00
+pcs4,320.00 9% 388.80 9% 388.80 4,320.00

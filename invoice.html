@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice - Vistara Tech Global</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Segoe+UI&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00c2d3;
+            --dark: #121212;
+            --text-main: #333;
+            --text-light: #555;
+            --bg-light: #f8f9fa;
+            --border-color: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e5e5e5;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+            color: var(--text-main);
+        }
+
+        /* -----------------------------------
+           Editor Sidebar (For generation)
+        ------------------------------------ */
+        .editor-sidebar {
+            width: 400px;
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 2rem;
+            overflow-y: auto;
+            border-right: 1px solid #333;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .editor-sidebar h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary);
+            margin-top: 0;
+            font-size: 1.4rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        label {
+            font-size: 0.75rem;
+            color: #aaa;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        input, textarea {
+            background-color: #2a2a2a;
+            border: 1px solid #444;
+            color: #fff;
+            padding: 0.6rem;
+            border-radius: 4px;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.9rem;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: rgba(0, 194, 211, 0.1);
+        }
+
+        .item-row-input {
+            background: #222;
+            padding: 1rem;
+            border-radius: 4px;
+            position: relative;
+            margin-bottom: 0.5rem;
+            border: 1px solid #333;
+        }
+
+        .remove-btn {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #ff4444;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        hr.sidebar-divider {
+            border: 0;
+            border-top: 1px solid #333;
+            margin: 5px 0;
+        }
+
+        /* -----------------------------------
+           Invoice Preview Area
+        ------------------------------------ */
+        .preview-area {
+            flex: 1;
+            padding: 2.5rem;
+            overflow-y: auto;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .invoice-container {
+            width: 800px;
+            background: #fff;
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            min-height: 1100px; /* A4 approx proportion */
+            position: relative;
+        }
+
+        /* 1. Header (Top Center Alignment) */
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 25px;
+        }
+
+        .header img {
+            width: 80px; /* Kept strictly 80px as requested */
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .company-name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .invoice-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            letter-spacing: 3px;
+            font-weight: 700;
+        }
+
+        /* Invoice Meta */
+        .invoice-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        /* 2. Address Section (Two Column Layout) */
+        .address-section {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            gap: 30px;
+        }
+
+        .address-box {
+            flex: 1;
+            background: var(--bg-light);
+            padding: 20px;
+            border-top: 4px solid var(--primary);
+            border-radius: 4px;
+        }
+
+        .address-box h3 {
+            margin: 0 0 10px 0;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .address-box p {
+            margin: 0;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .strong {
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 1.05rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* 3. Description Section (Table) */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        th {
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border-color);
+            font-variant-numeric: tabular-nums;
+            font-size: 0.95rem;
+        }
+
+        /* Specific alignment and widths */
+        th:nth-child(1), td:nth-child(1) { width: 5%; text-align: center; }
+        th:nth-child(2), td:nth-child(2) { width: 50%; }
+        th:nth-child(3), td:nth-child(3) { width: 10%; text-align: center; }
+        th:nth-child(4), td:nth-child(4) { width: 15%; text-align: right; }
+        th:nth-child(5), td:nth-child(5) { width: 20%; text-align: right; font-weight: 600; }
+
+        /* 4. Pricing Section */
+        .pricing-section {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 40px;
+        }
+
+        .totals {
+            width: 320px;
+        }
+
+        .totals-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 15px;
+            font-size: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .totals-row.hidden {
+            display: none !important;
+        }
+
+        .total-final {
+            background-color: var(--dark);
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.25rem;
+            padding: 15px;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            border: none;
+        }
+
+        /* Footer / Notes */
+        .notes-section {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--text-light);
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+            margin-top: 40px;
+        }
+
+        /* Print Settings */
+        @media print {
+            body {
+                background: white;
+                height: auto;
+                overflow: visible;
+                display: block;
+            }
+            .editor-sidebar {
+                display: none;
+            }
+            .preview-area {
+                padding: 0;
+                display: block;
+            }
+            .invoice-container {
+                box-shadow: none;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                min-height: auto;
+            }
+            th {
+                background-color: var(--primary) !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .address-box {
+                background-color: var(--bg-light) !important;
+                border-top: 4px solid var(--primary) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .total-final {
+                background-color: var(--dark) !important;
+                color: var(--primary) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Editor Sidebar -->
+    <div class="editor-sidebar no-print">
+        <h2>Invoice Builder</h2>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label>Invoice No</label>
+                <input type="text" id="in_invoiceNum" value="INV-2026-001" oninput="updateInvoice()">
+            </div>
+            <div class="form-group">
+                <label>Date</label>
+                <input type="date" id="in_date" oninput="updateInvoice()">
+            </div>
+        </div>
+
+        <hr class="sidebar-divider">
+
+        <h3 style="font-size:1rem; margin-bottom:0; color:var(--primary);">Sender (Company)</h3>
+        <div class="form-group">
+            <label>Address Details</label>
+            <textarea id="in_senderAddress" rows="3" oninput="updateInvoice()">H.NO.12-5-35/A/B, F.No.4F9, Ballad Estate
+Tarnaka, Hyderabad, Telangana 500017
+GSTIN: 36AAWCS9097C2ZJ</textarea>
+        </div>
+
+        <hr class="sidebar-divider">
+
+        <h3 style="font-size:1rem; margin-bottom:0; color:var(--primary);">Bill To (Client)</h3>
+        <div class="form-group">
+            <label>Client Name</label>
+            <input type="text" id="in_clientName" value="S.R EVENTS" oninput="updateInvoice()">
+        </div>
+        <div class="form-group">
+            <label>Client Address</label>
+            <textarea id="in_clientAddress" rows="3" oninput="updateInvoice()">Plot No. 65, Road No. 4, Ravi Colony,
+East Mareedpally, Secunderabad,
+Telangana 500026
+GSTIN: 36HWKPK5305M1Z1</textarea>
+        </div>
+
+        <hr class="sidebar-divider">
+
+        <h3 style="font-size:1rem; margin-bottom:0; color:var(--primary);">Items</h3>
+        <div id="itemsContainer"></div>
+        <button class="btn btn-outline" onclick="addItem()">+ Add Item</button>
+
+        <hr class="sidebar-divider">
+
+        <div class="form-group">
+            <label>Tax Rate (%) [Set to 0 to hide]</label>
+            <input type="number" id="in_taxRate" value="18" oninput="updateInvoice()">
+        </div>
+
+        <button class="btn" onclick="window.print()">Print Invoice</button>
+    </div>
+
+    <!-- Invoice Preview Area -->
+    <div class="preview-area">
+        <div class="invoice-container">
+            
+            <!-- 1. Header (Top Center) -->
+            <div class="header">
+                <img src="WWW.VISTARATECHGLOBAL.COM-removebg-preview.png" alt="Logo">
+                <div class="company-name">Vistara Tech Global</div>
+                <div class="invoice-title">INVOICE</div>
+            </div>
+
+            <!-- Meta details (Invoice No & Date) -->
+            <div class="invoice-meta">
+                <div><strong>Invoice Number:</strong> <span id="out_invoiceNum"></span></div>
+                <div><strong>Date:</strong> <span id="out_date"></span></div>
+            </div>
+
+            <!-- 2. Address Section (Two Column) -->
+            <div class="address-section">
+                <!-- Left: Sender -->
+                <div class="address-box">
+                    <h3>From / Sender</h3>
+                    <p>
+                        <span class="strong">Vistara Tech Global</span>
+                        <span id="out_senderAddress" style="white-space: pre-line;"></span>
+                    </p>
+                </div>
+                <!-- Right: Client -->
+                <div class="address-box">
+                    <h3>Bill To / Client</h3>
+                    <p>
+                        <span class="strong" id="out_clientName"></span>
+                        <span id="out_clientAddress" style="white-space: pre-line;"></span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- 3. Description Section (Table) -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Item Description</th>
+                        <th>Qty</th>
+                        <th>Rate (₹)</th>
+                        <th>Amount (₹)</th>
+                    </tr>
+                </thead>
+                <tbody id="out_tableBody">
+                    <!-- Dynamic rows here -->
+                </tbody>
+            </table>
+
+            <!-- 4. Pricing Section (Right Aligned) -->
+            <div class="pricing-section">
+                <div class="totals">
+                    <div class="totals-row">
+                        <span>Subtotal</span>
+                        <span id="out_subTotal">₹0.00</span>
+                    </div>
+                    <!-- 5. Tax Logic (Dynamically Hidden) -->
+                    <div class="totals-row" id="taxRow">
+                        <span id="out_taxLabel">Tax</span>
+                        <span id="out_taxAmount">₹0.00</span>
+                    </div>
+                    <div class="total-final">
+                        <span>Total Amount</span>
+                        <span id="out_totalAmount">₹0.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Additional Notes -->
+            <div class="notes-section">
+                <strong style="color: var(--dark);">Payment Details & Terms:</strong><br><br>
+                Bank Name: INDUSIND BANK | Acc No: 259700080096 | IFSC: INDB0000570<br>
+                Google Pay / PhonePe: 9700080096<br><br>
+                1. This is a Computerized Invoice.<br>
+                2. Payment once received is not refundable.<br>
+                3. The Source Code of the Website will be owned by Company upon receiving full payment.
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // Init Date
+        document.getElementById('in_date').valueAsDate = new Date();
+
+        let items = [
+            { desc: "Domain Registration", qty: 1, rate: 1380 },
+            { desc: "Server Hosting (1 Year)", qty: 1, rate: 4320 }
+        ];
+
+        function renderEditor() {
+            const container = document.getElementById('itemsContainer');
+            container.innerHTML = '';
+            items.forEach((item, index) => {
+                container.innerHTML += `
+                    <div class="item-row-input">
+                        <button class="remove-btn" onclick="removeItem(${index})">&times;</button>
+                        <div class="form-group" style="margin-bottom:8px;">
+                            <label>Description</label>
+                            <input type="text" value="${item.desc}" oninput="updateItem(${index}, 'desc', this.value)">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Qty</label>
+                                <input type="number" min="1" value="${item.qty}" oninput="updateItem(${index}, 'qty', this.value)">
+                            </div>
+                            <div class="form-group">
+                                <label>Rate</label>
+                                <input type="number" min="0" value="${item.rate}" oninput="updateItem(${index}, 'rate', this.value)">
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            updateInvoice();
+        }
+
+        function addItem() {
+            items.push({ desc: "", qty: 1, rate: 0 });
+            renderEditor();
+        }
+
+        function removeItem(index) {
+            items.splice(index, 1);
+            renderEditor();
+        }
+
+        function updateItem(index, field, value) {
+            if (field === 'qty' || field === 'rate') {
+                items[index][field] = parseFloat(value) || 0;
+            } else {
+                items[index][field] = value;
+            }
+            updateInvoice();
+        }
+
+        // 6. Formatting & Logic Application
+        function updateInvoice() {
+            // Update Headers
+            document.getElementById('out_invoiceNum').innerText = document.getElementById('in_invoiceNum').value;
+            
+            const rawDate = document.getElementById('in_date').value;
+            const formattedDate = rawDate ? new Date(rawDate).toLocaleDateString('en-GB') : '';
+            document.getElementById('out_date').innerText = formattedDate;
+
+            // Update Addression details
+            document.getElementById('out_senderAddress').innerText = document.getElementById('in_senderAddress').value;
+            document.getElementById('out_clientName').innerText = document.getElementById('in_clientName').value;
+            document.getElementById('out_clientAddress').innerText = document.getElementById('in_clientAddress').value;
+
+            // Render Table (Description Section)
+            const tbody = document.getElementById('out_tableBody');
+            tbody.innerHTML = '';
+            
+            let subtotal = 0;
+            items.forEach((item, idx) => {
+                const amount = item.qty * item.rate;
+                subtotal += amount;
+                tbody.innerHTML += `
+                    <tr>
+                        <td>${idx + 1}</td>
+                        <td>${item.desc}</td>
+                        <td>${item.qty}</td>
+                        <td>${item.rate.toFixed(2)}</td>
+                        <td>${amount.toFixed(2)}</td>
+                    </tr>
+                `;
+            });
+
+            // 5. Tax Logic & 4. Pricing Section
+            const taxRate = parseFloat(document.getElementById('in_taxRate').value) || 0;
+            const taxRow = document.getElementById('taxRow');
+            
+            let taxAmount = 0;
+            if (taxRate === 0) {
+                taxRow.classList.add('hidden'); // Hide if 0
+            } else {
+                taxRow.classList.remove('hidden');
+                taxAmount = (subtotal * taxRate) / 100;
+                document.getElementById('out_taxLabel').innerText = `Tax (${taxRate}%)`;
+                document.getElementById('out_taxAmount').innerText = `₹${taxAmount.toFixed(2)}`;
+            }
+
+            const total = subtotal + taxAmount;
+
+            document.getElementById('out_subTotal').innerText = `₹${subtotal.toFixed(2)}`;
+            document.getElementById('out_totalAmount').innerText = `₹${total.toFixed(2)}`;
+        }
+
+        // Initialization
+        renderEditor();
+    </script>
+</body>
+</html>

@@ -37,6 +37,7 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  width: 100%;
 }
 
 body {
@@ -46,6 +47,7 @@ body {
   font-size: 16px;
   line-height: 1.65;
   overflow-x: hidden;
+  width: 100%;
 }
 
 /* ---------- PARTICLE CANVAS ---------- */
@@ -3180,7 +3182,32 @@ section {
 
   /* Hero title feels huge on small screens, tone down */
   .hero-title {
-    font-size: clamp(2rem, 11vw, 3.2rem);
+    font-size: clamp(1.6rem, 8vw, 2.8rem);
+  }
+  
+  .hero-tagline {
+    font-size: 1.1rem;
+  }
+  
+  .title-line {
+    letter-spacing: 0.1em;
+  }
+  
+  @keyframes heroLineReveal {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+      letter-spacing: 0.1em;
+    }
+    60% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+      letter-spacing: -0.01em;
+    }
   }
 
   /* Service cards: slightly less padding */
