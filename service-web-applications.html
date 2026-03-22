@@ -1346,6 +1346,16 @@
         }
 
         @media(max-width:768px) {
+            #wa-canvas, .hg {
+                display: none !important;
+            }
+            body {
+                background: #030c10; /* Solid deep background for clear text */
+            }
+            .data-stream {
+                opacity: 0.8 !important; /* Make lines more prominent */
+                background: linear-gradient(180deg, transparent, rgba(0, 188, 212, 0.8), transparent) !important;
+            }
             section {
                 padding: 4rem 1.25rem
             }

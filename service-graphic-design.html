@@ -1351,41 +1351,85 @@
       }
     }
 
-    @media(max-width:1024px) {
+    @media(max-width: 1024px) {
       .hero {
-        grid-template-columns: 1fr;
-        padding-top: 8rem;
+        display: flex !important;
+        flex-direction: column-reverse; /* image is lower in DOM, so reverse puts it on top */
+        padding-top: 7rem;
         margin: 0 auto;
+        text-align: center;
+        gap: 2.5rem;
+      }
+
+      .hero-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .hero-image-wrapper {
+        width: 100%;
+        margin-bottom: 25px;
+      }
+
+      .hero-app-img {
+        max-width: 70%;
+      }
+
+      .hero-sub, .hero-btns, .hero-stats-row {
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .terminal {
         display: none
       }
 
-      .feat-2col {
-        grid-template-columns: 1fr
-      }
-
-      .seo-dashboard {
-        position: static
+      .process-row {
+        grid-template-columns: repeat(2, 1fr) !important;
       }
 
       .tech-categories {
-        grid-template-columns: repeat(2, 1fr)
+        grid-template-columns: repeat(2, 1fr) !important;
       }
 
       .why-editorial {
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .why-stats-side {
+        grid-template-columns: 1fr 1fr !important;
+      }
+      
+      .feat-2col {
+        grid-template-columns: 1fr !important;
       }
     }
 
     @media(max-width:768px) {
+      #gd-canvas, .amb {
+        display: none !important;
+      }
+      body {
+        background: #0a0800; /* Dark premium background for contrast */
+      }
+      .data-stream {
+        opacity: 0.8 !important; /* Prominent falling lines */
+        background: linear-gradient(180deg, transparent, rgba(240, 98, 146, 0.8), transparent) !important;
+        z-index: 1; /* Stay behind content but above background */
+      }
       section {
         padding: 4rem 1.25rem
       }
 
+      .hero-title {
+        font-size: clamp(2.5rem, 10vw, 4rem);
+      }
+
       .process-row {
-        grid-template-columns: 1fr 1fr
+        grid-template-columns: 1fr !important;
       }
 
       .process-row::before {
@@ -1401,11 +1445,11 @@
       }
 
       .tech-categories {
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr !important;
       }
 
       .why-stats-side {
-        grid-template-columns: 1fr 1fr
+        grid-template-columns: 1fr !important;
       }
 
       ul.nls {
@@ -1441,31 +1485,24 @@
       }
 
       .hero-title {
-        font-size: clamp(3rem, 14vw, 5rem)
+        font-size: clamp(2.2rem, 12vw, 3.5rem)
       }
 
       .hero-stats-row {
-        gap: 1rem
+        gap: 1.5rem;
+        justify-content: center;
       }
-
-      .process-row {
-        grid-template-columns: 1fr
+      
+      .hs-item {
+        padding-left: 0.75rem;
       }
-
-      .hero-btns {
-        flex-direction: column
-      }
-
-      .btn-am,
-      .btn-am-out {
-        width: 100%;
-        justify-content: center
-      }
-
-      .why-stats-side {
-        grid-template-columns: 1fr 1fr
+      
+      .hs-val {
+        font-size: 2rem;
       }
     }
+
+    
   
     .hero-image-wrapper {
       position: relative;
