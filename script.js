@@ -270,7 +270,7 @@
   }, { passive: true });
 
   /* ======================================================
-     6. CONTACT FORM
+     6. CONTACT FORM — EMAILJS INTEGRATION
      ====================================================== */
   const contactForm = document.getElementById('contactForm');
   const formSuccess = document.getElementById('formSuccess');
@@ -283,16 +283,33 @@
       btn.disabled = true;
       btn.innerHTML = '<span class="btn-icon">⏳</span> Transmitting... <span class="btn-glow"></span>';
 
-      setTimeout(() => {
-        btn.innerHTML = '<span class="btn-icon">✓</span> Sent Successfully! <span class="btn-glow"></span>';
-        formSuccess.style.display = 'block';
-        contactForm.reset();
-        setTimeout(() => {
+      // --- EMAILJS TRANSMISSION ---
+      const SERVICE_ID = 'service_86hwqa4';
+      const TEMPLATE_ID = 'template_pi045ef';
+
+      emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, contactForm)
+        .then(() => {
+          btn.innerHTML = '<span class="btn-icon">✓</span> Sent Successfully! <span class="btn-glow"></span>';
+          formSuccess.style.color = '#00e676';
+          formSuccess.textContent = '✓ Transmitted! We will respond within 24 hours.';
+          formSuccess.style.display = 'block';
+          contactForm.reset();
+        })
+        .catch((error) => {
+          console.error('EmailJS Error:', error);
+          btn.innerHTML = '<span class="btn-icon">❌</span> Error! Please try again. <span class="btn-glow"></span>';
           btn.disabled = false;
-          btn.innerHTML = '<span class="btn-icon">🚀</span> Launch Your Project <span class="btn-glow"></span>';
-          formSuccess.style.display = 'none';
-        }, 4000);
-      }, 1800);
+          formSuccess.style.color = '#ff5252';
+          formSuccess.textContent = '⚠️ Failed to transmit. Please check your connection.';
+          formSuccess.style.display = 'block';
+        })
+        .finally(() => {
+          setTimeout(() => {
+            btn.disabled = false;
+            btn.innerHTML = '<span class="btn-icon">🚀</span> Launch Your Project <span class="btn-glow"></span>';
+            formSuccess.style.display = 'none';
+          }, 5000);
+        });
     });
   }
 

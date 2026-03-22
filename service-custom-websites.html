@@ -90,30 +90,30 @@
             inset: 0;
             pointer-events: none;
             z-index: 0;
-            background-image: linear-gradient(rgba(83, 109, 254, .025) 1px, transparent 1px), linear-gradient(90deg, rgba(83, 109, 254, .025) 1px, transparent 1px);
-            background-size: 64px 64px;
+            background-image: linear-gradient(rgba(83, 109, 254, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(83, 109, 254, 0.12) 1px, transparent 1px);
+            background-size: 60px 60px;
             animation: cwGridDrift 26s linear infinite;
         }
 
         @keyframes cwGridDrift {
             0% {
-                transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0) scale(1.05);
             }
 
             25% {
-                transform: translate3d(-10px, 6px, 0);
+                transform: translate3d(-15px, 10px, 0) scale(1.05);
             }
 
             50% {
-                transform: translate3d(-18px, 0, 0);
+                transform: translate3d(-30px, 0, 0) scale(1.05);
             }
 
             75% {
-                transform: translate3d(-8px, -6px, 0);
+                transform: translate3d(-15px, -10px, 0) scale(1.05);
             }
 
             100% {
-                transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0) scale(1.05);
             }
         }
 
@@ -123,18 +123,24 @@
             inset: 0;
             pointer-events: none;
             z-index: 0;
-            overflow: hidden
+            overflow: hidden;
         }
 
         .amb::before {
             content: '';
             position: absolute;
-            top: -25%;
+            top: -20%;
             right: -10%;
-            width: 700px;
-            height: 700px;
-            background: radial-gradient(circle, rgba(83, 109, 254, .07), transparent 65%);
-            border-radius: 50%
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(83, 109, 254, 0.25), transparent 65%);
+            border-radius: 50%;
+            animation: floatGlow 12s ease-in-out infinite alternate;
+        }
+
+        @keyframes floatGlow {
+            0%, 100% { transform: translateY(0) scale(1); opacity: 0.8; }
+            50% { transform: translateY(40px) scale(1.1); opacity: 1; }
         }
 
         .amb::after {
@@ -145,8 +151,46 @@
             width: 500px;
             height: 500px;
             background: radial-gradient(circle, rgba(64, 196, 255, .04), transparent 65%);
-            border-radius: 50%
+            border-radius: 50%;
         }
+
+        /* DATA STREAMS */
+        .data-stream {
+            position: fixed;
+            width: 1px;
+            height: 40vh;
+            background: linear-gradient(180deg, transparent, rgba(83, 109, 254, 0.6), transparent);
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0;
+            animation: dataFall 4s linear infinite;
+        }
+
+        .data-stream::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -1px;
+            width: 3px;
+            height: 12px;
+            background: var(--sky);
+            border-radius: 4px;
+            box-shadow: 0 0 10px var(--sky);
+        }
+
+        @keyframes dataFall {
+            0% { transform: translateY(-100vh); opacity: 0; }
+            10% { opacity: 1; }
+            80% { opacity: 0.8; }
+            100% { transform: translateY(120vh); opacity: 0; }
+        }
+
+        .stream-1 { left: 10%; animation-duration: 4.5s; animation-delay: 0.2s; }
+        .stream-2 { left: 25%; animation-duration: 6s; animation-delay: 1.5s; }
+        .stream-3 { left: 45%; animation-duration: 3.8s; animation-delay: 0.8s; }
+        .stream-4 { left: 65%; animation-duration: 5.2s; animation-delay: 2.1s; }
+        .stream-5 { left: 85%; animation-duration: 4.9s; animation-delay: 0.5s; }
+        .stream-6 { left: 95%; animation-duration: 6.5s; animation-delay: 3.3s; }
 
         /* NAV */
         nav {
@@ -481,13 +525,27 @@
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 0 60px rgba(83, 109, 254, .12), 0 40px 80px rgba(0, 0, 0, .6);
-            position: relative
+            position: relative;
+            transform-style: preserve-3d;
+            animation: heroFloat 8s ease-in-out infinite;
+        }
+
+        @keyframes heroFloat {
+            0%, 100% {
+                transform: translateY(0) perspective(1000px) rotateY(-2deg) rotateX(2deg);
+                box-shadow: 0 0 60px rgba(83, 109, 254, .12), 0 40px 80px rgba(0, 0, 0, .6);
+            }
+            50% {
+                transform: translateY(-15px) perspective(1000px) rotateY(2deg) rotateX(-2deg);
+                box-shadow: 0 0 80px rgba(83, 109, 254, .25), 0 50px 100px rgba(0, 0, 0, .7);
+            }
         }
 
         .hero-img-frame img {
             width: 100%;
             display: block;
-            mix-blend-mode: lighten
+            border-radius: 12px;
+            /* mix-blend-mode: lighten removed to stop merging with background */
         }
 
         .hero-coord {
@@ -1155,6 +1213,45 @@
             transform: translateY(0)
         }
 
+        /* TEXT DYNAMIC ANIMATION */
+        @keyframes textDynamicPulse {
+            0% { filter: drop-shadow(0 0 5px rgba(83, 109, 254, 0.4)); opacity: 1; transform: scale(1); }
+            50% { filter: drop-shadow(0 0 18px rgba(64, 196, 255, 0.8)); opacity: 0.9; transform: scale(1.02); }
+            100% { filter: drop-shadow(0 0 5px rgba(83, 109, 254, 0.4)); opacity: 1; transform: scale(1); }
+        }
+
+        h2.sh-title em, h2.fcta-title em, .hero-title em {
+            animation: textDynamicPulse 4s ease-in-out infinite alternate;
+            display: inline-block;
+        }
+
+        /* BENTO GRID DESKTOP UPGRADES */
+        .feat-card, .wc, .tb-cat {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        @media (min-width: 1025px) {
+            .feat-grid { grid-template-columns: repeat(3, 1fr) !important; }
+            .feat-grid .feat-card:nth-child(1) { grid-column: span 2; }
+            .feat-grid .feat-card:nth-child(2) { grid-column: span 1; }
+            .feat-grid .feat-card:nth-child(3) { grid-column: span 1; }
+            .feat-grid .feat-card:nth-child(4) { grid-column: span 2; }
+            .feat-grid .feat-card:nth-child(5) { grid-column: span 2; }
+            .feat-grid .feat-card:nth-child(6) { grid-column: span 1; }
+
+            .tech-block { grid-template-columns: repeat(2, 1fr) !important; }
+            .tech-block .tb-cat:nth-child(1) { grid-column: span 2; }
+
+            .why-grid { grid-template-columns: repeat(3, 1fr) !important; }
+            .why-grid .wc:nth-child(1) { grid-column: span 2; }
+            .why-grid .wc:nth-child(2) { grid-column: span 1; }
+            .why-grid .wc:nth-child(3) { grid-column: span 1; }
+            .why-grid .wc:nth-child(4) { grid-column: span 2; }
+        }
+
         @media(max-width:1024px) {
             .hero {
                 grid-template-columns: 1fr
@@ -1259,6 +1356,12 @@
     <canvas id="cw-canvas"></canvas>
     <div class="bp-grid"></div>
     <div class="amb"></div>
+    <div class="data-stream stream-1"></div>
+    <div class="data-stream stream-2"></div>
+    <div class="data-stream stream-3"></div>
+    <div class="data-stream stream-4"></div>
+    <div class="data-stream stream-5"></div>
+    <div class="data-stream stream-6"></div>
 
     <nav id="nav">
         <div class="nc">
@@ -1611,7 +1714,7 @@
             function resize() { W = c.width = window.innerWidth; H = c.height = window.innerHeight }
             resize(); window.addEventListener('resize', resize);
             var pts = [];
-            for (var i = 0; i < 30; i++)pts.push({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .2, vy: (Math.random() - .5) * .2, r: Math.random() * 1.5 + .4, a: Math.random() * .3 + .1, c: Math.random() > .5 ? '83,109,254' : '64,196,255' });
+            for (var i = 0; i < 80; i++)pts.push({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .4, vy: (Math.random() - .5) * .4, r: Math.random() * 2 + 0.5, a: Math.random() * .5 + .3, c: Math.random() > .5 ? '83,109,254' : '64,196,255' });
             function draw() { ctx.clearRect(0, 0, W, H); pts.forEach(p => { p.x += p.vx; p.y += p.vy; if (p.x < 0 || p.x > W) p.vx *= -1; if (p.y < 0 || p.y > H) p.vy *= -1; ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); ctx.fillStyle = `rgba(${p.c},${p.a})`; ctx.fill(); }); requestAnimationFrame(draw); }
             draw();
         })();

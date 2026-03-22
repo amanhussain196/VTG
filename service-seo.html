@@ -78,7 +78,7 @@
       height: 100%;
       pointer-events: none;
       z-index: 0;
-      opacity: .15
+      opacity: 1
     }
 
     /* SCANLINE EFFECT */
@@ -86,10 +86,10 @@
       content: '';
       position: fixed;
       inset: 0;
-      background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, .08) 2px, rgba(0, 0, 0, .08) 4px);
+      background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, .1) 2px, rgba(0, 0, 0, .1) 4px);
       pointer-events: none;
-      z-index: 1;
-      opacity: .35
+      z-index: 10;
+      opacity: .4
     }
 
     /* AMBIENT */
@@ -107,9 +107,65 @@
       right: -10%;
       width: 700px;
       height: 700px;
-      background: radial-gradient(circle, rgba(255, 179, 0, .06), transparent 65%);
-      border-radius: 50%
+      background: radial-gradient(circle, rgba(255, 179, 0, .12), transparent 65%);
+      border-radius: 50%;
+      animation: floatGlow 15s ease-in-out infinite alternate;
     }
+
+    .amb::after {
+      content: '';
+      position: absolute;
+      bottom: -15%;
+      left: -5%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255, 143, 0, .08), transparent 70%);
+      border-radius: 50%;
+      animation: floatGlow 12s ease-in-out infinite alternate-reverse;
+    }
+
+    @keyframes floatGlow {
+      0% { transform: translate(0, 0) scale(1); opacity: 0.4; }
+      50% { transform: translate(30px, 15px) scale(1.1); opacity: 0.7; }
+      100% { transform: translate(-15px, 30px) scale(0.95); opacity: 0.4; }
+    }
+
+    /* DATA STREAMS */
+    .data-stream {
+      position: fixed;
+      width: 1.5px;
+      height: 40vh;
+      background: linear-gradient(180deg, transparent, rgba(255, 179, 0, 0.4), transparent);
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0;
+      animation: dataFall 6s linear infinite;
+    }
+
+    .data-stream::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: -1px;
+      width: 4px;
+      height: 14px;
+      background: var(--am);
+      border-radius: 4px;
+      box-shadow: 0 0 12px var(--am);
+    }
+
+    @keyframes dataFall {
+      0% { transform: translateY(-100vh); opacity: 0; }
+      15% { opacity: 1; }
+      85% { opacity: 0.8; }
+      100% { transform: translateY(120vh); opacity: 0; }
+    }
+
+    .stream-1 { left: 10%; animation-duration: 5.2s; animation-delay: 0.2s; }
+    .stream-2 { left: 30%; animation-duration: 7.5s; animation-delay: 1.5s; }
+    .stream-3 { left: 50%; animation-duration: 4.8s; animation-delay: 0.8s; }
+    .stream-4 { left: 70%; animation-duration: 6.2s; animation-delay: 2.1s; }
+    .stream-5 { left: 90%; animation-duration: 5.9s; animation-delay: 0.5s; }
 
     /* NAV */
     nav {
@@ -397,7 +453,43 @@
       border: 1px solid var(--border);
       border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 0 40px rgba(255, 179, 0, .08), 0 40px 80px rgba(0, 0, 0, .5)
+      box-shadow: 0 0 40px rgba(255, 179, 0, .15), 0 40px 80px rgba(0, 0, 0, .6);
+      transform-style: preserve-3d;
+      animation: heroFloat 8s ease-in-out infinite;
+    }
+
+    @keyframes heroFloat {
+      0%, 100% {
+        transform: translateY(0) perspective(1000px) rotateY(-3deg) rotateX(2deg);
+      }
+      50% {
+        transform: translateY(-20px) perspective(1000px) rotateY(3deg) rotateX(-2deg);
+        box-shadow: 0 0 60px rgba(255, 179, 0, .3), 0 60px 100px rgba(0, 0, 0, .8);
+      }
+    }
+
+    @keyframes textDynamicPulse {
+      0% { filter: drop-shadow(0 0 5px rgba(255, 179, 0, 0.4)); transform: scale(1); }
+      50% { filter: drop-shadow(0 0 15px rgba(255, 179, 0, 0.8)); transform: scale(1.02); }
+      100% { filter: drop-shadow(0 0 5px rgba(255, 179, 0, 0.4)); transform: scale(1); }
+    }
+
+    h2.sh-title em, h2.fcta-title em, .hero-title em {
+      animation: textDynamicPulse 4s ease-in-out infinite alternate;
+      display: inline-block;
+    }
+
+    @media (min-width: 1025px) {
+      .process-row { display: grid; grid-template-columns: repeat(4, 1fr) !important; gap: 1.5rem; }
+      .process-row .proc-step:nth-child(2) { grid-column: span 1; }
+      
+      .tech-categories { display: grid; grid-template-columns: repeat(3, 1fr) !important; gap: 1.5rem; }
+      .tech-categories .tech-cat:nth-child(1) { grid-column: span 2; }
+
+      .why-stats-side { display: grid; grid-template-columns: 1fr 1fr !important; gap: 1.25rem; }
+      .why-stats-side .ws-card:nth-child(2) { grid-column: span 1; }
+      
+      .feat-2col { display: grid; grid-template-columns: 1.3fr 1fr !important; gap: 2rem; }
     }
 
     .terminal-bar {
@@ -1384,6 +1476,11 @@
 <body>
   <canvas id="seo-canvas"></canvas>
   <div class="amb"></div>
+  <div class="data-stream stream-1"></div>
+  <div class="data-stream stream-2"></div>
+  <div class="data-stream stream-3"></div>
+  <div class="data-stream stream-4"></div>
+  <div class="data-stream stream-5"></div>
 
   <nav id="nav">
     <div class="nc">
@@ -1779,23 +1876,45 @@
     const rv = document.querySelectorAll('.reveal');
     const io = new IntersectionObserver((e) => { e.forEach((el, i) => { if (el.isIntersecting) { setTimeout(() => el.target.classList.add('visible'), i * 70); io.unobserve(el.target) } }); }, { threshold: 0.08 });
     rv.forEach(el => io.observe(el));
+    // ALGORITHM GRID
     (function () {
       var c = document.getElementById('seo-canvas'); if (!c) return;
       var ctx = c.getContext('2d'), W, H;
       function resize() { W = c.width = window.innerWidth; H = c.height = window.innerHeight }
       resize(); window.addEventListener('resize', resize);
-      // Data stream particles
+      
       var lines = [];
-      for (var i = 0; i < 20; i++)lines.push({ x: Math.random() * W, y: Math.random() * H, speed: Math.random() * 1.5 + .5, len: Math.random() * 80 + 30, a: Math.random() * .3 + .1 });
+      for (var i = 0; i < 25; i++) lines.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        len: Math.random() * 100 + 40,
+        speed: Math.random() * 2.5 + 1,
+        a: Math.random() * 0.4 + 0.1
+      });
+
       function draw() {
         ctx.clearRect(0, 0, W, H);
+        
+        // Static Grid
+        ctx.strokeStyle = 'rgba(255, 179, 0, 0.04)';
+        ctx.lineWidth = 1;
+        var spacing = 50;
+        for(var x=0; x<W; x+=spacing) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke(); }
+        for(var y=0; y<H; y+=spacing) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke(); }
+
+        // Moving Algorithm Lines
         lines.forEach(l => {
-          var grad = ctx.createLinearGradient(l.x, l.y - l.len, l.x, l.y);
+          var grad = ctx.createLinearGradient(l.x, l.y, l.x, l.y + l.len);
           grad.addColorStop(0, 'transparent');
-          grad.addColorStop(1, `rgba(255,179,0,${l.a})`);
-          ctx.beginPath(); ctx.moveTo(l.x, l.y - l.len); ctx.lineTo(l.x, l.y);
-          ctx.strokeStyle = grad; ctx.lineWidth = 1; ctx.stroke();
-          l.y += l.speed; if (l.y > H + l.len) l.y = -l.len;
+          grad.addColorStop(1, `rgba(255, 179, 0, ${l.a})`);
+          ctx.beginPath(); ctx.moveTo(l.x, l.y); ctx.lineTo(l.x, l.y + l.len);
+          ctx.strokeStyle = grad; ctx.lineWidth = 2; ctx.stroke();
+          
+          l.y += l.speed;
+          if (l.y > H) {
+            l.y = -l.len;
+            l.x = Math.random() * W;
+          }
         });
         requestAnimationFrame(draw);
       }

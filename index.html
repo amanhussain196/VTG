@@ -14,7 +14,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=6" />
+    <link rel="stylesheet" href="styles.css?v=8" />
     <link rel="stylesheet" href="veeha.css?v=2" />
 </head>
 
@@ -240,8 +240,7 @@
                         <div class="icon-glow"></div>
                     </div>
                     <h3 class="service-title">Custom Websites</h3>
-                    <p class="service-desc">Blazing-fast, pixel-perfect websites architected with modern frameworks.
-                        Designed to convert, built to last.</p>
+                    <p class="service-desc">Blazing-fast, pixel-perfect digital properties architected with modern modular frameworks. Designed to maximize conversion rates, strictly built to last, and engineered to outperform your competition.</p>
                     <div class="service-tags">
                         <span>React</span><span>Next.js</span><span>WordPress</span>
                     </div>
@@ -312,8 +311,7 @@
                         <div class="icon-glow"></div>
                     </div>
                     <h3 class="service-title">Native Android &amp; iOS Apps</h3>
-                    <p class="service-desc">Silky-smooth mobile experiences built natively or with cross-platform
-                        frameworks. From concept to app store approval.</p>
+                    <p class="service-desc">Silky-smooth dynamic mobile experiences built natively or with advanced cross-platform frameworks. We drive the entire execution from wireframe concepts to strict app store compliance and scalable user growth.</p>
                     <div class="service-tags">
                         <span>Flutter</span><span>Swift</span><span>Kotlin</span>
                     </div>
@@ -335,8 +333,7 @@
                         <div class="icon-glow"></div>
                     </div>
                     <h3 class="service-title">Data-Driven SEO Strategies</h3>
-                    <p class="service-desc">Algorithm-proof SEO powered by deep analytics. Dominate search rankings and
-                        drive qualified organic traffic at scale.</p>
+                    <p class="service-desc">Algorithm-proof technical SEO frameworks heavily powered by deep behavioral analytics. We help you systematically dominate search algorithms and continuously drive high quality organic traffic at an unprecedented global scale.</p>
                     <div class="service-tags">
                         <span>Technical SEO</span><span>Content</span><span>Analytics</span>
                     </div>
@@ -395,8 +392,7 @@
                         </svg>
                     </div>
                     <h3>Innovation Focused</h3>
-                    <p>We leverage emerging technologies — AI, ML, blockchain, and cloud — to keep your business ahead
-                        of the curve.</p>
+                    <p>We leverage emerging technologies — AI, ML, blockchain, and cloud architectures — to keep your business ahead of the curve, future-proofing your operations against rapidly evolving global market demands.</p>
                     <div class="why-line"></div>
                 </div>
 
@@ -438,8 +434,7 @@
                         </svg>
                     </div>
                     <h3>Performance & Security</h3>
-                    <p>99.9% uptime SLAs, enterprise-grade security protocols, penetration testing, and optimized Core
-                        Web Vitals.</p>
+                    <p>We guarantee 99.9% uptime SLAs alongside robust enterprise-grade security protocols, rigorous penetration testing routines, and thoroughly optimized Core Web Vitals to deliver uncompromised platform speed.</p>
                     <div class="why-line"></div>
                 </div>
             </div>
@@ -689,6 +684,12 @@
                         <div class="input-glow-line"></div>
                     </div>
                     <div class="form-group">
+                        <label for="phone" class="form-label">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" class="form-input" placeholder="+91 00000 00000"
+                            required />
+                        <div class="input-glow-line"></div>
+                    </div>
+                    <div class="form-group">
                         <label for="service" class="form-label">Service Needed</label>
                         <select id="service" name="service" class="form-input form-select">
                             <option value="">Select a service...</option>
@@ -766,6 +767,12 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+      (function() {
+        emailjs.init("10USoajnXWjp32QfI");
+      })();
+    </script>
     <script src="script.js"></script>
     <script>
         // Back to top

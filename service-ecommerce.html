@@ -80,7 +80,7 @@
       height: 100%;
       pointer-events: none;
       z-index: 0;
-      opacity: .2
+      opacity: 1
     }
 
     /* AMBIENT GLOW */
@@ -98,8 +98,9 @@
       right: -10%;
       width: 700px;
       height: 700px;
-      background: radial-gradient(circle, rgba(0, 230, 118, .07), transparent 65%);
-      border-radius: 50%
+      background: radial-gradient(circle, rgba(0, 230, 118, .12), transparent 65%);
+      border-radius: 50%;
+      animation: floatGlow 15s ease-in-out infinite alternate;
     }
 
     .amb::after {
@@ -110,29 +111,65 @@
       width: 500px;
       height: 500px;
       background:
-        radial-gradient(circle, rgba(29, 233, 182, .04), transparent 65%),
+        radial-gradient(circle, rgba(29, 233, 182, .08), transparent 65%),
         repeating-linear-gradient(
           90deg,
-          rgba(0, 230, 118, 0.12) 0px,
-          rgba(0, 230, 118, 0.12) 2px,
+          rgba(0, 230, 118, 0.15) 0px,
+          rgba(0, 230, 118, 0.15) 2px,
           transparent 2px,
           transparent 10px
         );
       border-radius: 50%;
-      animation: ecSweep 22s linear infinite;
+      animation: ecSweep 22s linear infinite, floatGlow 12s ease-in-out infinite alternate-reverse;
+    }
+
+    @keyframes floatGlow {
+      0% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+      50% { transform: translate(40px, 20px) scale(1.1); opacity: 0.8; }
+      100% { transform: translate(-20px, 40px) scale(0.95); opacity: 0.5; }
     }
 
     @keyframes ecSweep {
-      0% {
-        transform: translate3d(0, 0, 0) rotate(0deg);
-      }
-      50% {
-        transform: translate3d(30px, -10px, 0) rotate(8deg);
-      }
-      100% {
-        transform: translate3d(0, 0, 0) rotate(16deg);
-      }
+      0% { transform: translate3d(0, 0, 0) rotate(0deg); }
+      100% { transform: translate3d(0, 0, 0) rotate(360deg); }
     }
+
+    /* DATA STREAMS */
+    .data-stream {
+      position: fixed;
+      width: 1.5px;
+      height: 35vh;
+      background: linear-gradient(180deg, transparent, rgba(0, 230, 118, 0.5), transparent);
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0;
+      animation: dataFall 5s linear infinite;
+    }
+
+    .data-stream::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: -1px;
+      width: 4px;
+      height: 12px;
+      background: var(--em);
+      border-radius: 4px;
+      box-shadow: 0 0 10px var(--em);
+    }
+
+    @keyframes dataFall {
+      0% { transform: translateY(-100vh); opacity: 0; }
+      10% { opacity: 1; }
+      80% { opacity: 0.8; }
+      100% { transform: translateY(120vh); opacity: 0; }
+    }
+
+    .stream-1 { left: 15%; animation-duration: 4.2s; animation-delay: 0.5s; }
+    .stream-2 { left: 35%; animation-duration: 6.5s; animation-delay: 2.1s; }
+    .stream-3 { left: 55%; animation-duration: 3.9s; animation-delay: 1.2s; }
+    .stream-4 { left: 75%; animation-duration: 5.8s; animation-delay: 3.4s; }
+    .stream-5 { left: 90%; animation-duration: 4.7s; animation-delay: 0.8s; }
 
     /* NAV */
     nav {
@@ -441,71 +478,51 @@
       border-radius: 16px;
       overflow: hidden;
       border: 1px solid var(--border);
-      box-shadow: 0 0 60px rgba(0, 230, 118, .12), 0 40px 80px rgba(0, 0, 0, .6);
-      position: relative
+      box-shadow: 0 0 60px rgba(0, 230, 118, .15), 0 40px 80px rgba(0, 0, 0, .7);
+      position: relative;
+      transform-style: preserve-3d;
+      animation: heroFloat 8s ease-in-out infinite;
     }
 
     .hero-img-wrap img {
       width: 100%;
       height: auto;
       display: block;
-      mix-blend-mode: lighten;
     }
 
-    .hero-img-badge {
-      position: absolute;
-      bottom: 1.5rem;
-      left: 1.5rem;
-      background: rgba(3, 10, 6, .9);
-      border: 1px solid var(--em);
-      border-radius: 8px;
-      padding: .75rem 1rem;
-      backdrop-filter: blur(10px)
-    }
-
-    .hib-stat {
-      font-family: var(--font-h);
-      font-size: 1.8rem;
-      color: var(--em);
-      line-height: 1
-    }
-
-    .hib-lbl {
-      font-family: var(--font-m);
-      font-size: .6rem;
-      color: var(--txt2);
-      letter-spacing: .1em;
-      text-transform: uppercase
-    }
-
-    .floating-pill {
-      position: absolute;
-      top: -2rem;
-      right: -1rem;
-      z-index: 10;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 50px;
-      padding: .6rem 1.2rem;
-      font-family: var(--font-m);
-      font-size: .7rem;
-      color: var(--em);
-      display: flex;
-      align-items: center;
-      gap: .5rem;
-      animation: float 4s ease-in-out infinite
-    }
-
-    @keyframes float {
-
-      0%,
-      100% {
-        transform: translateY(0)
+    @keyframes heroFloat {
+      0%, 100% {
+        transform: translateY(0) perspective(1000px) rotateY(-3deg) rotateX(3deg);
       }
-
       50% {
-        transform: translateY(-10px)
+        transform: translateY(-20px) perspective(1000px) rotateY(3deg) rotateX(-3deg);
+        box-shadow: 0 0 80px rgba(0, 230, 118, .3), 0 60px 100px rgba(0, 0, 0, .8);
       }
+    }
+
+    @keyframes textDynamicPulse {
+      0% { filter: drop-shadow(0 0 5px rgba(0, 230, 118, 0.4)); transform: scale(1); }
+      50% { filter: drop-shadow(0 0 15px rgba(0, 230, 118, 0.8)); transform: scale(1.03); }
+      100% { filter: drop-shadow(0 0 5px rgba(0, 230, 118, 0.4)); transform: scale(1); }
+    }
+
+    h2.sh-title em, h2.fcta-title em, .hero-title em {
+      animation: textDynamicPulse 4s ease-in-out infinite alternate;
+      display: inline-block;
+    }
+
+    @media (min-width: 1025px) {
+      .feat-grid { display: grid; grid-template-columns: repeat(3, 1fr) !important; gap: 1.5rem; }
+      .feat-grid .feat-card:nth-child(1) { grid-column: span 2; }
+      .feat-grid .feat-card:nth-child(4) { grid-column: span 2; }
+      
+      .ind-grid { grid-template-columns: repeat(4, 1fr) !important; }
+      .ind-grid .ind-card:nth-child(1) { grid-column: span 2; }
+      .ind-grid .ind-card:nth-child(4) { grid-column: span 2; }
+
+      .why-grid { grid-template-columns: repeat(4, 1fr) !important; }
+      .why-grid .why-card:nth-child(2) { grid-column: span 2; }
+      .why-grid .why-card:nth-child(3) { grid-column: span 1; }
     }
 
     /* ============ SECTION BASE ============ */
@@ -1227,6 +1244,11 @@
 <body>
   <canvas id="ec-canvas"></canvas>
   <div class="amb"></div>
+  <div class="data-stream stream-1"></div>
+  <div class="data-stream stream-2"></div>
+  <div class="data-stream stream-3"></div>
+  <div class="data-stream stream-4"></div>
+  <div class="data-stream stream-5"></div>
 
   <nav id="nav">
     <div class="nc">
@@ -1569,23 +1591,64 @@
     const rv = document.querySelectorAll('.reveal');
     const io = new IntersectionObserver((e) => { e.forEach((el, i) => { if (el.isIntersecting) { setTimeout(() => el.target.classList.add('visible'), i * 70); io.unobserve(el.target) } }); }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
     rv.forEach(el => io.observe(el));
-    // Particle canvas
+    // SALES FLOW GRID
     (function () {
       var c = document.getElementById('ec-canvas');
       if (!c) return;
       var ctx = c.getContext('2d'), W, H;
       function resize() { W = c.width = window.innerWidth; H = c.height = window.innerHeight }
       resize(); window.addEventListener('resize', resize);
-      var pts = [];
-      for (var i = 0; i < 40; i++)pts.push({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .25, vy: (Math.random() - .5) * .25, r: Math.random() * 1.5 + .3, a: Math.random() * .4 + .1 });
+      
+      var lines = [];
+      for(var i=0; i<30; i++) {
+        lines.push({
+          x: Math.random() * W,
+          y: Math.random() * H,
+          len: Math.random() * 80 + 20,
+          speed: Math.random() * 2 + 0.5,
+          opacity: Math.random() * 0.4 + 0.1
+        });
+      }
+
       function draw() {
         ctx.clearRect(0, 0, W, H);
-        pts.forEach(p => {
-          p.x += p.vx; p.y += p.vy;
-          if (p.x < 0 || p.x > W) p.vx *= -1; if (p.y < 0 || p.y > H) p.vy *= -1;
-          ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(0,230,118,${p.a})`; ctx.fill();
+        
+        // Horizontal Grid Movement
+        ctx.strokeStyle = 'rgba(0, 230, 118, 0.03)';
+        ctx.lineWidth = 1;
+        var spacing = 50;
+        for(var x=0; x<W; x+=spacing) {
+           ctx.beginPath();
+           ctx.moveTo(x, 0);
+           ctx.lineTo(x, H);
+           ctx.stroke();
+        }
+        for(var y=0; y<H; y+=spacing) {
+           ctx.beginPath();
+           ctx.moveTo(0, y);
+           ctx.lineTo(W, y);
+           ctx.stroke();
+        }
+
+        // Falling "Digital Inventory" Lines
+        lines.forEach(l => {
+          ctx.beginPath();
+          var grad = ctx.createLinearGradient(l.x, l.y, l.x, l.y + l.len);
+          grad.addColorStop(0, 'transparent');
+          grad.addColorStop(1, `rgba(0, 230, 118, ${l.opacity})`);
+          ctx.strokeStyle = grad;
+          ctx.lineWidth = 2;
+          ctx.moveTo(l.x, l.y);
+          ctx.lineTo(l.x, l.y + l.len);
+          ctx.stroke();
+
+          l.y += l.speed;
+          if (l.y > H) {
+            l.y = -l.len;
+            l.x = Math.random() * W;
+          }
         });
+
         requestAnimationFrame(draw);
       }
       draw();
