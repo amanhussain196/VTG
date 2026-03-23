@@ -1325,11 +1325,20 @@
 
         @media(max-width:480px) {
             .hero { 
-                padding: 5rem 1.25rem 2rem !important;
+                padding-top: 100px !important;
+                padding-bottom: 2rem !important;
                 height: 100dvh;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
+                align-items: center;
+                overflow: hidden;
+            }
+            .hero-left {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
             .hero-title { font-size: clamp(2.2rem, 10vw, 3rem); line-height: 1 }
             .hero-stats { flex-direction: column; gap: 1rem }
@@ -1704,8 +1713,10 @@
             var ctx = c.getContext('2d'), W, H;
             function resize() { W = c.width = window.innerWidth; H = c.height = window.innerHeight }
             resize(); window.addEventListener('resize', resize);
+            var isMobile = window.innerWidth < 768;
             var pts = [];
-            for (var i = 0; i < 80; i++)pts.push({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .4, vy: (Math.random() - .5) * .4, r: Math.random() * 2 + 0.5, a: Math.random() * .5 + .3, c: Math.random() > .5 ? '83,109,254' : '64,196,255' });
+            var ptCount = isMobile ? 25 : 80;
+            for (var i = 0; i < ptCount; i++)pts.push({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .4, vy: (Math.random() - .5) * .4, r: Math.random() * 2 + 0.5, a: Math.random() * .5 + .3, c: Math.random() > .5 ? '83,109,254' : '64,196,255' });
             function draw() { ctx.clearRect(0, 0, W, H); pts.forEach(p => { p.x += p.vx; p.y += p.vy; if (p.x < 0 || p.x > W) p.vx *= -1; if (p.y < 0 || p.y > H) p.vy *= -1; ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); ctx.fillStyle = `rgba(${p.c},${p.a})`; ctx.fill(); }); requestAnimationFrame(draw); }
             draw();
         })();

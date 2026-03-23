@@ -20,6 +20,11 @@
   }
 }
 
+@keyframes globalLogoPulseMobile {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+}
+
 .logo-img, .li {
   height: 60px !important;
   width: auto;
@@ -34,6 +39,9 @@
 @media (max-width: 768px) {
   .logo-img, .li {
     height: 40px !important;
+    animation: globalLogoPulseMobile 4s ease-in-out infinite;
+    filter: none !important;
+    will-change: transform, opacity;
   }
 }
 

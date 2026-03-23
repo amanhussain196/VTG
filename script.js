@@ -36,7 +36,10 @@
   }
 
   function initParticles() {
-    const count = Math.min(Math.floor((canvas.width * canvas.height) / 12000), 120);
+    const isMobile = window.innerWidth < 768;
+    const baseDensity = isMobile ? 30000 : 14000;
+    const maxCount = isMobile ? 35 : 120;
+    const count = Math.min(Math.floor((canvas.width * canvas.height) / baseDensity), maxCount);
     particles = [];
     for (let i = 0; i < count; i++) {
       const p = createParticle();
@@ -337,16 +340,22 @@
     height: 300px;
     border-radius: 50%;
     background: radial-gradient(circle, rgba(0,229,255,0.045), transparent 70%);
-    transform: translate(-50%, -50%);
-    transition: left 0.15s ease, top 0.15s ease;
+    top: 0;
+    left: 0;
     z-index: 0;
-    will-change: left, top;
+    will-change: transform;
+    display: none;
   `;
-  document.body.appendChild(cursorTrail);
+  
+  if (window.innerWidth > 1024) {
+    cursorTrail.style.display = 'block';
+    document.body.appendChild(cursorTrail);
+  }
 
   document.addEventListener('mousemove', (e) => {
-    cursorTrail.style.left = e.clientX + 'px';
-    cursorTrail.style.top = e.clientY + 'px';
+    if (cursorTrail.style.display === 'block') {
+      cursorTrail.style.transform = `translate3d(${e.clientX - 150}px, ${e.clientY - 150}px, 0)`;
+    }
   }, { passive: true });
 
   /* ======================================================

@@ -1414,11 +1414,20 @@
 
         @media(max-width:480px) {
             .hero { 
-                padding: 5rem 1.25rem 2rem !important;
+                padding-top: 100px !important;
+                padding-bottom: 2rem !important;
                 height: 100dvh;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
+                align-items: center;
+                overflow: hidden;
+            }
+            .hero-left {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
             .ht { font-size: clamp(2rem, 10vw, 2.6rem); line-height: 1 }
             .hero-metrics { flex-direction: column; gap: 1rem; grid-template-columns: 1fr !important; }
@@ -1858,9 +1867,10 @@
             var ctx = c.getContext('2d'), W, H;
             function resize() { W = c.width = window.innerWidth; H = c.height = window.innerHeight }
             resize(); window.addEventListener('resize', resize);
-            // Node + connection system
+            var isMobile = window.innerWidth < 768;
             var nodes = []; var COLS = ['0,188,212', '0,131,143', '128,222,234'];
-            for (var i = 0; i < 80; i++)nodes.push({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .6, vy: (Math.random() - .5) * .6, r: Math.random() * 2 + 1, a: Math.random() * .5 + .3, c: COLS[Math.floor(Math.random() * COLS.length)] });
+            var nodeCount = isMobile ? 15 : 80;
+            for (var i = 0; i < nodeCount; i++)nodes.push({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .6, vy: (Math.random() - .5) * .6, r: Math.random() * 2 + 1, a: Math.random() * .5 + .3, c: COLS[Math.floor(Math.random() * COLS.length)] });
             function draw() {
                 ctx.clearRect(0, 0, W, H);
                 nodes.forEach((n, i) => {
