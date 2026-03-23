@@ -3457,16 +3457,23 @@ section {
   }
 
   .hero {
-    height: 100dvh;
+    min-height: 100dvh;
+    height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 110px 0.5rem 2rem !important;
+    justify-content: flex-start;
+    padding: 130px 0.5rem 2rem !important;
     width: 100vw !important;
     max-width: 100vw !important;
     box-sizing: border-box;
     overflow-x: hidden !important;
   }
+
+  .hero-badge { margin-bottom: 1rem; font-size: 0.55rem; padding: 0.3rem 0.8rem; }
+  .hero-title { font-size: clamp(1.8rem, 8vw, 2.5rem); line-height: 1.1; margin-bottom: 1rem; }
+  .title-line { transform: none !important; } /* Stop vertical drift */
+  .hero-tagline { font-size: 1.1rem; margin-bottom: 0.75rem; }
+  .hero-sub { font-size: 0.85rem; line-height: 1.5; margin-bottom: 1.5rem; padding: 0 0.5rem; }
 
   .hero-cta-group {
     flex-direction: column;
@@ -3476,6 +3483,7 @@ section {
   .btn {
     width: 100%;
     justify-content: center;
+    padding: 0.9rem;
   }
 
   .testimonial-grid {

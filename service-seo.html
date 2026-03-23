@@ -1442,26 +1442,31 @@
 
     @media(max-width:480px) {
       .hero { 
-        padding-top: 100px !important;
-        padding-bottom: 2rem !important;
-        height: 100dvh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
+        padding-top: 130px !important;
+        padding-bottom: 25px !important;
+        min-height: 100dvh !important;
+        height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        overflow: visible !important;
       }
       .hero-left {
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
+        text-align: center;
       }
-      .hero-title { font-size: clamp(2.2rem, 10vw, 2.8rem); line-height: 1 }
-      .hero-stats-row { flex-direction: column; gap: 1rem }
-      .hs-item { border-left: none; border-bottom: 2px solid var(--am); padding: 0 0 1rem 0; width: 100% }
-      .hero-btns { flex-direction: column }
-      .btn-am, .btn-am-out { width: 100%; justify-content: center }
+      .hero-visual { display: none !important; }
+      .hero-title { font-size: clamp(1.8rem, 8vw, 2.4rem); line-height: 1.1; margin-bottom: 1rem }
+      .hero-sub { font-size: 0.88rem; margin-bottom: 1.25rem }
+      .hero-stats-row { flex-direction: column; gap: 0.75rem; width: 100% }
+      .hs-item { border-left: none; border-bottom: 2px solid var(--am); padding: 0 0 0.5rem 0; width: 100% }
+      .hs-val { font-size: 1.6rem }
+      .hero-btns { flex-direction: column; width: 100%; gap: 0.75rem }
+      .btn-am, .btn-am-out { width: 100%; justify-content: center; padding: 0.8rem }
       .process-row, .tech-categories, .why-stats-side, .ind-grid, .pt-row { 
         grid-template-columns: 1fr !important; 
       }
